@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-        <title>Hello world</title>
+        <title>IBM x3650 m3 安装Linux小记</title>
         <meta charset="utf-8" />
 
 
@@ -49,27 +49,39 @@
 
             <header>
               <h2 class="entry-title">
-                <a href="/hello-world.html" rel="bookmark"
-                   title="Permalink to Hello world">Hello world</a></h2>
+                <a href="/ibm-x3650-m3-setup-linux.html" rel="bookmark"
+                   title="Permalink to IBM x3650 m3 安装Linux小记">IBM x3650 m3 安装Linux小记</a></h2>
            
             </header>
             <footer class="post-info">
-              <abbr class="published" title="2016-01-13T11:47:00+08:00">
-                Wed 13 January 2016
+              <abbr class="published" title="2015-08-02T03:04:58+00:00">
+                Sun 02 August 2015
               </abbr>
               <address class="vcard author">By 
                 <a class="url fn" href="/author/pel.html"> pel</a>
               </address>
             </footer><!-- /.post-info -->
             <div class="entry-content">
-              <p>First Blood...</p>
-<h1>Mark!</h1>
+              <p>回来折腾服务器，主要的问题是没接触过EFI，不了解EFI的工作原理，故重装服务器折腾了很久，服务器重启又是一个长等待，简单介绍下相关原理：</p>
+<h2>原引导流程</h2>
+<p><strong>BIOS+MBR:</strong>
+具体可以参考鸟哥linux，由于BIOS大小的64KB限制，只能分4个主分区，每个分区的大小不能超过2T，这个是硬伤，随着磁盘存储容量的升级，上T的硬盘都不是问题；</p>
+<h2>现引导流程</h2>
+<p><strong>EFI+GPT:</strong>
+Intel提出的，主要就是为了解决上面的问题，现在预装windows系统、Mac系统的都已经采用了EFI的引导方式。EFI的另一个优点是可以确保安装授权的操作系统（MS极力推广的原因）</p>
+<h2>关于系统</h2>
+<p>CentOS在6.3之前需要下载不同的IOS，对于EFI的版本需要下载CentOS 6.3 - EFI版本，对于BIOS的则需要下载普通版，6.3之后的已经不用再区分版本了，两个都可以兼容；</p>
+<h2>关于服务器</h2>
+<p>主板支持EFI引导方式的服务器需要在BIOS中设置为EFI，当需要切换回传统引导方式时则需要切换成Legacy</p>
+<h2>关于分区</h2>
+<p>设置为EFI引导方式安装系统时，需要创建/boot/efi（暂时未安装成功）</p>
+<p>设置BIOS引导方式安装系统则正常安装即可。</p>
             </div><!-- /.entry-content -->
             <div class="comments">
               <h3>Comments</h3>
               <div id="disqus_thread"></div>
               <script type="text/javascript">
-                var disqus_identifier = "hello-world.html";
+                var disqus_identifier = "ibm-x3650-m3-setup-linux.html";
                 (function() {
                 var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
                 dsq.src = 'https://pelucky.disqus.com/embed.js';

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-        <title>Hello world</title>
+        <title>安装Django小记</title>
         <meta charset="utf-8" />
 
 
@@ -49,27 +49,68 @@
 
             <header>
               <h2 class="entry-title">
-                <a href="/hello-world.html" rel="bookmark"
-                   title="Permalink to Hello world">Hello world</a></h2>
+                <a href="/setup-django.html" rel="bookmark"
+                   title="Permalink to 安装Django小记">安装Django小记</a></h2>
            
             </header>
             <footer class="post-info">
-              <abbr class="published" title="2016-01-13T11:47:00+08:00">
-                Wed 13 January 2016
+              <abbr class="published" title="2015-09-14T07:30:38+00:00">
+                Mon 14 September 2015
               </abbr>
               <address class="vcard author">By 
                 <a class="url fn" href="/author/pel.html"> pel</a>
               </address>
             </footer><!-- /.post-info -->
             <div class="entry-content">
-              <p>First Blood...</p>
-<h1>Mark!</h1>
+              <p>主要是局域网蛋疼，无pip，yum中不包含Django，故只能手动安装</p>
+<ol>
+<li>首先查看Python版本，CentOS6.5自带Python2.6，没戏，需要重新安装2.7以上版本；</li>
+<li>下载Python2.7.10，源码安装，三部曲走起...</li>
+<li>安装Django，提示需要安装setuptools，去下载，从头来；</li>
+<li>安装setuptools，外网只需要一个指令，即可自动安装，内网蛋疼，<code>/usr/local/python-2.7.10/bin/python setup.py install</code>，提示如下：</li>
+</ol>
+<div class="highlight"><pre>Traceback (most recent call last):
+File &quot;setup.py&quot;, line 171, in &lt;module&gt;
+dist = setuptools.setup(**setup_params)
+File &quot;/usr/local/python-2.7.10/lib/python2.7/distutils/core.py&quot;, line 151, in setup
+dist.run_commands()
+File &quot;/usr/local/python-2.7.10/lib/python2.7/distutils/dist.py&quot;, line 953, in run_commands
+self.run_command(cmd)
+File &quot;/usr/local/python-2.7.10/lib/python2.7/distutils/dist.py&quot;, line 972, in run_command
+cmd_obj.run()
+File &quot;/usr/local/src/setuptools-18.3.1/setuptools/command/install.py&quot;, line 67, in run
+self.do_egg_install()
+File &quot;/usr/local/src/setuptools-18.3.1/setuptools/command/install.py&quot;, line 109, in do_egg_install
+self.run_command(&#39;bdist_egg&#39;)
+File &quot;/usr/local/python-2.7.10/lib/python2.7/distutils/cmd.py&quot;, line 326, in run_command
+self.distribution.run_command(command)
+File &quot;/usr/local/python-2.7.10/lib/python2.7/distutils/dist.py&quot;, line 972, in run_command
+cmd_obj.run()
+File &quot;/usr/local/src/setuptools-18.3.1/setuptools/command/bdist_egg.py&quot;, line 222, in run
+dry_run=self.dry_run, mode=self.gen_header())
+File &quot;/usr/local/src/setuptools-18.3.1/setuptools/command/bdist_egg.py&quot;, line 463, in make_zipfile
+z = zipfile.ZipFile(zip_filename, mode, compression=compression)
+File &quot;/usr/local/python-2.7.10/lib/python2.7/zipfile.py&quot;, line 736, in __init__
+&quot;Compression requires the (missing) zlib module&quot;
+</pre></div>
+
+
+<p>简而言之就是没有zlib，网上查找再三，找到解决方法：</p>
+<div class="highlight"><pre>yum install zlib
+yum install zlib-devel
+</pre></div>
+
+
+<p>再重新编译python2.7，再三部曲
+1. 安装setuptools，成功；
+2. 安装django，成功；
+3. 如此蛋疼的问题，谁会想得到....</p>
             </div><!-- /.entry-content -->
             <div class="comments">
               <h3>Comments</h3>
               <div id="disqus_thread"></div>
               <script type="text/javascript">
-                var disqus_identifier = "hello-world.html";
+                var disqus_identifier = "setup-django.html";
                 (function() {
                 var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
                 dsq.src = 'https://pelucky.disqus.com/embed.js';

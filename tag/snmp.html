@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-        <title>pelucky's blog</title>
+        <title>pelucky's blog - snmp</title>
         <meta charset="utf-8" />
 
 
@@ -42,7 +42,7 @@
             </div>
 
 <section id="content">
-<h2>Articles in the Life category</h2>
+
 
 
    <div class="row">
@@ -51,22 +51,36 @@
         <div class="eleven columns">
                  <ol id="post-list">
                         <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="/hello-world.html" rel="bookmark" title="Permalink to Hello world">Hello world</a></h2> </header>
+                                <header> <h2 class="entry-title"><a href="/switch-snmp.html" rel="bookmark" title="Permalink to 交换机开启SNMP">交换机开启SNMP</a></h2> </header>
                                 <footer class="post-info">
-                                    <abbr class="published" title="2016-01-13T11:47:00+08:00"> Wed 13 January 2016 </abbr>
+                                    <abbr class="published" title="2015-10-10T03:32:13+00:00"> Sat 10 October 2015 </abbr>
                                     <address class="vcard author">By 
                                     <a class="url fn" href="/author/pel.html"> pel</a>
                                     </address>
                                 </footer><!-- /.post-info -->
-                                <div class="entry-content"> <p>第一篇博客...</p> </div><!-- /.entry-content -->
+                                <div class="entry-content"> <p>最近一直在研究使用zabbix监控整个系统，服务器的简单，直接套用模板即可，交换机和路由器无法安装zabbix agentd，故需要使用snmp，简单介绍下各类交换机打开snmp的方法：</p>
+<h2>SNMP</h2>
+<p>SNMP有一个树状结构的oid，每个树端点为一个值，比如CPU的负载 =&gt; 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.5</p>
+<p>故需要查询某值时只需要输入对应的oid即可。</p>
+<h2>服务器端</h2>
+<p>服务器端需要zabbix在编译时添加对snmp的支持，除此之外还需要安装net-snmp和net-snmp-utils，安装这两个之后可以使用snmpwalk命令检测交换机是否设置正确；</p>
+<p>服务器和所需要管理的交换机串连在一起，实现带内管理。</p>
+<h2>交换机端</h2>
+<p>交换机方面的设置整体思路都是相同的：<strong>打开telnet登录-&gt;设置交换机参数-&gt;设置snmp-&gt;服务器端测试。</strong>简单介绍下碰到的几类交换机：</p>
+<h3>huawei S2326</h3>
+<div class="highlight"><pre>&lt;Quidway&gt;system-view
+Enter system view, return user view ...</pre></div> </div><!-- /.entry-content -->
 
-                                <div class="medium primary btn"><a href="/hello-world.html" rel="bookmark" title="Permalink to Hello world">Read more <i class="icon-arrow-right"></i></a></div>
+                                <div class="medium primary btn"><a href="/switch-snmp.html" rel="bookmark" title="Permalink to 交换机开启SNMP">Read more <i class="icon-arrow-right"></i></a></div>
 
 
 
                                 <div class="row tag-row">
                                         <span>Tagged as : </span>
-                                            <a class="danger label" href="/tag/hello.html">hello</a>
+                                            <a class="danger label" href="/tag/mib.html">mib</a>
+                                            <a class="danger label" href="/tag/snmp.html">snmp</a>
+                                            <a class="danger label" href="/tag/zabbix.html">zabbix</a>
+                                            <a class="danger label" href="/tag/switch.html">switch</a>
                                 </div>
 
 

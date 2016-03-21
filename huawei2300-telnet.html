@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+        <title>华为2300 telnet配置（转）</title>
+        <meta charset="utf-8" />
+
+
+        <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+        <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+
+        <link rel="stylesheet" type="text/css" href="/theme/gumby.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/style.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/pygment.css" />
+
+        <script src="/theme/js/libs/modernizr-2.6.2.min.js"></script>
+
+
+
+
+</head>
+
+<body id="index" class="home">
+
+
+    <div class="container">
+
+        <div class="row">
+
+          <header id="banner" class="body">
+                  <h1><a href="/">pelucky's blog <strong></strong></a></h1>
+          </header><!-- /#banner -->
+
+            <div id="navigation" class="navbar row">
+              <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
+             
+              <ul class="columns">
+                <li><a href="/">Home</a></li>
+
+
+              </ul>
+            </div>
+
+<section id="content" class="body">
+
+   <div class="row">
+        <div class="eleven columns">
+
+
+            <header>
+              <h2 class="entry-title">
+                <a href="/huawei2300-telnet.html" rel="bookmark"
+                   title="Permalink to 华为2300 telnet配置（转）">华为2300 telnet配置（转）</a></h2>
+           
+            </header>
+            <footer class="post-info">
+              <abbr class="published" title="2015-09-14T07:38:48+00:00">
+                Mon 14 September 2015
+              </abbr>
+              <address class="vcard author">By 
+                <a class="url fn" href="/author/pel.html"> pel</a>
+              </address>
+            </footer><!-- /.post-info -->
+            <div class="entry-content">
+              <ul>
+<li>网络
+tags:</li>
+<li>huawei 2300</li>
+<li>telnet</li>
+<li>交换机</li>
+</ul>
+<hr />
+<p>{% include JB/setup %}</p>
+<p>最近一直想把整个网络设备和服务器都监控起来，每次跑进冷飕飕的机房的后果就是感冒...果断找方法远程，转载一篇huawei2300交换机开启telnet方法：</p>
+<!-- more -->
+
+<p>连接 console 口：</p>
+<p>sys</p>
+<p>[Quidway]interface vlanif 1         进入到vlan 1</p>
+<p>[Quidway-Vlanif1]ip address 你的网段ip 你的掩码</p>
+<p>设置ip:我的例子：ip address 192.168.0.200 255.255.255.0</p>
+<p>上述设置很重要，搞不好绝对上不了！</p>
+<p>设完ip后，用xp的cmd telnet 192.168.0.200得到下面画面：</p>
+<hr />
+<p>*           All rights reserved (2005-2008)               *</p>
+<p>*       Without the owner's prior written consent,        *</p>
+<ul>
+<li>
+<p>no decompiling or reverse-engineering shall be allowed. *</p>
+</li>
+<li>
+<p>Notice:                                                 *</p>
+</li>
+</ul>
+<p>*      This is a private communication system.            *</p>
+<p>*   Unauthorized access or use may lead to prosecution.   *</p>
+<hr />
+<p>Warning:Login password has not been set!</p>
+<p>失去了跟主机的连接。</p>
+<p>上面的信息说明，ip设置正确，只是telnet用户没有设置！下面设用户：</p>
+<p>[Quidway]user-interface maximum-vty 5              进入用户界面视图</p>
+<p>[Quidway]telnet server en                          因为是V5平台。所以要开启telnet服务，</p>
+<p>如果是V0-4平台则默认开启telnet服务。</p>
+<p>[Quidway]user-interface vty 0 4                     设置用户从VTY 0 - 4用户界面登录</p>
+<p>[Quidway-ui-vty0-4]shell                            开启终端服务功能。</p>
+<p>[Quidway-ui-vty0-4]protocol inbound telnet            配置用户界面支持Telnet 服务。</p>
+<p>[Quidway-ui-vty0-4]authentication-mode password     配置采用密码方式。</p>
+<p>[Quidway-ui-vty0-4]set authentication password cipher huawei</p>
+<p>配置验证登录用户的密码为 huawei</p>
+<p>[Quidway-ui-vty0-4]user privilege level 15   </p>
+<p>配置从当前用户界面登录的用户所能访问的命令级为15</p>
+<p>[Quidway-ui-vty0-4]idle-timeout 5          配置登录用户的超时断连时间，缺省情况下，登录用 户的超时断连时间为10 分钟，即如果登录用户10 分钟内没有任何操作，则此终端线路自动断开。使用idle-timeout 0 0 命令可以设置为永不超时断连。</p>
+<p>完成上面设置后：用xp的cmd telnet 192.168.0.200 结果出现下面画面，输入密码huawei，成功！</p>
+<hr />
+<p>*           All rights reserved (2005-2008)               *</p>
+<p>*       Without the owner's prior written consent,        *</p>
+<ul>
+<li>
+<p>no decompiling or reverse-engineering shall be allowed. *</p>
+</li>
+<li>
+<p>Notice:                                                 *</p>
+</li>
+</ul>
+<p>*      This is a private communication system.            *</p>
+<p>*   Unauthorized access or use may lead to prosecution.   *</p>
+<hr />
+<p>Login authentication</p>
+<p>Password:</p>
+<p>这样设置，交换机任何一个口都能上Telnet。</p>
+<hr />
+<p>实际测试表明，只要将主机的IP地址设置为同网段的私有地址，交换机级联下同样可以直接连接上去，前提是IP地址不能冲突；</p>
+<p>打完收工~</p>
+            </div><!-- /.entry-content -->
+            <div class="comments">
+              <h3>Comments</h3>
+              <div id="disqus_thread"></div>
+              <script type="text/javascript">
+                var disqus_identifier = "huawei2300-telnet.html";
+                (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'https://pelucky.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+              </script>
+            </div>
+
+
+        </div><!-- /.eleven.columns -->
+
+<div class="three columns">
+
+<h4>Pages</h4>
+
+ <ul>
+  </ul>
+
+<h4>Categories</h4>
+<ul class="blank">
+		<li><a href="/category/life.html">Life</a></li>
+		<li><a href="/category/misc.html">misc</a></li>
+</ul>
+
+
+<h4>Tags</h4>
+	<ul class="blank">
+</ul>
+
+
+<nav class="widget">
+  <h4>Social</h4>
+  <ul class="blank">
+    <li><a href="http://choidi.github.io">Choidi's Blog</a></li>
+    <li><a href="https://www.crackerben.com/new/">Crankerben</a></li>
+  </ul>
+</nav>
+
+</div> </div><!-- /.row -->
+
+
+</section>
+
+       </div><!-- /.row -->
+    </div><!-- /.container -->
+
+
+       <div class="container.nopad bg">
+
+    
+        <footer id="credits" class="row">
+          <div class="seven columns left-center">
+
+                   <address id="about" class="vcard body">
+                    Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+                    which takes great advantage of <a href="http://python.org">Python</a>.
+                    <br />
+                    Based on the <a target="_blank" href="http://gumbyframework.com">Gumby Framework</a>
+                    </address>
+          </div>
+
+
+          <div class="seven columns">
+            <div class="row">
+              <ul class="socbtns">
+
+
+
+
+
+              </ul>
+            </div>
+          </div>
+        </footer>
+
+    </div>
+
+
+<script type="text/javascript">
+    var disqus_shortname = 'pelucky';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+  <script src="/theme/js/libs/jquery-1.9.1.min.js"></script>
+  <script src="/theme/js/libs/gumby.min.js"></script>
+  <script src="/theme/js/plugins.js"></script>
+</body>
+</html>

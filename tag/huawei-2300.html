@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-        <title>Hello world</title>
+        <title>pelucky's blog - huawei 2300</title>
         <meta charset="utf-8" />
 
 
@@ -41,46 +41,55 @@
               </ul>
             </div>
 
-<section id="content" class="body">
+<section id="content">
+
+
 
    <div class="row">
+
+
         <div class="eleven columns">
+                 <ol id="post-list">
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="/huawei-s2300-port-mirror.html" rel="bookmark" title="Permalink to Wireshark抓包测试--Huawei s2300 端口镜像">Wireshark抓包测试--Huawei s2300 端口镜像</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2015-08-03T08:06:57+00:00"> Mon 03 August 2015 </abbr>
+                                    <address class="vcard author">By 
+                                    <a class="url fn" href="/author/pel.html"> pel</a>
+                                    </address>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <p>wireshark抓取局域网中的包，有三种方法：
+- 交换机换成集线器，也就是交换性网络换成共享性网络，会有广播风暴等缺点，现在普通的交换机都已经是交换性网卡了，这个方案肯定不可行；
+- 交换机中做端口镜像。这个可以有；
+- 做man-in-the-middle攻击。现在的大部分主机都会安装防火墙和杀软，一进行中间人攻击，可恶的360就会报警，但是手机平板之类的就另说了...</p>
+<p>交换机为Huawei s2326 ，查了下交换机手册，做了下端口镜像：</p>
+<div class="highlight"><pre>&lt;Huawei-s2326&gt;:sys //进入交换机
+[Huawei-s2326]:observing-port 1 interface Ethernet 0/0/24  //设置观察端口
+[Huawei-s2326]:interface Ethernet 0//0/1    //进入被镜像端口
+[Huawei-s2326]:port-mirroring to observe-port 1 both  //设置双向镜像
+</pre></div>
 
 
-            <header>
-              <h2 class="entry-title">
-                <a href="/hello-world.html" rel="bookmark"
-                   title="Permalink to Hello world">Hello world</a></h2>
-           
-            </header>
-            <footer class="post-info">
-              <abbr class="published" title="2016-01-13T11:47:00+08:00">
-                Wed 13 January 2016
-              </abbr>
-              <address class="vcard author">By 
-                <a class="url fn" href="/author/pel.html"> pel</a>
-              </address>
-            </footer><!-- /.post-info -->
-            <div class="entry-content">
-              <p>First Blood...</p>
-<h1>Mark!</h1>
-            </div><!-- /.entry-content -->
-            <div class="comments">
-              <h3>Comments</h3>
-              <div id="disqus_thread"></div>
-              <script type="text/javascript">
-                var disqus_identifier = "hello-world.html";
-                (function() {
-                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                dsq.src = 'https://pelucky.disqus.com/embed.js';
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-                })();
-              </script>
-            </div>
+<p>打开wireshark，即可抓包分析网络数据。</p> </div><!-- /.entry-content -->
 
+                                <div class="medium primary btn"><a href="/huawei-s2300-port-mirror.html" rel="bookmark" title="Permalink to Wireshark抓包测试--Huawei s2300 端口镜像">Read more <i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tagged as : </span>
+                                            <a class="danger label" href="/tag/huawei-2300.html">huawei 2300</a>
+                                            <a class="danger label" href="/tag/wireshark.html">wireshark</a>
+                                            <a class="danger label" href="/tag/port-span.html">Port Span</a>
+                                </div>
+
+
+
+                        </article></li>
+                </ol><!-- /#posts-list -->
 
         </div><!-- /.eleven.columns -->
-
+        
 <div class="three columns">
 
 <h4>Pages</h4>
@@ -110,8 +119,10 @@
 
 </div> </div><!-- /.row -->
 
-
-</section>
+<p class="paginator">
+    Page 1 / 1
+</p>
+</section><!-- /#content -->
 
        </div><!-- /.row -->
     </div><!-- /.container -->

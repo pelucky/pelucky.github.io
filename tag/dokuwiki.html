@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-        <title>pelucky's blog</title>
+        <title>pelucky's blog - dokuwiki</title>
         <meta charset="utf-8" />
 
 
@@ -42,7 +42,7 @@
             </div>
 
 <section id="content">
-<h2>Articles in the Life category</h2>
+
 
 
    <div class="row">
@@ -51,22 +51,37 @@
         <div class="eleven columns">
                  <ol id="post-list">
                         <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="/hello-world.html" rel="bookmark" title="Permalink to Hello world">Hello world</a></h2> </header>
+                                <header> <h2 class="entry-title"><a href="/bitnami-move.html" rel="bookmark" title="Permalink to bitnami之迁移">bitnami之迁移</a></h2> </header>
                                 <footer class="post-info">
-                                    <abbr class="published" title="2016-01-13T11:47:00+08:00"> Wed 13 January 2016 </abbr>
+                                    <abbr class="published" title="2015-09-15T12:31:59+00:00"> Tue 15 September 2015 </abbr>
                                     <address class="vcard author">By 
                                     <a class="url fn" href="/author/pel.html"> pel</a>
                                     </address>
                                 </footer><!-- /.post-info -->
-                                <div class="entry-content"> <p>第一篇博客...</p> </div><!-- /.entry-content -->
+                                <div class="entry-content"> <p>前文有介绍，发现bitnami这个大套件后，就顺手搭了三个系统：
+- 用于代码管理的gitlab
+- 用于工作管理的redmine
+- 用于知识共享的dokuwiki</p>
+<p>bitnami的好处之前已经提过，一键式安装，所有组件都子提供一份。但缺点也很明显，扩展、升级、备份略微蛋疼...</p>
+<h2>原因</h2>
+<p>迁移的原因很简单，之前对于服务器分区，将/var用作存储数据，将/usr用作存储软件，故在安装bitnami的时候，下意识的就将三个平台放到/usr上了，后来一查看空间，/usr总共才分了30G，对于dokuwiki时肯定不够的，故决定迁移；</p>
+<p>这个问题也说明了业务数据和逻辑实现分离的重要性，同时也是bitnami的弊端，给懒人安装上的便利，同时带来维护上的麻烦；</p>
+<h2>解决思路</h2>
+<p>这算是总结之后的思路：
+- 去bitnami的官方网站和bbs查看是否有迁移的方法；查到了备份和还原的方法；以及查看到了bitnami平台的文件结构，至少需要备份./XXX/apps/中的内容，这一般就是特定系统的文件。对于dokuwiki使用文本进行保存，就不需要备份数据库了，否则需要将数据库中的内容备份；
+- 在新的位置重新安装一遍dokuwik；因为只是迁移，故只要修改为正确的路径即可，其他的与原系统的相同；停止新的dokuwiki服务；</p>
+<p>停止方法是进入到bitnami系统的目录 ...</p> </div><!-- /.entry-content -->
 
-                                <div class="medium primary btn"><a href="/hello-world.html" rel="bookmark" title="Permalink to Hello world">Read more <i class="icon-arrow-right"></i></a></div>
+                                <div class="medium primary btn"><a href="/bitnami-move.html" rel="bookmark" title="Permalink to bitnami之迁移">Read more <i class="icon-arrow-right"></i></a></div>
 
 
 
                                 <div class="row tag-row">
                                         <span>Tagged as : </span>
-                                            <a class="danger label" href="/tag/hello.html">hello</a>
+                                            <a class="danger label" href="/tag/bitnami.html">bitnami</a>
+                                            <a class="danger label" href="/tag/dokuwiki.html">dokuwiki</a>
+                                            <a class="danger label" href="/tag/pi-liang-wen-jian-ti-huan-zi-fu-chuan.html">批量文件替换字符串</a>
+                                            <a class="danger label" href="/tag/move.html">move</a>
                                 </div>
 
 
