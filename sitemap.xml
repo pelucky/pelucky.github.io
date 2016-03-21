@@ -4,259 +4,259 @@ xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitem
 xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
-<loc>pelucky.github.io/</loc>
-<lastmod>2016-03-21T19:45:22-00:00</lastmod>
+<loc>/</loc>
+<lastmod>2016-03-21T19:55:45-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>pelucky.github.io/archives.html</loc>
-<lastmod>2016-03-21T19:45:22-00:00</lastmod>
+<loc>/archives.html</loc>
+<lastmod>2016-03-21T19:55:45-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>pelucky.github.io/tags.html</loc>
-<lastmod>2016-03-21T19:45:22-00:00</lastmod>
+<loc>/tags.html</loc>
+<lastmod>2016-03-21T19:55:45-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>pelucky.github.io/categories.html</loc>
-<lastmod>2016-03-21T19:45:22-00:00</lastmod>
+<loc>/categories.html</loc>
+<lastmod>2016-03-21T19:55:45-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>pelucky.github.io/hello-world.html</loc>
+<loc>/hello-world.html</loc>
 <lastmod>2016-03-21T18:31:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
 </url>
 
 <url>
-<loc>pelucky.github.io/switch-snmp.html</loc>
+<loc>/switch-snmp.html</loc>
 <lastmod>2016-03-21T18:54:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
 </url>
 
 <url>
-<loc>pelucky.github.io/bitnami-move.html</loc>
+<loc>/bitnami-move.html</loc>
 <lastmod>2016-03-21T18:58:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
 </url>
 
 <url>
-<loc>pelucky.github.io/setup-django.html</loc>
+<loc>/setup-django.html</loc>
 <lastmod>2016-03-21T18:50:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
 </url>
 
 <url>
-<loc>pelucky.github.io/huawei-s2300-port-mirror.html</loc>
+<loc>/huawei-s2300-port-mirror.html</loc>
 <lastmod>2016-03-21T18:44:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
 </url>
 
 <url>
-<loc>pelucky.github.io/gitlab-setup.html</loc>
+<loc>/gitlab-setup.html</loc>
 <lastmod>2016-03-21T18:42:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
 </url>
 
 <url>
-<loc>pelucky.github.io/ibm-x3650-m3-setup-linux.html</loc>
+<loc>/ibm-x3650-m3-setup-linux.html</loc>
 <lastmod>2016-03-21T18:40:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
 </url>
 
 <url>
-<loc>pelucky.github.io/centos-6-5-update-http.html</loc>
+<loc>/centos-6-5-update-http.html</loc>
 <lastmod>2016-03-21T18:31:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
 </url>
 
 <url>
-<loc>pelucky.github.io/category/life.html</loc>
+<loc>/category/life.html</loc>
 <lastmod>2016-03-21T18:31:00+07:37</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>pelucky.github.io/category/misc.html</loc>
+<loc>/category/misc.html</loc>
 <lastmod>2016-03-21T18:58:00+07:37</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>pelucky.github.io/tag/dokuwiki.html</loc>
+<loc>/tag/dokuwiki.html</loc>
 <lastmod>2016-03-21T18:58:00+07:37</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>pelucky.github.io/tag/snmp.html</loc>
+<loc>/tag/snmp.html</loc>
 <lastmod>2016-03-21T18:54:00+07:37</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>pelucky.github.io/tag/move.html</loc>
+<loc>/tag/move.html</loc>
 <lastmod>2016-03-21T18:58:00+07:37</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>pelucky.github.io/tag/linux.html</loc>
+<loc>/tag/linux.html</loc>
 <lastmod>2016-03-21T18:40:00+07:37</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>pelucky.github.io/tag/mib.html</loc>
+<loc>/tag/mib.html</loc>
 <lastmod>2016-03-21T18:54:00+07:37</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>pelucky.github.io/tag/port-mirror.html</loc>
+<loc>/tag/port-mirror.html</loc>
 <lastmod>2016-03-21T18:44:00+07:37</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>pelucky.github.io/tag/switch.html</loc>
+<loc>/tag/switch.html</loc>
 <lastmod>2016-03-21T18:54:00+07:37</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>pelucky.github.io/tag/centos-65.html</loc>
+<loc>/tag/centos-65.html</loc>
 <lastmod>2016-03-21T18:31:00+07:37</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>pelucky.github.io/tag/efi.html</loc>
+<loc>/tag/efi.html</loc>
 <lastmod>2016-03-21T18:40:00+07:37</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>pelucky.github.io/tag/gpt.html</loc>
+<loc>/tag/gpt.html</loc>
 <lastmod>2016-03-21T18:40:00+07:37</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>pelucky.github.io/tag/bitnami.html</loc>
+<loc>/tag/bitnami.html</loc>
 <lastmod>2016-03-21T18:58:00+07:37</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>pelucky.github.io/tag/wireshark.html</loc>
+<loc>/tag/wireshark.html</loc>
 <lastmod>2016-03-21T18:44:00+07:37</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>pelucky.github.io/tag/python.html</loc>
+<loc>/tag/python.html</loc>
 <lastmod>2016-03-21T18:50:00+07:37</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>pelucky.github.io/tag/pi-liang-wen-jian-ti-huan-zi-fu-chuan.html</loc>
+<loc>/tag/pi-liang-wen-jian-ti-huan-zi-fu-chuan.html</loc>
 <lastmod>2016-03-21T18:58:00+07:37</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>pelucky.github.io/tag/ibm.html</loc>
+<loc>/tag/ibm.html</loc>
 <lastmod>2016-03-21T18:40:00+07:37</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>pelucky.github.io/tag/updateyuan.html</loc>
+<loc>/tag/updateyuan.html</loc>
 <lastmod>2016-03-21T18:31:00+07:37</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>pelucky.github.io/tag/setup.html</loc>
+<loc>/tag/setup.html</loc>
 <lastmod>2016-03-21T18:42:00+07:37</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>pelucky.github.io/tag/gitlab.html</loc>
+<loc>/tag/gitlab.html</loc>
 <lastmod>2016-03-21T18:42:00+07:37</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>pelucky.github.io/tag/zabbix.html</loc>
+<loc>/tag/zabbix.html</loc>
 <lastmod>2016-03-21T18:54:00+07:37</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>pelucky.github.io/tag/setuptools.html</loc>
+<loc>/tag/setuptools.html</loc>
 <lastmod>2016-03-21T18:50:00+07:37</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>pelucky.github.io/tag/hello.html</loc>
+<loc>/tag/hello.html</loc>
 <lastmod>2016-03-21T18:31:00+07:37</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>pelucky.github.io/tag/huawei-2300.html</loc>
+<loc>/tag/huawei-2300.html</loc>
 <lastmod>2016-03-21T18:44:00+07:37</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>pelucky.github.io/author/pel.html</loc>
+<loc>/author/pel.html</loc>
 <lastmod>2016-03-21T18:58:00+07:37</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
