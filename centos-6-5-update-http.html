@@ -77,13 +77,17 @@
 <p><code>cat dvd2/Packages/TRANS.TBL &gt;&gt; dvd1/Packages/TRANS.TBL</code></p>
 <p><code>mv dvd1/Packages/{TRANS.TBL.BAK,TRANS.TBL.BAK}</code></p>
 <p><code>sort dvd1/Packages/TRANS.TBL.BAK &gt;dvd1/Packages/TRANS.TBL</code></p>
-<p><code>rm -rf dvd1/Packages/TRANS.TBL.BAK</code>
-5. 接下来使用安装createrepo病创建软件仓库：</p>
+<p><code>rm -rf dvd1/Packages/TRANS.TBL.BAK</code></p>
+<ol>
+<li>接下来使用安装createrepo病创建软件仓库：</li>
+</ol>
 <p><code>rpm -ivh Packages/deltarpm-3.5-0.5.20090913git.el6.x86_64.rpm</code></p>
 <p><code>rpm -ivh Packages/python-deltarpm-3.5-0.5.20090913git.el6.x86_64.rpm</code></p>
-<p><code>rpm -ivh Packages/createrepo-0.9.9-18.el6.noarch.rpm</code>
-6. 使用createrepo命令将所有安装包加载进入到软件仓库中：
-<code>createrepo -v /var/www/html/yum/CentOS-6.5/Packages/</code></p>
+<p><code>rpm -ivh Packages/createrepo-0.9.9-18.el6.noarch.rpm</code></p>
+<ol>
+<li>使用createrepo命令将所有安装包加载进入到软件仓库中：
+<code>createrepo -v /var/www/html/yum/CentOS-6.5/Packages/</code></li>
+</ol>
 </blockquote>
 <h2>客户端配置</h2>
 <p>使用vim修改/etc/yum.repos.d/CentOS-Base.repo的文件：</p>
