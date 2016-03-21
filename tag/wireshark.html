@@ -58,19 +58,7 @@
                                     <a class="url fn" href="/author/pel.html"> pel</a>
                                     </address>
                                 </footer><!-- /.post-info -->
-                                <div class="entry-content"> <p>wireshark抓取局域网中的包，有三种方法：
-- 交换机换成集线器，也就是交换性网络换成共享性网络，会有广播风暴等缺点，现在普通的交换机都已经是交换性网卡了，这个方案肯定不可行；
-- 交换机中做端口镜像。这个可以有；
-- 做man-in-the-middle攻击。现在的大部分主机都会安装防火墙和杀软，一进行中间人攻击，可恶的360就会报警，但是手机平板之类的就另说了...</p>
-<p>交换机为Huawei s2326 ，查了下交换机手册，做了下端口镜像：</p>
-<div class="highlight"><pre>&lt;Huawei-s2326&gt;:sys //进入交换机
-[Huawei-s2326]:observing-port 1 interface Ethernet 0/0/24  //设置观察端口
-[Huawei-s2326]:interface Ethernet 0//0/1    //进入被镜像端口
-[Huawei-s2326]:port-mirroring to observe-port 1 both  //设置双向镜像
-</pre></div>
-
-
-<p>打开wireshark，即可抓包分析网络数据。</p> </div><!-- /.entry-content -->
+                                <div class="entry-content"> <p>Open port mirror for wireshark</p> </div><!-- /.entry-content -->
 
                                 <div class="medium primary btn"><a href="/huawei-s2300-port-mirror.html" rel="bookmark" title="Permalink to Wireshark抓包测试--Huawei s2300 端口镜像">Read more <i class="icon-arrow-right"></i></a></div>
 
@@ -80,7 +68,7 @@
                                         <span>Tagged as : </span>
                                             <a class="danger label" href="/tag/huawei-2300.html">huawei 2300</a>
                                             <a class="danger label" href="/tag/wireshark.html">wireshark</a>
-                                            <a class="danger label" href="/tag/port-span.html">Port Span</a>
+                                            <a class="danger label" href="/tag/port-mirror.html">port mirror</a>
                                 </div>
 
 
