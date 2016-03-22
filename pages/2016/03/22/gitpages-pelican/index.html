@@ -280,7 +280,7 @@ pelican-themes -i gum
 </pre></div>
 
 
-<p>在文章中引用图片,路径要设置为本文件与图片文件中的相对路径，可<a href="http://stackoverflow.com/questions/21892913/editing-markdown-files-with-images-for-pelican-site">参考</a>：</p>
+<p>在文章中引用图片,路径要设置为本文件与图片文件中的相对路径，如果文件路径变更了，就需要修改图片的相对路径，那个真蠢...可<a href="http://stackoverflow.com/questions/21892913/editing-markdown-files-with-images-for-pelican-site">参考</a>：</p>
 <div class="highlight"><pre><span class="o">!</span><span class="p">[</span><span class="n">Test</span> <span class="n">img</span><span class="p">](..</span><span class="o">/</span><span class="p">..</span><span class="o">/</span><span class="p">..</span><span class="o">/</span><span class="p">..</span><span class="o">/</span><span class="p">..</span><span class="o">/</span><span class="p">..</span><span class="o">/</span><span class="n">images</span><span class="o">/</span><span class="n">test</span><span class="p">.</span><span class="n">jpg</span><span class="p">)</span>
 </pre></div>
 
@@ -305,6 +305,14 @@ pelican-themes -i gum
 <li>将xml转成Markdown；使用 <a href="https://github.com/yourtion/exitwp">exitwp</a> 自动处理xml文件。下载后将导出的 xml 放入 wordpress-xml 目录中，运行 python exitwp.py 即可将 xml 转成 Markdown。 </li>
 <li>需要注意的是转换出的文件注释部分，关于Tags，Category，Date等Meta部分需要按Pelican的形式进行格式调整，以便被Pelican解析，其实还是有点工作量的...</li>
 </ol>
+<h4>URL配置</h4>
+<p>默认的URL太low了，可以更优雅...但要注意修改后本地图片的相对路径需要该.</p>
+<p>打开pelicanconf.py配置文件，添加如下，具体配置请参见<a href="http://docs.getpelican.com/en/3.6.3/settings.html#url-settings">官方文档</a>。</p>
+<div class="highlight"><pre>ARTICLE_URL = &#39;pages/{date:%Y}/{date:%m}/{date:%d}/{slug}/&#39;
+ARTICLE_SAVE_AS = &#39;pages/{date:%Y}/{date:%m}/{date:%d}/{slug}/index.html&#39;
+</pre></div>
+
+
 <blockquote>
 <ul>
 <li>如何创建github-page、git使用就不介绍了...</li>
@@ -356,6 +364,31 @@ pelican-themes -i gum
 
 <h4>Tags</h4>
 	<ul class="blank">
+	    <li class="tag-4"><a href="/tag/updateyuan.html">update源</a></li>
+	    <li class="tag-4"><a href="/tag/snmp.html">snmp</a></li>
+	    <li class="tag-4"><a href="/tag/switch.html">switch</a></li>
+	    <li class="tag-4"><a href="/tag/gitlab.html">gitlab</a></li>
+	    <li class="tag-4"><a href="/tag/git.html">git</a></li>
+	    <li class="tag-4"><a href="/tag/pelican.html">pelican</a></li>
+	    <li class="tag-4"><a href="/tag/centos-65.html">CentOS 6.5</a></li>
+	    <li class="tag-4"><a href="/tag/mib.html">mib</a></li>
+	    <li class="tag-4"><a href="/tag/move.html">move</a></li>
+	    <li class="tag-4"><a href="/tag/python.html">Python</a></li>
+	    <li class="tag-4"><a href="/tag/dokuwiki.html">dokuwiki</a></li>
+	    <li class="tag-1"><a href="/tag/bitnami.html">bitnami</a></li>
+	    <li class="tag-4"><a href="/tag/jekyll.html">jekyll</a></li>
+	    <li class="tag-4"><a href="/tag/gpt.html">GPT</a></li>
+	    <li class="tag-1"><a href="/tag/setup.html">setup</a></li>
+	    <li class="tag-4"><a href="/tag/zabbix.html">zabbix</a></li>
+	    <li class="tag-4"><a href="/tag/wireshark.html">wireshark</a></li>
+	    <li class="tag-4"><a href="/tag/pi-liang-wen-jian-ti-huan-zi-fu-chuan.html">批量文件替换字符串</a></li>
+	    <li class="tag-4"><a href="/tag/setuptools.html">setuptools</a></li>
+	    <li class="tag-4"><a href="/tag/ibm.html">IBM</a></li>
+	    <li class="tag-4"><a href="/tag/port-mirror.html">port mirror</a></li>
+	    <li class="tag-4"><a href="/tag/hello.html">hello</a></li>
+	    <li class="tag-4"><a href="/tag/efi.html">EFI</a></li>
+	    <li class="tag-4"><a href="/tag/linux.html">Linux</a></li>
+	    <li class="tag-4"><a href="/tag/huawei-2300.html">huawei 2300</a></li>
 </ul>
 
 
