@@ -229,6 +229,48 @@ pelican-themes -i gum
 
 
 <p>稍微有点Jinja的知识加上一些HTML和CSS的知识，就可以自己定义主题了。</p>
+<h4>配置插件</h4>
+<p>插件同主题类似，也在github上有，down下来,虽然大部分插件都是全主题可用的,但是也存在好用与否的问题, 有些插件在原生主题上就需要自己改base.css才能用,所以尽量配套选,避免麻烦.</p>
+<div class="highlight"><pre>git clone --recursive https://github.com/getpelican/pelican-plugins
+</pre></div>
+
+
+<p>将需要安装的插件添加到pelicanconf.py文件中，新版本将关键字改为PLUFIN_PATHS以及列表的形式。</p>
+<div class="highlight"><pre>PLUGIN_PATHS = [u&quot;pelican-plugins&quot;]
+PLUGINS = [u&quot;sitemap&quot;, u&quot;tag_cloud&quot;, u&quot;gzip_cache&quot;, u&quot;neighbors&quot;, u&quot;related_posts&quot;]
+</pre></div>
+
+
+<h5>sitemap</h5>
+<p>Pelican的sitemap插件可以导出站点地图，Google Webmaster是Google的站长工具，可以方便Google收录博客：</p>
+<p>a. 在pelicanconf.py中添加sitemap，同时别忘了设置SITEURL，否则生成的sitemap.xml不正确</p>
+<div class="highlight"><pre>SITEURL = u&#39;https://pelucky.github.io&#39;
+
+SITEMAP = {
+    &quot;format&quot;: &quot;xml&quot;,
+    &quot;priorities&quot;: {
+        &quot;articles&quot;: 0.7,
+        &quot;indexes&quot;: 0.5,
+        &quot;pages&quot;: 0.3,
+    },
+    &quot;changefreqs&quot;: {
+        &quot;articles&quot;: &quot;monthly&quot;,
+        &quot;indexes&quot;: &quot;daily&quot;,
+        &quot;pages&quot;: &quot;monthly&quot;,
+    }
+}
+</pre></div>
+
+
+<p>b. 登录<a href="https://www.google.com/webmasters">Google Webmasters</a>,注册网址，测试sitemap，通过后提交sitemap.xml，过段时间就可以查看Google已经收录了博客。同样可以选择“Google抓取方式”，手动提交索引；抓取的结果在“抓取统计信息”页面中查看，参考<a href="https://support.google.com/webmasters/answer/96568#2">关于我们的统计信息和数据</a></p>
+<ul>
+<li>
+<p>对于sitemap不熟悉的可以参考Google提供的<a href="https://support.google.com/webmasters/answer/183668">创建和提交站点地图</a></p>
+</li>
+<li>
+<p>同样可以添加robots.txt用于告知Google抓取的内容，参考<a href="https://support.google.com/webmasters/answer/6062608?hl=zh-Hans">了解 robots.txt 文件</a></p>
+</li>
+</ul>
 <h4>一键Github</h4>
 <p>若要一键上传到Github，需要修改Makefile脚本两处地方：</p>
 <div class="highlight"><pre><span class="nf">publish</span><span class="o">:</span>
@@ -294,8 +336,6 @@ pelican-themes -i gum
 
 
 <p>之后即可到Google Analytics的控制台查看访问情况；</p>
-<h4>Google Webmaster</h4>
-<p>待续...</p>
 <h4>DNS</h4>
 <p>待续...</p>
 <h4>Google站内搜索</h4>
@@ -311,6 +351,8 @@ pelican-themes -i gum
 <p>打开pelicanconf.py配置文件，添加如下，具体配置请参见<a href="http://docs.getpelican.com/en/3.6.3/settings.html#url-settings">官方文档</a>。</p>
 <div class="highlight"><pre>ARTICLE_URL = &#39;pages/{date:%Y}/{date:%m}/{date:%d}/{slug}/&#39;
 ARTICLE_SAVE_AS = &#39;pages/{date:%Y}/{date:%m}/{date:%d}/{slug}/index.html&#39;
+PAGE_URL = &#39;pages/{slug}/&#39;
+PAGE_SAVE_AS = &#39;pages/{slug}/index.html&#39;
 </pre></div>
 
 
@@ -366,31 +408,31 @@ ARTICLE_SAVE_AS = &#39;pages/{date:%Y}/{date:%m}/{date:%d}/{slug}/index.html&#39
 
 <h4>Tags</h4>
 	<ul class="blank">
-	    <li class="tag-1"><a href="https://pelucky.github.io/tag/setup.html">setup</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/pelican.html">pelican</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/pi-liang-wen-jian-ti-huan-zi-fu-chuan.html">批量文件替换字符串</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/dokuwiki.html">dokuwiki</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/gitlab.html">gitlab</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/mib.html">mib</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/updateyuan.html">update源</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/setuptools.html">setuptools</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/python.html">Python</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/efi.html">EFI</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/jekyll.html">jekyll</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/port-mirror.html">port mirror</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/linux.html">Linux</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/snmp.html">snmp</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/centos-65.html">CentOS 6.5</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/git.html">git</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/wireshark.html">wireshark</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/huawei-2300.html">huawei 2300</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/gpt.html">GPT</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/move.html">move</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/hello.html">hello</a></li>
 	    <li class="tag-1"><a href="https://pelucky.github.io/tag/bitnami.html">bitnami</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/switch.html">switch</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/jekyll.html">jekyll</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/git.html">git</a></li>
+	    <li class="tag-1"><a href="https://pelucky.github.io/tag/setup.html">setup</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/move.html">move</a></li>
 	    <li class="tag-4"><a href="https://pelucky.github.io/tag/ibm.html">IBM</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/hello.html">hello</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/linux.html">Linux</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/port-mirror.html">port mirror</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/snmp.html">snmp</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/pelican.html">pelican</a></li>
 	    <li class="tag-4"><a href="https://pelucky.github.io/tag/zabbix.html">zabbix</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/switch.html">switch</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/mib.html">mib</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/python.html">Python</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/huawei-2300.html">huawei 2300</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/updateyuan.html">update源</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/gitlab.html">gitlab</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/gpt.html">GPT</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/dokuwiki.html">dokuwiki</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/pi-liang-wen-jian-ti-huan-zi-fu-chuan.html">批量文件替换字符串</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/wireshark.html">wireshark</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/centos-65.html">CentOS 6.5</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/efi.html">EFI</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/setuptools.html">setuptools</a></li>
 </ul>
 
 
