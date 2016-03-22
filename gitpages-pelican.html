@@ -241,6 +241,22 @@ pelican-themes -i gum
 
 
 <p>以后写完文章在Pelican目录下执行make github就可以一键部署了。</p>
+<h4>取消代码中红框</h4>
+<p>参考：<a href="http://allotory.github.io/posts/2014/09/08/fix-code-err/">修复pelican代码中红框</a>
+在使用Markdown的代码块时，如果代码中有汉字或者按规定书写错误的代码，则生成的HTML文件中错误的代码会有红框框住，output/theme/pygment.css文件中定义了该样式，注释或者删除掉。</p>
+<div class="highlight"><pre><span class="na">.err</span> <span class="err">{</span>
+<span class="nl">border:</span><span class="err">1</span><span class="nf">px</span> <span class="no">solid</span> <span class="c">#FF0000;</span>
+<span class="err">}</span>
+</pre></div>
+
+
+<p>由于output中的内容每次都会生成，故需要把模板中的pygment.css进行更换，如果之前使用了
+<code>pelican-themes -i gum</code>安装，则一般会在如下位置，直接vim修改模板中的pygment.css：</p>
+<div class="highlight"><pre>pel@debian:~/pelican$ pelican-themes -p
+/usr/local/lib/python2.7/dist-packages/pelican/themes
+</pre></div>
+
+
 <h4>评论系统</h4>
 <p>在<a href="https://disqus.com/admin/signup">Disqus</a>上申请一个站点，记牢Shortname(不需要加后缀)，评论系统加载起来有点慢，国内也可以使用多说。 在pelicanconf.py添加</p>
 <div class="highlight"><pre>DISQUS_SITENAME = &#39;Shortname&#39;
