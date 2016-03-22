@@ -1,1 +1,1 @@
-Sitemap: https://pelucky.github.io/sitemap.xml
+User-agent:*
