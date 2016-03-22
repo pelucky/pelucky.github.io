@@ -281,11 +281,11 @@ pelican-themes -i gum
 
 
 <p>在文章中引用图片,路径要设置为本文件与图片文件中的相对路径，可<a href="http://stackoverflow.com/questions/21892913/editing-markdown-files-with-images-for-pelican-site">参考</a>：</p>
-<div class="highlight"><pre><span class="o">!</span><span class="p">[</span><span class="n">Test</span> <span class="n">img</span><span class="p">](.</span><span class="o">/</span><span class="n">images</span><span class="o">/</span><span class="n">test</span><span class="p">.</span><span class="n">jpg</span><span class="p">)</span>
+<div class="highlight"><pre><span class="o">!</span><span class="p">[</span><span class="n">Test</span> <span class="n">img</span><span class="p">](..</span><span class="o">/</span><span class="p">..</span><span class="o">/</span><span class="p">..</span><span class="o">/</span><span class="p">..</span><span class="o">/</span><span class="p">..</span><span class="o">/</span><span class="p">..</span><span class="o">/</span><span class="n">images</span><span class="o">/</span><span class="n">test</span><span class="p">.</span><span class="n">jpg</span><span class="p">)</span>
 </pre></div>
 
 
-<p><img alt="Test img" src="./images/test.jpg" /></p>
+<p><img alt="Test img" src="../../../../../../images/test.jpg" /></p>
 <h4>Google Analytics</h4>
 <p>去Google Analytics申请账号，会要求检验你拥有该站点的所有权，需要下载googlexxxx.html，上传并点击该链接来确认。记下跟踪ID。 在pelicanconf.py添加</p>
 <div class="highlight"><pre>GOOGLE_ANALYTICS = u&#39;跟踪ID&#39;
