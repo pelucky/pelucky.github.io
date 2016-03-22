@@ -266,7 +266,7 @@ pelican-themes -i gum
 <h4>图片</h4>
 <p>有两种方法:</p>
 <ul>
-<li>一种是使用云存储，直接链接过来，如<a href="https://picasaweb.google.com/home">Picasa</a>来维护图片,推荐使用云图床；</li>
+<li>一种是使用云存储，设置为公开图片，直接链接过来，如<a href="https://picasaweb.google.com/home">Picasa</a>来维护图片,推荐使用云图床；</li>
 </ul>
 <div class="highlight"><pre>![Test Cloud img](https://lh3.googleusercontent.com/-rBvjY3F2wEU/VvD3yZ9T-1I/AAAAAAAAAVc/LsPcb3CIxtomUcXq5aVKj27qSrI4OserwCCo/s400-Ic42/3d94dcb44aed2e730566c2068601a18b86d6fa7f.jpg)
 </pre></div>
@@ -287,7 +287,12 @@ pelican-themes -i gum
 
 <p><img alt="Test img" src="./images/test.jpg" /></p>
 <h4>Google Analytics</h4>
-<p>待续...</p>
+<p>去Google Analytics申请账号，会要求检验你拥有该站点的所有权，需要下载googlexxxx.html，上传并点击该链接来确认。记下跟踪ID。 在pelicanconf.py添加</p>
+<div class="highlight"><pre>GOOGLE_ANALYTICS = u&#39;跟踪ID&#39;
+</pre></div>
+
+
+<p>之后即可到Google Analytics的控制台查看访问情况；</p>
 <h4>Google Webmaster</h4>
 <p>待续...</p>
 <h4>DNS</h4>
