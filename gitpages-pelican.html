@@ -74,14 +74,30 @@
 <h2>Solution</h2>
 <p>主要是三大类解决方案：</p>
 <ol>
-<li>商业化产品</li>
-<li>Lofter</li>
-<li>CSDN</li>
-<li>个人博客（CMS）</li>
-<li>Wordpress</li>
-<li>Durpal</li>
-<li>静态页面</li>
-<li>Pelican</li>
+<li>
+<p>商业化产品</p>
+</li>
+<li>
+<p>Lofter</p>
+</li>
+<li>
+<p>CSDN</p>
+</li>
+<li>
+<p>个人博客（CMS）</p>
+</li>
+<li>
+<p>Wordpress</p>
+</li>
+<li>
+<p>Durpal</p>
+</li>
+<li>
+<p>静态页面</p>
+</li>
+<li>
+<p>Pelican</p>
+</li>
 <li>jekyll</li>
 <li>Ortopress</li>
 </ol>
@@ -225,12 +241,14 @@ pelican-themes -i gum
 
 <p>稍微有点Jinja的知识加上一些HTML和CSS的知识，就可以自己定义主题了。</p>
 <h4>一键Github</h4>
-<p>若要一键上传到Github，需要修改Makefile文件两处地方：</p>
+<p>若要一键上传到Github，需要修改Makefile脚本两处地方：</p>
 <div class="highlight"><pre><span class="nf">publish</span><span class="o">:</span>
 <span class="k">$(</span><span class="nv">PELICAN</span><span class="k">)</span> <span class="k">$(</span><span class="nv">INPUTDIR</span><span class="k">)</span> <span class="err">-o</span> <span class="k">$(</span><span class="nv">OUTPUTDIR</span><span class="k">)</span> <span class="err">-s</span> <span class="k">$(</span><span class="nv">CONFFILE</span><span class="k">)</span> <span class="k">$(</span><span class="nv">PELICANOPTS</span><span class="k">)</span>
 
+<span class="err">......</span>
+
 <span class="nf">github</span><span class="o">:</span> <span class="n">publish</span>
-<span class="err">cd</span> <span class="k">$(</span><span class="nv">OUTPUTDIR</span><span class="k">)</span> <span class="err">;</span> <span class="err">git</span> <span class="err">add</span> <span class="err">.</span> <span class="err">;</span>  <span class="err">git</span> <span class="err">commit</span> <span class="err">-am</span> <span class="s1">&#39;your comments&#39;</span> <span class="err">;</span> <span class="err">git</span> <span class="err">push</span>
+<span class="err">cd</span> <span class="k">$(</span><span class="nv">OUTPUTDIR</span><span class="k">)</span> <span class="err">;</span> <span class="err">git</span> <span class="err">add</span> <span class="err">.</span> <span class="err">;</span>  <span class="err">git</span> <span class="err">commit</span> <span class="err">-am</span> <span class="s1">&#39;Update pages&#39;</span> <span class="err">;</span> <span class="err">git</span> <span class="err">push</span>
 </pre></div>
 
 
