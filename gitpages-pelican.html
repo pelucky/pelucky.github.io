@@ -267,18 +267,18 @@ pelican-themes -i gum
 <p>有两种方法:</p>
 <ul>
 <li>一种是使用云存储，直接链接过来，如<a href="https://picasaweb.google.com/home">Picasa</a>来维护图片；</li>
-<li>另一种使用本地图片，content目录下建立一个 imgs目录 然后在 pelicanconf.py 中添加:</li>
+<li>另一种使用本地图片，content目录下建立一个 images目录 然后在 pelicanconf.py 中添加:</li>
 </ul>
-<div class="highlight"><pre>STATIC_PATHS = [u&quot;imgs&quot;]
+<div class="highlight"><pre>STATIC_PATHS = [&quot;images&quot;]
 </pre></div>
 
 
 <p>在文章中引用图片：</p>
-<div class="highlight"><pre>![aimg](/imgs/test.jpg)
+<div class="highlight"><pre>![aimg](./images/test.jpg)
 </pre></div>
 
 
-<p><img alt="aimg" src="/imgs/test.jpg" /></p>
+<p><img alt="Test img" src="./images/test.jpg" /></p>
 <h4>Google Analytics</h4>
 <p>待续...</p>
 <h4>Google Webmaster</h4>
