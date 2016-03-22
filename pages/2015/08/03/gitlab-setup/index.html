@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+
+        <title>gitlab 安装使用</title>
+        <meta charset="utf-8" />
+
+
+        <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+        <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+
+        <link rel="stylesheet" type="text/css" href="/theme/gumby.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/style.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/pygment.css" />
+
+        <script src="/theme/js/libs/modernizr-2.6.2.min.js"></script>
+
+
+
+
+</head>
+
+<body id="index" class="home">
+
+
+    <div class="container">
+
+        <div class="row">
+
+          <header id="banner" class="body">
+                  <h1><a href="/">pelucky's blog <strong></strong></a></h1>
+          </header><!-- /#banner -->
+
+            <div id="navigation" class="navbar row">
+              <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
+             
+              <ul class="columns">
+                <li><a href="/">Home</a></li>
+
+
+              </ul>
+            </div>
+
+<section id="content" class="body">
+
+   <div class="row">
+        <div class="eleven columns">
+
+
+            <header>
+              <h2 class="entry-title">
+                <a href="/pages/2015/08/03/gitlab-setup/" rel="bookmark"
+                   title="Permalink to gitlab 安装使用">gitlab 安装使用</a></h2>
+           
+            </header>
+            <footer class="post-info">
+              <abbr class="published" title="2015-08-03T01:36:01+00:00">
+                Mon 03 August 2015
+              </abbr>
+              <address class="vcard author">By 
+                <a class="url fn" href="/author/pel.html"> pel</a>
+              </address>
+            </footer><!-- /.post-info -->
+            <div class="entry-content">
+              <p>习惯了外网使用github管理代码，局域网中依旧没有：</p>
+<p>简单说下安装使用</p>
+<h2>前期调研</h2>
+<p>两大选择SVN或者git，一直没有用过SVN，如果搭建内网SVN估计难度较大，故选择了git；
+开源git方案最常见的就是gitlab</p>
+<h2>关于gitlab</h2>
+<p>gitlab是基于ruby on rails框架；
+先去官方网站看了说明，查看有两种安装：</p>
+<ul>
+<li>一种是每种服务自行安装，包括mysql、appache或nginx、ruby等，要解决依赖性等问题，相对复杂；</li>
+<li>另一种官网提供了脚本，一键运行脚本，再下载对应的安装包，如rpm或deb包；</li>
+</ul>
+<p>原本计划为第二种方案，但是查看脚本，有curl https://xxx，发现需要下载外网文件，安装中中断，后自行下载暂未安装；</p>
+<p>再查找解决方法的时候，发现<strong>bitnami</strong>，一个为开源软件提供一键安装的支持，bitnami-gitlab就是解决bitnami问题，安装方法很简单：</p>
+<p>下载对应64位的run安装包，运行，设置参数即可；</p>
+            </div><!-- /.entry-content -->
+            <div class="comments">
+              <h3>Comments</h3>
+              <div id="disqus_thread"></div>
+              <script type="text/javascript">
+                var disqus_identifier = "pages/2015/08/03/gitlab-setup/";
+                (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'https://pelucky.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+              </script>
+            </div>
+
+
+        </div><!-- /.eleven.columns -->
+
+<div class="three columns">
+
+<h4>Pages</h4>
+
+ <ul>
+  </ul>
+
+<h4>Categories</h4>
+<ul class="blank">
+		<li><a href="/category/life.html">Life</a></li>
+		<li><a href="/category/network.html">Network</a></li>
+		<li><a href="/category/system.html">System</a></li>
+</ul>
+
+
+<h4>Tags</h4>
+	<ul class="blank">
+</ul>
+
+
+<nav class="widget">
+  <h4>Social</h4>
+  <ul class="blank">
+    <li><a href="http://choidi.github.io">Choidi's Blog</a></li>
+    <li><a href="https://www.crackerben.com/new/">Crankerben</a></li>
+  </ul>
+</nav>
+
+</div> </div><!-- /.row -->
+
+
+</section>
+
+       </div><!-- /.row -->
+    </div><!-- /.container -->
+
+
+       <div class="container.nopad bg">
+
+    
+        <footer id="credits" class="row">
+          <div class="seven columns left-center">
+
+                   <address id="about" class="vcard body">
+                    Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+                    which takes great advantage of <a href="http://python.org">Python</a>.
+                    <br />
+                    Based on the <a target="_blank" href="http://gumbyframework.com">Gumby Framework</a>
+                    </address>
+          </div>
+
+
+          <div class="seven columns">
+            <div class="row">
+              <ul class="socbtns">
+
+
+
+
+
+              </ul>
+            </div>
+          </div>
+        </footer>
+
+    </div>
+
+
+<script type="text/javascript">
+    var disqus_shortname = 'pelucky';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+  <script src="/theme/js/libs/jquery-1.9.1.min.js"></script>
+  <script src="/theme/js/libs/gumby.min.js"></script>
+  <script src="/theme/js/plugins.js"></script>
+</body>
+</html>

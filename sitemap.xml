@@ -5,90 +5,90 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/</loc>
-<lastmod>2016-03-22T16:11:56-00:00</lastmod>
+<lastmod>2016-03-22T16:37:52-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/archives.html</loc>
-<lastmod>2016-03-22T16:11:56-00:00</lastmod>
+<lastmod>2016-03-22T16:37:52-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tags.html</loc>
-<lastmod>2016-03-22T16:11:56-00:00</lastmod>
+<lastmod>2016-03-22T16:37:52-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/categories.html</loc>
-<lastmod>2016-03-22T16:11:56-00:00</lastmod>
+<lastmod>2016-03-22T16:37:52-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/gitpages-pelican.html</loc>
+<loc>/pages/2016/03/22/gitpages-pelican/</loc>
 <lastmod>2016-03-22T10:13:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
 </url>
 
 <url>
-<loc>/hello-world.html</loc>
+<loc>/pages/2016/01/13/hello-world/</loc>
 <lastmod>2016-03-21T18:31:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
 </url>
 
 <url>
-<loc>/switch-snmp.html</loc>
+<loc>/pages/2015/10/10/switch-snmp/</loc>
 <lastmod>2016-03-21T18:54:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
 </url>
 
 <url>
-<loc>/bitnami-move.html</loc>
+<loc>/pages/2015/09/15/bitnami-move/</loc>
 <lastmod>2016-03-21T18:58:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
 </url>
 
 <url>
-<loc>/setup-django.html</loc>
+<loc>/pages/2015/09/14/setup-django/</loc>
 <lastmod>2016-03-21T18:50:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
 </url>
 
 <url>
-<loc>/huawei-s2300-port-mirror.html</loc>
+<loc>/pages/2015/08/03/huawei-s2300-port-mirror/</loc>
 <lastmod>2016-03-21T18:44:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
 </url>
 
 <url>
-<loc>/gitlab-setup.html</loc>
+<loc>/pages/2015/08/03/gitlab-setup/</loc>
 <lastmod>2016-03-21T18:42:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
 </url>
 
 <url>
-<loc>/ibm-x3650-m3-setup-linux.html</loc>
+<loc>/pages/2015/08/02/ibm-x3650-m3-setup-linux/</loc>
 <lastmod>2016-03-21T18:40:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
 </url>
 
 <url>
-<loc>/centos-6-5-update-http.html</loc>
+<loc>/pages/2015/08/02/centos-6-5-update-http/</loc>
 <lastmod>2016-03-21T18:31:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>

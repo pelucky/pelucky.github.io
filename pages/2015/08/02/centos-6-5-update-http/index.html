@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+
+        <title>CentOS 6.5 64bits 自建内部http源</title>
+        <meta charset="utf-8" />
+
+
+        <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+        <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+
+        <link rel="stylesheet" type="text/css" href="/theme/gumby.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/style.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/pygment.css" />
+
+        <script src="/theme/js/libs/modernizr-2.6.2.min.js"></script>
+
+
+
+
+</head>
+
+<body id="index" class="home">
+
+
+    <div class="container">
+
+        <div class="row">
+
+          <header id="banner" class="body">
+                  <h1><a href="/">pelucky's blog <strong></strong></a></h1>
+          </header><!-- /#banner -->
+
+            <div id="navigation" class="navbar row">
+              <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
+             
+              <ul class="columns">
+                <li><a href="/">Home</a></li>
+
+
+              </ul>
+            </div>
+
+<section id="content" class="body">
+
+   <div class="row">
+        <div class="eleven columns">
+
+
+            <header>
+              <h2 class="entry-title">
+                <a href="/pages/2015/08/02/centos-6-5-update-http/" rel="bookmark"
+                   title="Permalink to CentOS 6.5 64bits 自建内部http源">CentOS 6.5 64bits 自建内部http源</a></h2>
+           
+            </header>
+            <footer class="post-info">
+              <abbr class="published" title="2015-08-02T02:31:00+00:00">
+                Sun 02 August 2015
+              </abbr>
+              <address class="vcard author">By 
+                <a class="url fn" href="/author/pel.html"> pel</a>
+              </address>
+            </footer><!-- /.post-info -->
+            <div class="entry-content">
+              <p>笔者以前不能连接互联网，故需要自己内建update源...</p>
+<p>局域网内部未找到CentOS源，故决定自己做一个，查了下教程，不难，简单写一下：</p>
+<p>如果只是想使用的话，则只看下面客户端配置即可，要求是CentOS6.5 64bit。</p>
+<h2>服务器端配置</h2>
+<p>a. 准备好CentOS-6.5DVD1和DVD2中的文件，通过winSCP或lrzsz上传到服务器上；</p>
+<p>b. 开启http服务，apache、Nginx均可</p>
+<p>c. 将DVD1中的内容全部拷贝到上面的文件夹中，将DVD2中Packages中的文件全部拷进去</p>
+<div class="highlight"><pre>mkdir /var/www/html/yum/CentOS-6.5/
+</pre></div>
+
+
+<p>d. 合并DVD2中的Packages/TRANS.TBL到DVD1中并排序，主要是cat进入后再sort，没用过这个方法，记录下</p>
+<div class="highlight"><pre>cat dvd2/Packages/TRANS.TBL &gt;&gt; dvd1/Packages/TRANS.TBL
+mv dvd1/Packages/{TRANS.TBL.BAK,TRANS.TBL.BAK}
+sort dvd1/Packages/TRANS.TBL.BAK &gt;dvd1/Packages/TRANS.TBL
+rm -rf dvd1/Packages/TRANS.TBL.BAK
+</pre></div>
+
+
+<p>e. 接下来使用安装createrepo病创建软件仓库：</p>
+<div class="highlight"><pre>rpm -ivh Packages/deltarpm-3.5-0.5.20090913git.el6.x86_64.rpm
+rpm -ivh Packages/python-deltarpm-3.5-0.5.20090913git.el6.x86_64.rpm
+rpm -ivh Packages/createrepo-0.9.9-18.el6.noarch.rpm
+</pre></div>
+
+
+<p>f. 使用createrepo命令将所有安装包加载进入到软件仓库中：</p>
+<div class="highlight"><pre>createrepo -v /var/www/html/yum/CentOS-6.5/Packages/
+</pre></div>
+
+
+<h2>客户端配置</h2>
+<p>使用vim修改/etc/yum.repos.d/CentOS-Base.repo的文件：</p>
+<div class="highlight"><pre># Made by pel for yum update
+
+[base]
+name=myrepo
+baseurl=http://192.168.1.10/yum/CentOS-6.5/Packages
+enabled=1
+gpgcheck=0
+
+#release updates
+[updates]
+name=myrepo
+baseurl=http://192.168.1.10/yum/CentOS-6.5/Packages
+gpgcheck=1
+enabled=1
+gpgcheck=0
+
+#packages used/procduced in the build but not released
+[addons]
+name=myrepo
+baseurl=http://192.168.1.10/yum/CentOS-6.5/Packages
+enabled=1
+gpgcheck=0
+
+#additional packages that may be useful
+[extras]
+name=myrepo
+baseurl=http://192.168.1.10/yum/CentOS-6.5/Packages
+enabled=1
+gpgcheck=0&lt;/blockquote&gt;
+</pre></div>
+
+
+<p>查看效果</p>
+<div class="highlight"><pre>yum list 即可看到可安装的软件源
+</pre></div>
+            </div><!-- /.entry-content -->
+            <div class="comments">
+              <h3>Comments</h3>
+              <div id="disqus_thread"></div>
+              <script type="text/javascript">
+                var disqus_identifier = "pages/2015/08/02/centos-6-5-update-http/";
+                (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'https://pelucky.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+              </script>
+            </div>
+
+
+        </div><!-- /.eleven.columns -->
+
+<div class="three columns">
+
+<h4>Pages</h4>
+
+ <ul>
+  </ul>
+
+<h4>Categories</h4>
+<ul class="blank">
+		<li><a href="/category/life.html">Life</a></li>
+		<li><a href="/category/network.html">Network</a></li>
+		<li><a href="/category/system.html">System</a></li>
+</ul>
+
+
+<h4>Tags</h4>
+	<ul class="blank">
+</ul>
+
+
+<nav class="widget">
+  <h4>Social</h4>
+  <ul class="blank">
+    <li><a href="http://choidi.github.io">Choidi's Blog</a></li>
+    <li><a href="https://www.crackerben.com/new/">Crankerben</a></li>
+  </ul>
+</nav>
+
+</div> </div><!-- /.row -->
+
+
+</section>
+
+       </div><!-- /.row -->
+    </div><!-- /.container -->
+
+
+       <div class="container.nopad bg">
+
+    
+        <footer id="credits" class="row">
+          <div class="seven columns left-center">
+
+                   <address id="about" class="vcard body">
+                    Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+                    which takes great advantage of <a href="http://python.org">Python</a>.
+                    <br />
+                    Based on the <a target="_blank" href="http://gumbyframework.com">Gumby Framework</a>
+                    </address>
+          </div>
+
+
+          <div class="seven columns">
+            <div class="row">
+              <ul class="socbtns">
+
+
+
+
+
+              </ul>
+            </div>
+          </div>
+        </footer>
+
+    </div>
+
+
+<script type="text/javascript">
+    var disqus_shortname = 'pelucky';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+  <script src="/theme/js/libs/jquery-1.9.1.min.js"></script>
+  <script src="/theme/js/libs/gumby.min.js"></script>
+  <script src="/theme/js/plugins.js"></script>
+</body>
+</html>
