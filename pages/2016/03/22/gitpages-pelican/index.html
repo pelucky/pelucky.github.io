@@ -242,16 +242,16 @@ python -m http.server           #python3
 <li>打开浏览器http://192.168.1.112:8000/，预览效果；</li>
 </ul>
 <h4>配置主题</h4>
-<p>Pelican支持大量的开源主题，GitHub上的pelican-themes项目有几十套主题，大部分都带了效果预览图。可以从里面挑一个喜欢的主题样式来使用。还有一个更方便的挑选主题的方式，直接打开<a href="www.pelicanthemes.com">pelicanthemes</a>挑选（加载略慢）。一个网页里就列出了几乎所有的主题。该博客使用Gum主题，并在这套主题的基础上进行了一些定制。选定好喜欢的主题后，从GitHub上下载下来所有的主题，安装主题：</p>
+<p>Pelican支持大量的开源主题，GitHub上的pelican-themes项目有几十套主题，大部分都带了效果预览图。可以从里面挑一个喜欢的主题样式来使用。还有一个更方便的挑选主题的方式，直接打开<a href="www.pelicanthemes.com">pelicanthemes</a>挑选（加载略慢）。一个网页里就列出了几乎所有的主题。该博客使用pelican-bootstrap3主题，并在这套主题的基础上进行了一些定制。选定好喜欢的主题后，从GitHub上下载下来所有的主题，安装主题：</p>
 <div class="highlight"><pre>mkdir pelican
 cd pelican
 git clone https://github.com/getpelican/pelican-themes.git
-pelican-themes -i gum
+pelican-themes -i pelican-bootstrap3
 </pre></div>
 
 
 <p>然后在pelicanconf.py里通过下面代码指定博客主题：</p>
-<div class="highlight"><pre>THEME = &#39;gum&#39;
+<div class="highlight"><pre>THEME = &#39;pelican-bootstrap3&#39;
 </pre></div>
 
 
@@ -357,7 +357,7 @@ tag_cloud = True
 
 
 <p>由于output中的内容每次都会生成，故需要把模板中的pygment.css进行更换，如果之前使用了
-<code>pelican-themes -i gum</code>安装，则一般会在如下位置，直接vim修改模板中的pygment.css：</p>
+<code>pelican-themes -i pelican-bootstrap</code>安装，则一般会在如下位置，直接vim修改模板中的pygment.css：</p>
 <div class="highlight"><pre>pel@debian:~/pelican$ pelican-themes -p
 /usr/local/lib/python2.7/dist-packages/pelican/themes
 </pre></div>
@@ -503,98 +503,8 @@ PAGE_SAVE_AS = &#39;pages/{slug}/index.html&#39;
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="https://pelucky.github.io/tag/switch.html">
-                            switch
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="https://pelucky.github.io/tag/setuptools.html">
-                            setuptools
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="https://pelucky.github.io/tag/pi-liang-wen-jian-ti-huan-zi-fu-chuan.html">
-                            批量文件替换字符串
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="https://pelucky.github.io/tag/pelican.html">
-                            pelican
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="https://pelucky.github.io/tag/huawei-2300.html">
-                            huawei 2300
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="https://pelucky.github.io/tag/wireshark.html">
-                            wireshark
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="https://pelucky.github.io/tag/zabbix.html">
-                            zabbix
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="https://pelucky.github.io/tag/hello.html">
-                            hello
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="https://pelucky.github.io/tag/snmp.html">
-                            snmp
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="https://pelucky.github.io/tag/git.html">
-                            git
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="https://pelucky.github.io/tag/updateyuan.html">
-                            update源
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="https://pelucky.github.io/tag/jekyll.html">
-                            jekyll
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="https://pelucky.github.io/tag/mib.html">
-                            mib
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="https://pelucky.github.io/tag/gitlab.html">
-                            gitlab
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="https://pelucky.github.io/tag/gpt.html">
-                            GPT
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="https://pelucky.github.io/tag/efi.html">
-                            EFI
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="https://pelucky.github.io/tag/dokuwiki.html">
-                            dokuwiki
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="https://pelucky.github.io/tag/centos-65.html">
-                            CentOS 6.5
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="https://pelucky.github.io/tag/ibm.html">
-                            IBM
+                        <a href="https://pelucky.github.io/tag/move.html">
+                            move
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
@@ -603,18 +513,23 @@ PAGE_SAVE_AS = &#39;pages/{slug}/index.html&#39;
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="https://pelucky.github.io/tag/port-mirror.html">
-                            port mirror
+                        <a href="https://pelucky.github.io/tag/dokuwiki.html">
+                            dokuwiki
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="https://pelucky.github.io/tag/move.html">
-                            move
+                        <a href="https://pelucky.github.io/tag/pelican.html">
+                            pelican
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="https://pelucky.github.io/tag/python.html">
-                            Python
+                        <a href="https://pelucky.github.io/tag/git.html">
+                            git
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://pelucky.github.io/tag/snmp.html">
+                            snmp
                         </a>
                     </li>
                 </ul>
