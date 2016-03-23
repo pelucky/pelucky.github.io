@@ -69,30 +69,30 @@
 <li>用于工作管理的redmine</li>
 <li>用于知识共享的dokuwiki</li>
 </ul>
-<p>bitnami的好处之前已经提过，一键式安装，所有组件都子提供一份。但缺点也很明显，扩展、升级、备份略微蛋疼...</p>
+<p>bitnami的好处之前已经提过，一键式安装，所有组件都子提供一份。但缺点也很明显，扩展、升级、备份略微蛋疼&#8230;</p>
 <h2>原因</h2>
 <p>迁移的原因很简单，之前对于服务器分区，将/var用作存储数据，将/usr用作存储软件，故在安装bitnami的时候，下意识的就将三个平台放到/usr上了，后来一查看空间，/usr总共才分了30G，对于dokuwiki时肯定不够的，故决定迁移；</p>
 <p>这个问题也说明了业务数据和逻辑实现分离的重要性，同时也是bitnami的弊端，给懒人安装上的便利，同时带来维护上的麻烦；</p>
 <h2>解决思路</h2>
 <p>这算是总结之后的思路：</p>
 <ul>
-<li>去bitnami的官方网站和bbs查看是否有迁移的方法；查到了备份和还原的方法；以及查看到了bitnami平台的文件结构，至少需要备份./XXX/apps/中的内容，这一般就是特定系统的文件。对于dokuwiki使用文本进行保存，就不需要备份数据库了，否则需要将数据库中的内容备份；</li>
+<li>去bitnami的官方网站和bbs查看是否有迁移的方法；查到了备份和还原的方法；以及查看到了bitnami平台的文件结构，至少需要备份./<span class="caps">XXX</span>/apps/中的内容，这一般就是特定系统的文件。对于dokuwiki使用文本进行保存，就不需要备份数据库了，否则需要将数据库中的内容备份；</li>
 <li>在新的位置重新安装一遍dokuwik；因为只是迁移，故只要修改为正确的路径即可，其他的与原系统的相同；停止新的dokuwiki服务；</li>
 </ul>
-<p>停止方法是进入到bitnami系统的目录，运行./ctlscript.sh stop。该脚本就是负责整个bitnami系统的启停；</p>
+<p>停止方法是进入到bitnami系统的目录，运行./ctlscript.sh&nbsp;stop。该脚本就是负责整个bitnami系统的启停；</p>
 <p>停止老的dokuwiki系统（当然在安装新的dokuwiki时就应该停止老系统了）；将老的dokuwiki中的./apps/dokuwiki中的内容全部都覆盖到新的对应的位置，要保留文件权限，同时强制复制：</p>
-<p><strong>TIPS:</strong>由于CentOS在启动脚本中已将alias cp=cp -i，故遇到重复的文件，会强制询问你，所以可以先unalias cp，否则会询问很多次；</p>
+<p><strong><span class="caps">TIPS</span>:</strong>由于CentOS在启动脚本中已将alias cp=cp -i，故遇到重复的文件，会强制询问你，所以可以先unalias&nbsp;cp，否则会询问很多次；</p>
 <div class="highlight"><pre>cp -rfvp dokuwiki/ /var/opt/dokuwiki-20140929d-0/apps/
 </pre></div>
 
 
 <p>替换更新后的文件中的路径参数；因为dokuwiki中有许多配置文件会涉及到文件系统路径的问题，故需要更新路径；</p>
-<p><strong>TIPS：</strong>最开始想到使用sed替换，但是sed遇到需要转义的字符就会嗝屁；最后敲定使用rpl工具，需要自己下载，但是功能很强大；</p>
+<p><strong><span class="caps">TIPS</span>：</strong>最开始想到使用sed替换，但是sed遇到需要转义的字符就会嗝屁；最后敲定使用rpl工具，需要自己下载，但是功能很强大；</p>
 <div class="highlight"><pre>rpl -vR &quot;usr/dokuwiki-20140929-0&quot; &quot;var/opt/dokuwiki-20140929d-0&quot; ./dokuwiki/
 </pre></div>
 
 
-<p>启动新的dokuwiki系统，查看是否有问题。运行./ctlscript.sh start；（如果之前复制没有使用相同的权限，则启动可能无法写缓存）</p>
+<p>启动新的dokuwiki系统，查看是否有问题。运行./ctlscript.sh&nbsp;start；（如果之前复制没有使用相同的权限，则启动可能无法写缓存）</p>
 <p>之前绕了很大一圈：最初的思路是直接将整个系统复制过来，再对所有文件全部进行路径配置替换，但是系统会报错，故作罢。还是不能像绿色软件那样移动自如；</p>
             </div><!-- /.entry-content -->
             <div class="comments">
@@ -129,31 +129,31 @@
 
 <h4>Tags</h4>
 	<ul class="blank">
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/zabbix.html">zabbix</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/port-mirror.html">port mirror</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/wireshark.html">wireshark</a></li>
 	    <li class="tag-4"><a href="https://pelucky.github.io/tag/python.html">Python</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/jekyll.html">jekyll</a></li>
 	    <li class="tag-4"><a href="https://pelucky.github.io/tag/updateyuan.html">update源</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/efi.html">EFI</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/git.html">git</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/setuptools.html">setuptools</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/centos-65.html">CentOS 6.5</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/pelican.html">pelican</a></li>
 	    <li class="tag-4"><a href="https://pelucky.github.io/tag/linux.html">Linux</a></li>
 	    <li class="tag-1"><a href="https://pelucky.github.io/tag/setup.html">setup</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/ibm.html">IBM</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/move.html">move</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/mib.html">mib</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/gitlab.html">gitlab</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/gpt.html">GPT</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/pi-liang-wen-jian-ti-huan-zi-fu-chuan.html">批量文件替换字符串</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/switch.html">switch</a></li>
 	    <li class="tag-1"><a href="https://pelucky.github.io/tag/bitnami.html">bitnami</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/setuptools.html">setuptools</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/gpt.html">GPT</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/switch.html">switch</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/gitlab.html">gitlab</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/ibm.html">IBM</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/jekyll.html">jekyll</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/pelican.html">pelican</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/mib.html">mib</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/pi-liang-wen-jian-ti-huan-zi-fu-chuan.html">批量文件替换字符串</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/move.html">move</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/huawei-2300.html">huawei 2300</a></li>
 	    <li class="tag-4"><a href="https://pelucky.github.io/tag/hello.html">hello</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/port-mirror.html">port mirror</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/wireshark.html">wireshark</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/efi.html">EFI</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/zabbix.html">zabbix</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/git.html">git</a></li>
 	    <li class="tag-4"><a href="https://pelucky.github.io/tag/snmp.html">snmp</a></li>
 	    <li class="tag-4"><a href="https://pelucky.github.io/tag/dokuwiki.html">dokuwiki</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/huawei-2300.html">huawei 2300</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/centos-65.html">CentOS 6.5</a></li>
 </ul>
 
 

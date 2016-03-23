@@ -51,7 +51,7 @@
             <header>
               <h2 class="entry-title">
                 <a href="https://pelucky.github.io/pages/2015/10/10/switch-snmp/" rel="bookmark"
-                   title="Permalink to 交换机开启SNMP">交换机开启SNMP</a></h2>
+                   title="Permalink to 交换机开启SNMP">交换机开启<span class="caps">SNMP</span></a></h2>
            
             </header>
             <footer class="post-info">
@@ -63,16 +63,16 @@
               </address>
             </footer><!-- /.post-info -->
             <div class="entry-content">
-              <p>最近一直在研究使用zabbix监控整个系统，服务器的简单，直接套用模板即可，交换机和路由器无法安装zabbix agentd，故需要使用snmp，简单介绍下各类交换机打开snmp的方法：</p>
-<h2>SNMP</h2>
-<p>SNMP有一个树状结构的oid，每个树端点为一个值，比如CPU的负载 =&gt; 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.5</p>
+              <p>最近一直在研究使用zabbix监控整个系统，服务器的简单，直接套用模板即可，交换机和路由器无法安装zabbix&nbsp;agentd，故需要使用snmp，简单介绍下各类交换机打开snmp的方法：</p>
+<h2><span class="caps">SNMP</span></h2>
+<p><span class="caps">SNMP</span>有一个树状结构的oid，每个树端点为一个值，比如<span class="caps">CPU</span>的负载 =&gt;&nbsp;1.3.6.1.4.1.2011.5.25.31.1.1.1.1.5</p>
 <p>故需要查询某值时只需要输入对应的oid即可。</p>
 <h2>服务器端</h2>
 <p>服务器端需要zabbix在编译时添加对snmp的支持，除此之外还需要安装net-snmp和net-snmp-utils，安装这两个之后可以使用snmpwalk命令检测交换机是否设置正确；</p>
 <p>服务器和所需要管理的交换机串连在一起，实现带内管理。</p>
 <h2>交换机端</h2>
 <p>交换机方面的设置整体思路都是相同的：<strong>打开telnet登录-&gt;设置交换机参数-&gt;设置snmp-&gt;服务器端测试。</strong>简单介绍下碰到的几类交换机：</p>
-<h3>huawei S2326</h3>
+<h3>huawei&nbsp;S2326</h3>
 <div class="highlight"><pre>&lt;Quidway&gt;system-view
 Enter system view, return user view with Ctrl+Z.
 [Quidway]snmp-agent
@@ -88,7 +88,7 @@ Enter system view, return user view with Ctrl+Z.
 </pre></div>
 
 
-<h3>DCN DCS-4500（指令类似思科）</h3>
+<h3><span class="caps">DCN</span> <span class="caps">DCS</span>-4500（指令类似思科）</h3>
 <div class="highlight"><pre>enable
 configure terminal
 snmp-server enable
@@ -122,11 +122,11 @@ CPU =&gt; 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.5
 </pre></div>
 
 
-<p><strong>输出结果：</strong>SNMPv2-MIB::sysName.0 = STRING: S2326-100-8L-2P-5</p>
+<p><strong>输出结果：</strong>SNMPv2-<span class="caps">MIB</span>::sysName.0 = <span class="caps">STRING</span>:&nbsp;S2326-100-8L-2P-5</p>
 <h3>getif</h3>
 <p>一款可以测试snmp的windows下的软件，它可以获取所有的oid,使用方法</p>
 <ol>
-<li>在parameters-&gt;host name -&gt;点击下方的start即可以看到设备的最基本的信息；</li>
+<li>在parameters-&gt;host name&nbsp;-&gt;点击下方的start即可以看到设备的最基本的信息；</li>
 <li>选择interfaces-&gt;start即可看到所有的接口信息；</li>
 <li>选择MBrowser-&gt;输入对应的oid-&gt;start即可获取该值结果。不输入则会全部显示；</li>
 </ol>
@@ -165,31 +165,31 @@ CPU =&gt; 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.5
 
 <h4>Tags</h4>
 	<ul class="blank">
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/zabbix.html">zabbix</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/port-mirror.html">port mirror</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/wireshark.html">wireshark</a></li>
 	    <li class="tag-4"><a href="https://pelucky.github.io/tag/python.html">Python</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/jekyll.html">jekyll</a></li>
 	    <li class="tag-4"><a href="https://pelucky.github.io/tag/updateyuan.html">update源</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/efi.html">EFI</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/git.html">git</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/setuptools.html">setuptools</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/centos-65.html">CentOS 6.5</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/pelican.html">pelican</a></li>
 	    <li class="tag-4"><a href="https://pelucky.github.io/tag/linux.html">Linux</a></li>
 	    <li class="tag-1"><a href="https://pelucky.github.io/tag/setup.html">setup</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/ibm.html">IBM</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/move.html">move</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/mib.html">mib</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/gitlab.html">gitlab</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/gpt.html">GPT</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/pi-liang-wen-jian-ti-huan-zi-fu-chuan.html">批量文件替换字符串</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/switch.html">switch</a></li>
 	    <li class="tag-1"><a href="https://pelucky.github.io/tag/bitnami.html">bitnami</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/setuptools.html">setuptools</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/gpt.html">GPT</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/switch.html">switch</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/gitlab.html">gitlab</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/ibm.html">IBM</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/jekyll.html">jekyll</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/pelican.html">pelican</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/mib.html">mib</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/pi-liang-wen-jian-ti-huan-zi-fu-chuan.html">批量文件替换字符串</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/move.html">move</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/huawei-2300.html">huawei 2300</a></li>
 	    <li class="tag-4"><a href="https://pelucky.github.io/tag/hello.html">hello</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/port-mirror.html">port mirror</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/wireshark.html">wireshark</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/efi.html">EFI</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/zabbix.html">zabbix</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/git.html">git</a></li>
 	    <li class="tag-4"><a href="https://pelucky.github.io/tag/snmp.html">snmp</a></li>
 	    <li class="tag-4"><a href="https://pelucky.github.io/tag/dokuwiki.html">dokuwiki</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/huawei-2300.html">huawei 2300</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/centos-65.html">CentOS 6.5</a></li>
 </ul>
 
 
