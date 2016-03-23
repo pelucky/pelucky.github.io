@@ -98,14 +98,7 @@
 <p>bitnami的好处之前已经提过，一键式安装，所有组件都子提供一份。但缺点也很明显，扩展、升级、备份略微蛋疼...</p>
 <h2>原因</h2>
 <p>迁移的原因很简单，之前对于服务器分区，将/var用作存储数据，将/usr用作存储软件，故在安装bitnami的时候，下意识的就将三个平台放到/usr上了，后来一查看空间，/usr总共才分了30G，对于dokuwiki时肯定不够的，故决定迁移；</p>
-<p>这个问题也说明了业务数据和逻辑实现分离的重要性，同时也是bitnami的弊端，给懒人安装上的便利，同时带来维护上的麻烦；</p>
-<h2>解决思路</h2>
-<p>这算是总结之后的思路：</p>
-<ul>
-<li>去bitnami的官方网站和bbs查看是否有迁移的方法；查到了备份和还原的方法；以及查看到了bitnami平台的文件结构，至少需要备份./XXX/apps/中的内容，这一般就是特定系统的文件。对于dokuwiki使用文本进行保存，就不需要备份数据库了，否则需要将数据库中的内容备份；</li>
-<li>在新的位置重新安装一遍dokuwik；因为只是迁移，故只要修改为正确的路径即可，其他的与原系统的相同；停止新的dokuwiki服务；</li>
-</ul>
-<p>停止方法是进入到bitnami系统的目录 ...</p>
+<p>这个问题也说明了业务数据和逻辑实现分离的重要性，同时也是bitnami的弊端，给懒人安装上的便利 ...</p>
                     <a class="btn btn-default btn-xs" href="https://pelucky.github.io/pages/2015/09/15/bitnami-move/">more ...</a>
                 </div>
             </article>
@@ -114,7 +107,15 @@
         </div>
         <div class="col-sm-3" id="sidebar">
             <aside>
-
+<div id="aboutme">
+        <p>
+            <img width="100%" class="img-thumbnail" src="images/test.jpg"/>
+        </p>
+    <p>
+        <strong>About pelucky</strong><br/>
+        True
+    </p>
+</div>
 <section class="well well-sm">
     <ul class="list-group list-group-flush">
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
@@ -148,6 +149,11 @@
             <li class="list-group-item"><a href="https://pelucky.github.io/tags.html"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
                 <ul class="list-group " id="tags">
                     <li class="list-group-item tag-1">
+                        <a href="https://pelucky.github.io/tag/setup.html">
+                            setup
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-1">
                         <a href="https://pelucky.github.io/tag/bitnami.html">
                             bitnami
                         </a>
@@ -155,16 +161,6 @@
                     <li class="list-group-item tag-1">
                         <a href="https://pelucky.github.io/tag/switch.html">
                             switch
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-1">
-                        <a href="https://pelucky.github.io/tag/setup.html">
-                            setup
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="https://pelucky.github.io/tag/dokuwiki.html">
-                            dokuwiki
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
@@ -178,13 +174,18 @@
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="https://pelucky.github.io/tag/update-http-source.html">
-                            update http source
+                        <a href="https://pelucky.github.io/tag/dokuwiki.html">
+                            dokuwiki
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
                         <a href="https://pelucky.github.io/tag/snmp.html">
                             snmp
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://pelucky.github.io/tag/update-http-source.html">
+                            update http source
                         </a>
                     </li>
                 </ul>

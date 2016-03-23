@@ -15,13 +15,13 @@
 
         <meta name="author" content="pel" />
         <meta name="keywords" content="CentOS 6.5,update http source" />
-        <meta name="description" content="笔者以前不能连接互联网，故需要自己内建update源... 局域网内部未找到CentOS源，故决定自己做一个，查了下教程，不难，简单写一下： 如果只是想使用的话，则只看下面客户端配置即可，要求是CentOS6.5 64bit。 服务器端配置 a. 准备好CentOS-6.5DVD1和DVD2中的文件，通过winSCP或lrzsz上传到服务器上； b. 开启http服务，apache、Nginx均可 c. 将DVD1中的内容全部拷贝到上面的文件夹中，将DVD2中Packages中的文件全部拷进去 mkdir /var/www/html/yum/CentOS-6.5/ d. 合并DVD2中的Packages/TRANS.TBL到DVD1中并排序，主要是cat进入后再sort，没用过这个方法，记录下 cat dvd2/Packages/TRANS.TBL &gt;&gt; dvd1/Packages/TRANS.TBL mv dvd1/Packages ..." />
+        <meta name="description" content="笔者以前不能连接互联网，故需要自己内建update源... 局域网内部未找到CentOS源，故决定自己做一个，查了下教程，不难，简单写一下： 如果只是想使用的话，则只看下面客户端配置即可，要求是CentOS6.5 64bit。 服务器端配置 a. 准备好CentOS-6.5DVD1和DVD2中的文件，通过winSCP或lrzsz上传到服务器上； b. 开启http服务，apache、Nginx均可 c. 将DVD1中的内容全部拷贝到上面的文件夹中，将DVD2中Packages中的文件全部拷进去 mkdir /var/www/html/yum/CentOS-6 ..." />
 
         <meta property="og:site_name" content="pelucky's blog" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="CentOS 6.5 64bits 自建内部http源"/>
         <meta property="og:url" content="https://pelucky.github.io/pages/2015/08/02/centos-6-5-update-http/"/>
-        <meta property="og:description" content="笔者以前不能连接互联网，故需要自己内建update源... 局域网内部未找到CentOS源，故决定自己做一个，查了下教程，不难，简单写一下： 如果只是想使用的话，则只看下面客户端配置即可，要求是CentOS6.5 64bit。 服务器端配置 a. 准备好CentOS-6.5DVD1和DVD2中的文件，通过winSCP或lrzsz上传到服务器上； b. 开启http服务，apache、Nginx均可 c. 将DVD1中的内容全部拷贝到上面的文件夹中，将DVD2中Packages中的文件全部拷进去 mkdir /var/www/html/yum/CentOS-6.5/ d. 合并DVD2中的Packages/TRANS.TBL到DVD1中并排序，主要是cat进入后再sort，没用过这个方法，记录下 cat dvd2/Packages/TRANS.TBL &gt;&gt; dvd1/Packages/TRANS.TBL mv dvd1/Packages ..."/>
+        <meta property="og:description" content="笔者以前不能连接互联网，故需要自己内建update源... 局域网内部未找到CentOS源，故决定自己做一个，查了下教程，不难，简单写一下： 如果只是想使用的话，则只看下面客户端配置即可，要求是CentOS6.5 64bit。 服务器端配置 a. 准备好CentOS-6.5DVD1和DVD2中的文件，通过winSCP或lrzsz上传到服务器上； b. 开启http服务，apache、Nginx均可 c. 将DVD1中的内容全部拷贝到上面的文件夹中，将DVD2中Packages中的文件全部拷进去 mkdir /var/www/html/yum/CentOS-6 ..."/>
         <meta property="article:published_time" content="2015-08-02" />
             <meta property="article:section" content="System" />
             <meta property="article:tag" content="CentOS 6.5" />
@@ -209,7 +209,15 @@ gpgcheck=0&lt;/blockquote&gt;
         </div>
         <div class="col-sm-3" id="sidebar">
             <aside>
-
+<div id="aboutme">
+        <p>
+            <img width="100%" class="img-thumbnail" src="images/test.jpg"/>
+        </p>
+    <p>
+        <strong>About pelucky</strong><br/>
+        True
+    </p>
+</div>
 <section class="well well-sm">
     <ul class="list-group list-group-flush">
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
@@ -243,6 +251,11 @@ gpgcheck=0&lt;/blockquote&gt;
             <li class="list-group-item"><a href="https://pelucky.github.io/tags.html"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
                 <ul class="list-group " id="tags">
                     <li class="list-group-item tag-1">
+                        <a href="https://pelucky.github.io/tag/setup.html">
+                            setup
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-1">
                         <a href="https://pelucky.github.io/tag/bitnami.html">
                             bitnami
                         </a>
@@ -250,16 +263,6 @@ gpgcheck=0&lt;/blockquote&gt;
                     <li class="list-group-item tag-1">
                         <a href="https://pelucky.github.io/tag/switch.html">
                             switch
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-1">
-                        <a href="https://pelucky.github.io/tag/setup.html">
-                            setup
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="https://pelucky.github.io/tag/dokuwiki.html">
-                            dokuwiki
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
@@ -273,13 +276,18 @@ gpgcheck=0&lt;/blockquote&gt;
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="https://pelucky.github.io/tag/update-http-source.html">
-                            update http source
+                        <a href="https://pelucky.github.io/tag/dokuwiki.html">
+                            dokuwiki
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
                         <a href="https://pelucky.github.io/tag/snmp.html">
                             snmp
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://pelucky.github.io/tag/update-http-source.html">
+                            update http source
                         </a>
                     </li>
                 </ul>

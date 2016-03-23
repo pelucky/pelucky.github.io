@@ -99,9 +99,7 @@
 <li>一种是每种服务自行安装，包括mysql、appache或nginx、ruby等，要解决依赖性等问题，相对复杂；</li>
 <li>另一种官网提供了脚本，一键运行脚本，再下载对应的安装包，如rpm或deb包；</li>
 </ul>
-<p>原本计划为第二种方案，但是查看脚本，有curl https://xxx，发现需要下载外网文件，安装中中断，后自行下载暂未安装；</p>
-<p>再查找解决方法的时候，发现<strong>bitnami</strong>，一个为开源软件提供一键安装的支持，bitnami-gitlab就是解决bitnami问题，安装方法很简单：</p>
-<p>下载对应64位的run安装包，运行，设置参数即可；</p>
+<p>原本计划为第二种方案，但是查看脚本，有curl https://xxx ...</p>
                     <a class="btn btn-default btn-xs" href="https://pelucky.github.io/pages/2015/08/03/gitlab-setup/">more ...</a>
                 </div>
             </article>
@@ -137,12 +135,7 @@
 <p><strong>EFI+GPT:</strong>
 Intel提出的，主要就是为了解决上面的问题，现在预装windows系统、Mac系统的都已经采用了EFI的引导方式。EFI的另一个优点是可以确保安装授权的操作系统（MS极力推广的原因）</p>
 <h2>关于系统</h2>
-<p>CentOS在6.3之前需要下载不同的IOS，对于EFI的版本需要下载CentOS 6.3 - EFI版本，对于BIOS的则需要下载普通版，6.3之后的已经不用再区分版本了，两个都可以兼容；</p>
-<h2>关于服务器</h2>
-<p>主板支持EFI引导方式的服务器需要在BIOS中设置为EFI，当需要切换回传统引导方式时则需要切换成Legacy</p>
-<h2>关于分区</h2>
-<p>设置为EFI引导方式安装系统时，需要创建/boot/efi（暂时未安装成功）</p>
-<p>设置BIOS引导方式安装系统则正常安装即可。</p>
+<p>CentOS在6.3之前需要下载不同的IOS，对于EFI的版本需要下载CentOS 6 ...</p>
                     <a class="btn btn-default btn-xs" href="https://pelucky.github.io/pages/2015/08/02/ibm-x3650-m3-setup-linux/">more ...</a>
                 </div>
             </article>
@@ -151,7 +144,15 @@ Intel提出的，主要就是为了解决上面的问题，现在预装windows�
         </div>
         <div class="col-sm-3" id="sidebar">
             <aside>
-
+<div id="aboutme">
+        <p>
+            <img width="100%" class="img-thumbnail" src="images/test.jpg"/>
+        </p>
+    <p>
+        <strong>About pelucky</strong><br/>
+        True
+    </p>
+</div>
 <section class="well well-sm">
     <ul class="list-group list-group-flush">
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
@@ -185,6 +186,11 @@ Intel提出的，主要就是为了解决上面的问题，现在预装windows�
             <li class="list-group-item"><a href="https://pelucky.github.io/tags.html"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
                 <ul class="list-group " id="tags">
                     <li class="list-group-item tag-1">
+                        <a href="https://pelucky.github.io/tag/setup.html">
+                            setup
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-1">
                         <a href="https://pelucky.github.io/tag/bitnami.html">
                             bitnami
                         </a>
@@ -192,16 +198,6 @@ Intel提出的，主要就是为了解决上面的问题，现在预装windows�
                     <li class="list-group-item tag-1">
                         <a href="https://pelucky.github.io/tag/switch.html">
                             switch
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-1">
-                        <a href="https://pelucky.github.io/tag/setup.html">
-                            setup
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="https://pelucky.github.io/tag/dokuwiki.html">
-                            dokuwiki
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
@@ -215,13 +211,18 @@ Intel提出的，主要就是为了解决上面的问题，现在预装windows�
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="https://pelucky.github.io/tag/update-http-source.html">
-                            update http source
+                        <a href="https://pelucky.github.io/tag/dokuwiki.html">
+                            dokuwiki
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
                         <a href="https://pelucky.github.io/tag/snmp.html">
                             snmp
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://pelucky.github.io/tag/update-http-source.html">
+                            update http source
                         </a>
                     </li>
                 </ul>

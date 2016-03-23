@@ -101,19 +101,7 @@
 <li>Wordpress</li>
 <li>Durpal</li>
 </ul>
-<p>c. 静态页面</p>
-<ul>
-<li>Pelican</li>
-<li>jekyll</li>
-<li>Ortopress</li>
-</ul>
-<blockquote>
-<ul>
-<li>商业化产品首先不考虑，服务受提供商制约，用户体验有待提高，备份也很头疼，且没有折腾的意义...</li>
-<li>使用过Wordpress，需要数据库等后面一套，略庞大，肯定需要独立空间，我懒...</li>
-</ul>
-</blockquote>
-<p>自从<a href="http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html">搭建一个免费的，无限流量的Blog----github Pages和Jekyll入门</a>之后，国内的个人博客就如雨后春笋 ...</p>
+<p>c ...</p>
                     <a class="btn btn-default btn-xs" href="https://pelucky.github.io/pages/2016/03/22/gitpages-pelican/">more ...</a>
                 </div>
             </article>
@@ -159,7 +147,12 @@
 	<a href="https://pelucky.github.io/tag/switch.html">switch</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>Open SNMP in switch</p>
+                <div class="summary"><p>最近一直在研究使用zabbix监控整个系统，服务器的简单，直接套用模板即可，交换机和路由器无法安装zabbix agentd，故需要使用snmp，简单介绍下各类交换机打开snmp的方法：</p>
+<h2>SNMP</h2>
+<p>SNMP有一个树状结构的oid，每个树端点为一个值，比如CPU的负载 =&gt; 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.5</p>
+<p>故需要查询某值时只需要输入对应的oid即可。</p>
+<h2>服务器端</h2>
+<p>服务器端需要zabbix在编译时添加对snmp的支持，除此之外还需要安装net-snmp和net-snmp-utils ...</p>
                     <a class="btn btn-default btn-xs" href="https://pelucky.github.io/pages/2015/10/10/switch-snmp/">more ...</a>
                 </div>
             </article>
@@ -194,14 +187,7 @@
 <p>bitnami的好处之前已经提过，一键式安装，所有组件都子提供一份。但缺点也很明显，扩展、升级、备份略微蛋疼...</p>
 <h2>原因</h2>
 <p>迁移的原因很简单，之前对于服务器分区，将/var用作存储数据，将/usr用作存储软件，故在安装bitnami的时候，下意识的就将三个平台放到/usr上了，后来一查看空间，/usr总共才分了30G，对于dokuwiki时肯定不够的，故决定迁移；</p>
-<p>这个问题也说明了业务数据和逻辑实现分离的重要性，同时也是bitnami的弊端，给懒人安装上的便利，同时带来维护上的麻烦；</p>
-<h2>解决思路</h2>
-<p>这算是总结之后的思路：</p>
-<ul>
-<li>去bitnami的官方网站和bbs查看是否有迁移的方法；查到了备份和还原的方法；以及查看到了bitnami平台的文件结构，至少需要备份./XXX/apps/中的内容，这一般就是特定系统的文件。对于dokuwiki使用文本进行保存，就不需要备份数据库了，否则需要将数据库中的内容备份；</li>
-<li>在新的位置重新安装一遍dokuwik；因为只是迁移，故只要修改为正确的路径即可，其他的与原系统的相同；停止新的dokuwiki服务；</li>
-</ul>
-<p>停止方法是进入到bitnami系统的目录 ...</p>
+<p>这个问题也说明了业务数据和逻辑实现分离的重要性，同时也是bitnami的弊端，给懒人安装上的便利 ...</p>
                     <a class="btn btn-default btn-xs" href="https://pelucky.github.io/pages/2015/09/15/bitnami-move/">more ...</a>
                 </div>
             </article>
@@ -228,11 +214,7 @@
 <li>首先查看Python版本，CentOS6.5自带Python2.6，没戏，需要重新安装2.7以上版本；</li>
 <li>下载Python2.7.10，源码安装，三部曲走起...</li>
 <li>安装Django，提示需要安装setuptools，去下载，从头来；</li>
-<li>安装setuptools，外网只需要一个指令，即可自动安装，内网蛋疼，<code>/usr/local/python-2.7.10/bin/python setup.py install</code>，提示如下：</li>
-</ol>
-<div class="highlight"><pre>Traceback (most recent call last):
-File &quot;setup.py&quot;, line 171, in &lt;module&gt;
-dist = setuptools.setup ...</pre></div>
+<li>安装setuptools，外网只需要一个指令，即可自动安装，内网蛋疼，<code>/usr/local/python-2.7.10/bin ...</code></li></ol>
                     <a class="btn btn-default btn-xs" href="https://pelucky.github.io/pages/2015/09/14/setup-django/">more ...</a>
                 </div>
             </article>
@@ -266,93 +248,8 @@ dist = setuptools.setup ...</pre></div>
 </ul>
 <p>交换机为Huawei s2326 ，查了下交换机手册，做了下端口镜像：</p>
 <div class="highlight"><pre>&lt;Huawei-s2326&gt;:sys //进入交换机
-[Huawei-s2326]:observing-port 1 interface Ethernet 0/0/24  //设置观察端口
-[Huawei-s2326]:interface Ethernet 0//0/1    //进入被镜像端口
-[Huawei-s2326]:port-mirroring to observe-port 1 both  //设置双向镜像
-</pre></div>
-
-
-<p>打开wireshark，即可抓包分析网络数据。</p>
+[Huawei-s2326]:observing-port 1 interface Ethernet 0/0/24  //设置观察端口 ...</pre></div>
                     <a class="btn btn-default btn-xs" href="https://pelucky.github.io/pages/2015/08/03/huawei-s2300-port-mirror/">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://pelucky.github.io/pages/2015/08/03/gitlab-setup/">gitlab 安装使用</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2015-08-03T01:36:01+00:00"> Mon 03 August 2015</time>
-    </span>
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://pelucky.github.io/tag/bitnami.html">bitnami</a>
-        /
-	<a href="https://pelucky.github.io/tag/gitlab.html">gitlab</a>
-        /
-	<a href="https://pelucky.github.io/tag/setup.html">setup</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>习惯了外网使用github管理代码，局域网中依旧没有：</p>
-<p>简单说下安装使用</p>
-<h2>前期调研</h2>
-<p>两大选择SVN或者git，一直没有用过SVN，如果搭建内网SVN估计难度较大，故选择了git；
-开源git方案最常见的就是gitlab</p>
-<h2>关于gitlab</h2>
-<p>gitlab是基于ruby on rails框架；
-先去官方网站看了说明，查看有两种安装：</p>
-<ul>
-<li>一种是每种服务自行安装，包括mysql、appache或nginx、ruby等，要解决依赖性等问题，相对复杂；</li>
-<li>另一种官网提供了脚本，一键运行脚本，再下载对应的安装包，如rpm或deb包；</li>
-</ul>
-<p>原本计划为第二种方案，但是查看脚本，有curl https://xxx，发现需要下载外网文件，安装中中断，后自行下载暂未安装；</p>
-<p>再查找解决方法的时候，发现<strong>bitnami</strong>，一个为开源软件提供一键安装的支持，bitnami-gitlab就是解决bitnami问题，安装方法很简单：</p>
-<p>下载对应64位的run安装包，运行，设置参数即可；</p>
-                    <a class="btn btn-default btn-xs" href="https://pelucky.github.io/pages/2015/08/03/gitlab-setup/">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://pelucky.github.io/pages/2015/08/02/ibm-x3650-m3-setup-linux/">IBM x3650 m3 安装Linux小记</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2015-08-02T03:04:58+00:00"> Sun 02 August 2015</time>
-    </span>
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://pelucky.github.io/tag/efi.html">EFI</a>
-        /
-	<a href="https://pelucky.github.io/tag/gpt.html">GPT</a>
-        /
-	<a href="https://pelucky.github.io/tag/ibm.html">IBM</a>
-        /
-	<a href="https://pelucky.github.io/tag/linux.html">Linux</a>
-        /
-	<a href="https://pelucky.github.io/tag/setup.html">setup</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>回来折腾服务器，主要的问题是没接触过EFI，不了解EFI的工作原理，故重装服务器折腾了很久，服务器重启又是一个长等待，简单介绍下相关原理：</p>
-<h2>原引导流程</h2>
-<p><strong>BIOS+MBR:</strong>
-具体可以参考鸟哥linux，由于BIOS大小的64KB限制，只能分4个主分区，每个分区的大小不能超过2T，这个是硬伤，随着磁盘存储容量的升级，上T的硬盘都不是问题；</p>
-<h2>现引导流程</h2>
-<p><strong>EFI+GPT:</strong>
-Intel提出的，主要就是为了解决上面的问题，现在预装windows系统、Mac系统的都已经采用了EFI的引导方式。EFI的另一个优点是可以确保安装授权的操作系统（MS极力推广的原因）</p>
-<h2>关于系统</h2>
-<p>CentOS在6.3之前需要下载不同的IOS，对于EFI的版本需要下载CentOS 6.3 - EFI版本，对于BIOS的则需要下载普通版，6.3之后的已经不用再区分版本了，两个都可以兼容；</p>
-<h2>关于服务器</h2>
-<p>主板支持EFI引导方式的服务器需要在BIOS中设置为EFI，当需要切换回传统引导方式时则需要切换成Legacy</p>
-<h2>关于分区</h2>
-<p>设置为EFI引导方式安装系统时，需要创建/boot/efi（暂时未安装成功）</p>
-<p>设置BIOS引导方式安装系统则正常安装即可。</p>
-                    <a class="btn btn-default btn-xs" href="https://pelucky.github.io/pages/2015/08/02/ibm-x3650-m3-setup-linux/">more ...</a>
                 </div>
             </article>
             <hr/>
@@ -365,7 +262,15 @@ Intel提出的，主要就是为了解决上面的问题，现在预装windows�
         </div>
         <div class="col-sm-3" id="sidebar">
             <aside>
-
+<div id="aboutme">
+        <p>
+            <img width="100%" class="img-thumbnail" src="images/test.jpg"/>
+        </p>
+    <p>
+        <strong>About pelucky</strong><br/>
+        True
+    </p>
+</div>
 <section class="well well-sm">
     <ul class="list-group list-group-flush">
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
@@ -399,6 +304,11 @@ Intel提出的，主要就是为了解决上面的问题，现在预装windows�
             <li class="list-group-item"><a href="https://pelucky.github.io/tags.html"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
                 <ul class="list-group " id="tags">
                     <li class="list-group-item tag-1">
+                        <a href="https://pelucky.github.io/tag/setup.html">
+                            setup
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-1">
                         <a href="https://pelucky.github.io/tag/bitnami.html">
                             bitnami
                         </a>
@@ -406,16 +316,6 @@ Intel提出的，主要就是为了解决上面的问题，现在预装windows�
                     <li class="list-group-item tag-1">
                         <a href="https://pelucky.github.io/tag/switch.html">
                             switch
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-1">
-                        <a href="https://pelucky.github.io/tag/setup.html">
-                            setup
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="https://pelucky.github.io/tag/dokuwiki.html">
-                            dokuwiki
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
@@ -429,13 +329,18 @@ Intel提出的，主要就是为了解决上面的问题，现在预装windows�
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="https://pelucky.github.io/tag/update-http-source.html">
-                            update http source
+                        <a href="https://pelucky.github.io/tag/dokuwiki.html">
+                            dokuwiki
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
                         <a href="https://pelucky.github.io/tag/snmp.html">
                             snmp
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://pelucky.github.io/tag/update-http-source.html">
+                            update http source
                         </a>
                     </li>
                 </ul>

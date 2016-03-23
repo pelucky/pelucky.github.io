@@ -15,13 +15,13 @@
 
         <meta name="author" content="pel" />
         <meta name="keywords" content="bitnami,gitlab,setup" />
-        <meta name="description" content="习惯了外网使用github管理代码，局域网中依旧没有： 简单说下安装使用 前期调研 两大选择SVN或者git，一直没有用过SVN，如果搭建内网SVN估计难度较大，故选择了git； 开源git方案最常见的就是gitlab 关于gitlab gitlab是基于ruby on rails框架； 先去官方网站看了说明，查看有两种安装： 一种是每种服务自行安装，包括mysql、appache或nginx、ruby等，要解决依赖性等问题，相对复杂； 另一种官网提供了脚本，一键运行脚本，再下载对应的安装包，如rpm或deb包； 原本计划为第二种方案，但是查看脚本，有curl https://xxx，发现需要下载外网文件，安装中中断，后自行下载暂未安装； 再查找解决方法的时候，发现bitnami，一个为开源软件提供一键安装的支持，bitnami-gitlab就是解决bitnami问题，安装方法很简单： 下载对应64位的run安装包，运行，设置参数即可；" />
+        <meta name="description" content="习惯了外网使用github管理代码，局域网中依旧没有： 简单说下安装使用 前期调研 两大选择SVN或者git，一直没有用过SVN，如果搭建内网SVN估计难度较大，故选择了git； 开源git方案最常见的就是gitlab 关于gitlab gitlab是基于ruby on rails框架； 先去官方网站看了说明，查看有两种安装： 一种是每种服务自行安装，包括mysql、appache或nginx、ruby等，要解决依赖性等问题，相对复杂； 另一种官网提供了脚本，一键运行脚本，再下载对应的安装包，如rpm或deb包； 原本计划为第二种方案，但是查看脚本，有curl https://xxx ..." />
 
         <meta property="og:site_name" content="pelucky's blog" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="gitlab 安装使用"/>
         <meta property="og:url" content="https://pelucky.github.io/pages/2015/08/03/gitlab-setup/"/>
-        <meta property="og:description" content="习惯了外网使用github管理代码，局域网中依旧没有： 简单说下安装使用 前期调研 两大选择SVN或者git，一直没有用过SVN，如果搭建内网SVN估计难度较大，故选择了git； 开源git方案最常见的就是gitlab 关于gitlab gitlab是基于ruby on rails框架； 先去官方网站看了说明，查看有两种安装： 一种是每种服务自行安装，包括mysql、appache或nginx、ruby等，要解决依赖性等问题，相对复杂； 另一种官网提供了脚本，一键运行脚本，再下载对应的安装包，如rpm或deb包； 原本计划为第二种方案，但是查看脚本，有curl https://xxx，发现需要下载外网文件，安装中中断，后自行下载暂未安装； 再查找解决方法的时候，发现bitnami，一个为开源软件提供一键安装的支持，bitnami-gitlab就是解决bitnami问题，安装方法很简单： 下载对应64位的run安装包，运行，设置参数即可；"/>
+        <meta property="og:description" content="习惯了外网使用github管理代码，局域网中依旧没有： 简单说下安装使用 前期调研 两大选择SVN或者git，一直没有用过SVN，如果搭建内网SVN估计难度较大，故选择了git； 开源git方案最常见的就是gitlab 关于gitlab gitlab是基于ruby on rails框架； 先去官方网站看了说明，查看有两种安装： 一种是每种服务自行安装，包括mysql、appache或nginx、ruby等，要解决依赖性等问题，相对复杂； 另一种官网提供了脚本，一键运行脚本，再下载对应的安装包，如rpm或deb包； 原本计划为第二种方案，但是查看脚本，有curl https://xxx ..."/>
         <meta property="article:published_time" content="2015-08-03" />
             <meta property="article:section" content="System" />
             <meta property="article:tag" content="bitnami" />
@@ -166,7 +166,15 @@
         </div>
         <div class="col-sm-3" id="sidebar">
             <aside>
-
+<div id="aboutme">
+        <p>
+            <img width="100%" class="img-thumbnail" src="images/test.jpg"/>
+        </p>
+    <p>
+        <strong>About pelucky</strong><br/>
+        True
+    </p>
+</div>
 <section class="well well-sm">
     <ul class="list-group list-group-flush">
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
@@ -200,6 +208,11 @@
             <li class="list-group-item"><a href="https://pelucky.github.io/tags.html"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
                 <ul class="list-group " id="tags">
                     <li class="list-group-item tag-1">
+                        <a href="https://pelucky.github.io/tag/setup.html">
+                            setup
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-1">
                         <a href="https://pelucky.github.io/tag/bitnami.html">
                             bitnami
                         </a>
@@ -207,16 +220,6 @@
                     <li class="list-group-item tag-1">
                         <a href="https://pelucky.github.io/tag/switch.html">
                             switch
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-1">
-                        <a href="https://pelucky.github.io/tag/setup.html">
-                            setup
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="https://pelucky.github.io/tag/dokuwiki.html">
-                            dokuwiki
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
@@ -230,13 +233,18 @@
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="https://pelucky.github.io/tag/update-http-source.html">
-                            update http source
+                        <a href="https://pelucky.github.io/tag/dokuwiki.html">
+                            dokuwiki
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
                         <a href="https://pelucky.github.io/tag/snmp.html">
                             snmp
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://pelucky.github.io/tag/update-http-source.html">
+                            update http source
                         </a>
                     </li>
                 </ul>
