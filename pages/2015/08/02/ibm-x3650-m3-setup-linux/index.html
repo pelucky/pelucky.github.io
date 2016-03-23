@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
 
-        <title>IBM x3650 m3 安装Linux小记</title>
+        <title>IBM x3650 m3 安装Linux小记</title>
         <meta charset="utf-8" />
 
 
@@ -51,7 +51,7 @@
             <header>
               <h2 class="entry-title">
                 <a href="https://pelucky.github.io/pages/2015/08/02/ibm-x3650-m3-setup-linux/" rel="bookmark"
-                   title="Permalink to IBM x3650 m3 安装Linux小记"><span class="caps">IBM</span> x3650 m3&nbsp;安装Linux小记</a></h2>
+                   title="Permalink to IBM x3650 m3 安装Linux小记">IBM x3650 m3 安装Linux小记</a></h2>
            
             </header>
             <footer class="post-info">
@@ -63,20 +63,20 @@
               </address>
             </footer><!-- /.post-info -->
             <div class="entry-content">
-              <p>回来折腾服务器，主要的问题是没接触过<span class="caps">EFI</span>，不了解<span class="caps">EFI</span>的工作原理，故重装服务器折腾了很久，服务器重启又是一个长等待，简单介绍下相关原理：</p>
+              <p>回来折腾服务器，主要的问题是没接触过EFI，不了解EFI的工作原理，故重装服务器折腾了很久，服务器重启又是一个长等待，简单介绍下相关原理：</p>
 <h2>原引导流程</h2>
-<p><strong><span class="caps">BIOS</span>+<span class="caps">MBR</span>:</strong>
-具体可以参考鸟哥linux，由于<span class="caps">BIOS</span>大小的<span class="caps">64KB</span>限制，只能分4个主分区，每个分区的大小不能超过2T，这个是硬伤，随着磁盘存储容量的升级，上T的硬盘都不是问题；</p>
+<p><strong>BIOS+MBR:</strong>
+具体可以参考鸟哥linux，由于BIOS大小的64KB限制，只能分4个主分区，每个分区的大小不能超过2T，这个是硬伤，随着磁盘存储容量的升级，上T的硬盘都不是问题；</p>
 <h2>现引导流程</h2>
-<p><strong><span class="caps">EFI</span>+<span class="caps">GPT</span>:</strong>
-Intel提出的，主要就是为了解决上面的问题，现在预装windows系统、Mac系统的都已经采用了<span class="caps">EFI</span>的引导方式。<span class="caps">EFI</span>的另一个优点是可以确保安装授权的操作系统（<span class="caps">MS</span>极力推广的原因）</p>
+<p><strong>EFI+GPT:</strong>
+Intel提出的，主要就是为了解决上面的问题，现在预装windows系统、Mac系统的都已经采用了EFI的引导方式。EFI的另一个优点是可以确保安装授权的操作系统（MS极力推广的原因）</p>
 <h2>关于系统</h2>
-<p>CentOS在6.3之前需要下载不同的<span class="caps">IOS</span>，对于<span class="caps">EFI</span>的版本需要下载CentOS 6.3 - <span class="caps">EFI</span>版本，对于<span class="caps">BIOS</span>的则需要下载普通版，6.3之后的已经不用再区分版本了，两个都可以兼容；</p>
+<p>CentOS在6.3之前需要下载不同的IOS，对于EFI的版本需要下载CentOS 6.3 - EFI版本，对于BIOS的则需要下载普通版，6.3之后的已经不用再区分版本了，两个都可以兼容；</p>
 <h2>关于服务器</h2>
-<p>主板支持<span class="caps">EFI</span>引导方式的服务器需要在<span class="caps">BIOS</span>中设置为<span class="caps">EFI</span>，当需要切换回传统引导方式时则需要切换成Legacy</p>
+<p>主板支持EFI引导方式的服务器需要在BIOS中设置为EFI，当需要切换回传统引导方式时则需要切换成Legacy</p>
 <h2>关于分区</h2>
-<p>设置为<span class="caps">EFI</span>引导方式安装系统时，需要创建/boot/efi（暂时未安装成功）</p>
-<p>设置<span class="caps">BIOS</span>引导方式安装系统则正常安装即可。</p>
+<p>设置为EFI引导方式安装系统时，需要创建/boot/efi（暂时未安装成功）</p>
+<p>设置BIOS引导方式安装系统则正常安装即可。</p>
             </div><!-- /.entry-content -->
             <div class="comments">
               <h3>Comments</h3>
@@ -112,31 +112,31 @@ Intel提出的，主要就是为了解决上面的问题，现在预装windows�
 
 <h4>Tags</h4>
 	<ul class="blank">
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/python.html">Python</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/updateyuan.html">update源</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/linux.html">Linux</a></li>
-	    <li class="tag-1"><a href="https://pelucky.github.io/tag/setup.html">setup</a></li>
-	    <li class="tag-1"><a href="https://pelucky.github.io/tag/bitnami.html">bitnami</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/setuptools.html">setuptools</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/gpt.html">GPT</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/switch.html">switch</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/gitlab.html">gitlab</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/ibm.html">IBM</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/jekyll.html">jekyll</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/pelican.html">pelican</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/mib.html">mib</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/pi-liang-wen-jian-ti-huan-zi-fu-chuan.html">批量文件替换字符串</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/move.html">move</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/huawei-2300.html">huawei 2300</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/hello.html">hello</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/port-mirror.html">port mirror</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/wireshark.html">wireshark</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/efi.html">EFI</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/zabbix.html">zabbix</a></li>
 	    <li class="tag-4"><a href="https://pelucky.github.io/tag/git.html">git</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/snmp.html">snmp</a></li>
-	    <li class="tag-4"><a href="https://pelucky.github.io/tag/dokuwiki.html">dokuwiki</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/pi-liang-wen-jian-ti-huan-zi-fu-chuan.html">批量文件替换字符串</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/hello.html">hello</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/efi.html">EFI</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/move.html">move</a></li>
 	    <li class="tag-4"><a href="https://pelucky.github.io/tag/centos-65.html">CentOS 6.5</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/mib.html">mib</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/snmp.html">snmp</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/pelican.html">pelican</a></li>
+	    <li class="tag-1"><a href="https://pelucky.github.io/tag/setup.html">setup</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/dokuwiki.html">dokuwiki</a></li>
+	    <li class="tag-1"><a href="https://pelucky.github.io/tag/bitnami.html">bitnami</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/linux.html">Linux</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/port-mirror.html">port mirror</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/ibm.html">IBM</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/updateyuan.html">update源</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/setuptools.html">setuptools</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/jekyll.html">jekyll</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/python.html">Python</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/wireshark.html">wireshark</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/switch.html">switch</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/huawei-2300.html">huawei 2300</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/gitlab.html">gitlab</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/zabbix.html">zabbix</a></li>
+	    <li class="tag-4"><a href="https://pelucky.github.io/tag/gpt.html">GPT</a></li>
 </ul>
 
 
@@ -176,6 +176,7 @@ Intel提出的，主要就是为了解决上面的问题，现在预装windows�
             <div class="row">
               <ul class="socbtns">
 
+                <li><div class="btn primary"><a href="https://github.com/pelucky" target="_blank">Github</a></div></li>
 
 
 
