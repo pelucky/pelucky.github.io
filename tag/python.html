@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
+    <link href="https://pelucky.github.io/extra/favicon.ico" rel="icon">
 
 
     <meta name="author" content="pelucky" />
@@ -69,7 +70,31 @@
 
             <article>
                 <h2><a href="https://pelucky.github.io/pages/2015/09/14/setup-django/">安装Django小记</a></h2>
-                <div class="summary"><p>Setup Django without Internet</p>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2015-09-14T07:30:38+00:00"> Mon 14 September 2015</time>
+    </span>
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://pelucky.github.io/tag/python.html">Python</a>
+        /
+	<a href="https://pelucky.github.io/tag/setuptools.html">setuptools</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>主要是局域网蛋疼，无pip，yum中不包含Django，故只能手动安装</p>
+<ol>
+<li>首先查看Python版本，CentOS6.5自带Python2.6，没戏，需要重新安装2.7以上版本；</li>
+<li>下载Python2.7.10，源码安装，三部曲走起...</li>
+<li>安装Django，提示需要安装setuptools，去下载，从头来；</li>
+<li>安装setuptools，外网只需要一个指令，即可自动安装，内网蛋疼，<code>/usr/local/python-2.7.10/bin/python setup.py install</code>，提示如下：</li>
+</ol>
+<div class="highlight"><pre>Traceback (most recent call last):
+File &quot;setup.py&quot;, line 171, in &lt;module&gt;
+dist = setuptools.setup ...</pre></div>
                     <a class="btn btn-default btn-xs" href="https://pelucky.github.io/pages/2015/09/14/setup-django/">more ...</a>
                 </div>
             </article>
@@ -112,33 +137,18 @@
             <li class="list-group-item"><a href="https://pelucky.github.io/tags.html"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
                 <ul class="list-group " id="tags">
                     <li class="list-group-item tag-1">
-                        <a href="https://pelucky.github.io/tag/setup.html">
-                            setup
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-1">
                         <a href="https://pelucky.github.io/tag/bitnami.html">
                             bitnami
                         </a>
                     </li>
-                    <li class="list-group-item tag-4">
-                        <a href="https://pelucky.github.io/tag/git.html">
-                            git
+                    <li class="list-group-item tag-1">
+                        <a href="https://pelucky.github.io/tag/switch.html">
+                            switch
                         </a>
                     </li>
-                    <li class="list-group-item tag-4">
-                        <a href="https://pelucky.github.io/tag/linux.html">
-                            Linux
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="https://pelucky.github.io/tag/pelican.html">
-                            pelican
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="https://pelucky.github.io/tag/snmp.html">
-                            snmp
+                    <li class="list-group-item tag-1">
+                        <a href="https://pelucky.github.io/tag/setup.html">
+                            setup
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
@@ -149,6 +159,21 @@
                     <li class="list-group-item tag-4">
                         <a href="https://pelucky.github.io/tag/move.html">
                             move
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://pelucky.github.io/tag/pelican.html">
+                            pelican
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://pelucky.github.io/tag/update-http-source.html">
+                            update http source
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://pelucky.github.io/tag/snmp.html">
+                            snmp
                         </a>
                     </li>
                 </ul>

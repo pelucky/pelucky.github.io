@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
+    <link href="https://pelucky.github.io/extra/favicon.ico" rel="icon">
 
 
     <meta name="author" content="pelucky" />
@@ -69,14 +70,80 @@
 
             <article>
                 <h2><a href="https://pelucky.github.io/pages/2015/09/15/bitnami-move/">bitnami之迁移</a></h2>
-                <div class="summary"><p>Move dokuwiki of bitnami and change string in branch of files</p>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2015-09-15T12:31:59+00:00"> Tue 15 September 2015</time>
+    </span>
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://pelucky.github.io/tag/bitnami.html">bitnami</a>
+        /
+	<a href="https://pelucky.github.io/tag/dokuwiki.html">dokuwiki</a>
+        /
+	<a href="https://pelucky.github.io/tag/replace-string-in-branch-files.html">replace string in branch files</a>
+        /
+	<a href="https://pelucky.github.io/tag/move.html">move</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>前文有介绍，发现bitnami这个大套件后，就顺手搭了三个系统：</p>
+<ul>
+<li>用于代码管理的gitlab</li>
+<li>用于工作管理的redmine</li>
+<li>用于知识共享的dokuwiki</li>
+</ul>
+<p>bitnami的好处之前已经提过，一键式安装，所有组件都子提供一份。但缺点也很明显，扩展、升级、备份略微蛋疼...</p>
+<h2>原因</h2>
+<p>迁移的原因很简单，之前对于服务器分区，将/var用作存储数据，将/usr用作存储软件，故在安装bitnami的时候，下意识的就将三个平台放到/usr上了，后来一查看空间，/usr总共才分了30G，对于dokuwiki时肯定不够的，故决定迁移；</p>
+<p>这个问题也说明了业务数据和逻辑实现分离的重要性，同时也是bitnami的弊端，给懒人安装上的便利，同时带来维护上的麻烦；</p>
+<h2>解决思路</h2>
+<p>这算是总结之后的思路：</p>
+<ul>
+<li>去bitnami的官方网站和bbs查看是否有迁移的方法；查到了备份和还原的方法；以及查看到了bitnami平台的文件结构，至少需要备份./XXX/apps/中的内容，这一般就是特定系统的文件。对于dokuwiki使用文本进行保存，就不需要备份数据库了，否则需要将数据库中的内容备份；</li>
+<li>在新的位置重新安装一遍dokuwik；因为只是迁移，故只要修改为正确的路径即可，其他的与原系统的相同；停止新的dokuwiki服务；</li>
+</ul>
+<p>停止方法是进入到bitnami系统的目录 ...</p>
                     <a class="btn btn-default btn-xs" href="https://pelucky.github.io/pages/2015/09/15/bitnami-move/">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="https://pelucky.github.io/pages/2015/08/03/gitlab-setup/">gitlab 安装使用</a></h2>
-                <div class="summary"><p>Setup gitlab by bitnami</p>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2015-08-03T01:36:01+00:00"> Mon 03 August 2015</time>
+    </span>
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://pelucky.github.io/tag/bitnami.html">bitnami</a>
+        /
+	<a href="https://pelucky.github.io/tag/gitlab.html">gitlab</a>
+        /
+	<a href="https://pelucky.github.io/tag/setup.html">setup</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>习惯了外网使用github管理代码，局域网中依旧没有：</p>
+<p>简单说下安装使用</p>
+<h2>前期调研</h2>
+<p>两大选择SVN或者git，一直没有用过SVN，如果搭建内网SVN估计难度较大，故选择了git；
+开源git方案最常见的就是gitlab</p>
+<h2>关于gitlab</h2>
+<p>gitlab是基于ruby on rails框架；
+先去官方网站看了说明，查看有两种安装：</p>
+<ul>
+<li>一种是每种服务自行安装，包括mysql、appache或nginx、ruby等，要解决依赖性等问题，相对复杂；</li>
+<li>另一种官网提供了脚本，一键运行脚本，再下载对应的安装包，如rpm或deb包；</li>
+</ul>
+<p>原本计划为第二种方案，但是查看脚本，有curl https://xxx，发现需要下载外网文件，安装中中断，后自行下载暂未安装；</p>
+<p>再查找解决方法的时候，发现<strong>bitnami</strong>，一个为开源软件提供一键安装的支持，bitnami-gitlab就是解决bitnami问题，安装方法很简单：</p>
+<p>下载对应64位的run安装包，运行，设置参数即可；</p>
                     <a class="btn btn-default btn-xs" href="https://pelucky.github.io/pages/2015/08/03/gitlab-setup/">more ...</a>
                 </div>
             </article>
@@ -119,33 +186,18 @@
             <li class="list-group-item"><a href="https://pelucky.github.io/tags.html"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
                 <ul class="list-group " id="tags">
                     <li class="list-group-item tag-1">
-                        <a href="https://pelucky.github.io/tag/setup.html">
-                            setup
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-1">
                         <a href="https://pelucky.github.io/tag/bitnami.html">
                             bitnami
                         </a>
                     </li>
-                    <li class="list-group-item tag-4">
-                        <a href="https://pelucky.github.io/tag/git.html">
-                            git
+                    <li class="list-group-item tag-1">
+                        <a href="https://pelucky.github.io/tag/switch.html">
+                            switch
                         </a>
                     </li>
-                    <li class="list-group-item tag-4">
-                        <a href="https://pelucky.github.io/tag/linux.html">
-                            Linux
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="https://pelucky.github.io/tag/pelican.html">
-                            pelican
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="https://pelucky.github.io/tag/snmp.html">
-                            snmp
+                    <li class="list-group-item tag-1">
+                        <a href="https://pelucky.github.io/tag/setup.html">
+                            setup
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
@@ -156,6 +208,21 @@
                     <li class="list-group-item tag-4">
                         <a href="https://pelucky.github.io/tag/move.html">
                             move
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://pelucky.github.io/tag/pelican.html">
+                            pelican
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://pelucky.github.io/tag/update-http-source.html">
+                            update http source
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://pelucky.github.io/tag/snmp.html">
+                            snmp
                         </a>
                     </li>
                 </ul>

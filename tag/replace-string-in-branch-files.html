@@ -2,7 +2,7 @@
 <html lang="zh"
 >
 <head>
-    <title>pelucky's blog</title>
+    <title>replace string in branch files - pelucky's blog</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -11,8 +11,9 @@
 
     <link href="https://pelucky.github.io/extra/favicon.ico" rel="icon">
 
-<link rel="canonical" href="https://pelucky.github.io">
-        <meta name="author" content="pelucky" />
+
+    <meta name="author" content="pelucky" />
+    <meta name="keywords" content="replace string in branch files" />
 
     <!-- Open Graph tags -->
         <meta property="og:site_name" content="pelucky's blog" />
@@ -61,47 +62,55 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-9">
+    <ol class="breadcrumb">
+        <li><a href="https://pelucky.github.io" title="pelucky's blog"><i class="fa fa-home fa-lg"></i></a></li>
+        <li><a href="https://pelucky.github.io/tags.html" title="Tags">Tags</a></li>
+        <li class="active">replace string in branch files</li>
+    </ol>
 
             <article>
-                <h2><a href="https://pelucky.github.io/pages/2015/08/02/centos-6-5-update-http/">CentOS 6.5 64bits 自建内部http源</a></h2>
+                <h2><a href="https://pelucky.github.io/pages/2015/09/15/bitnami-move/">bitnami之迁移</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2015-08-02T02:31:00+00:00"> Sun 02 August 2015</time>
+        <i class="fa fa-calendar"></i><time datetime="2015-09-15T12:31:59+00:00"> Tue 15 September 2015</time>
     </span>
 
 
 
 <span class="label label-default">Tags</span>
-	<a href="https://pelucky.github.io/tag/centos-65.html">CentOS 6.5</a>
+	<a href="https://pelucky.github.io/tag/bitnami.html">bitnami</a>
         /
-	<a href="https://pelucky.github.io/tag/update-http-source.html">update http source</a>
+	<a href="https://pelucky.github.io/tag/dokuwiki.html">dokuwiki</a>
+        /
+	<a href="https://pelucky.github.io/tag/replace-string-in-branch-files.html">replace string in branch files</a>
+        /
+	<a href="https://pelucky.github.io/tag/move.html">move</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>笔者以前不能连接互联网，故需要自己内建update源...</p>
-<p>局域网内部未找到CentOS源，故决定自己做一个，查了下教程，不难，简单写一下：</p>
-<p>如果只是想使用的话，则只看下面客户端配置即可，要求是CentOS6.5 64bit。</p>
-<h2>服务器端配置</h2>
-<p>a. 准备好CentOS-6.5DVD1和DVD2中的文件，通过winSCP或lrzsz上传到服务器上；</p>
-<p>b. 开启http服务，apache、Nginx均可</p>
-<p>c. 将DVD1中的内容全部拷贝到上面的文件夹中，将DVD2中Packages中的文件全部拷进去</p>
-<div class="highlight"><pre>mkdir /var/www/html/yum/CentOS-6.5/
-</pre></div>
-
-
-<p>d. 合并DVD2中的Packages/TRANS.TBL到DVD1中并排序，主要是cat进入后再sort，没用过这个方法，记录下</p>
-<div class="highlight"><pre>cat dvd2/Packages/TRANS.TBL &gt;&gt; dvd1/Packages/TRANS.TBL
-mv dvd1/Packages ...</pre></div>
-                    <a class="btn btn-default btn-xs" href="https://pelucky.github.io/pages/2015/08/02/centos-6-5-update-http/">more ...</a>
+                <div class="summary"><p>前文有介绍，发现bitnami这个大套件后，就顺手搭了三个系统：</p>
+<ul>
+<li>用于代码管理的gitlab</li>
+<li>用于工作管理的redmine</li>
+<li>用于知识共享的dokuwiki</li>
+</ul>
+<p>bitnami的好处之前已经提过，一键式安装，所有组件都子提供一份。但缺点也很明显，扩展、升级、备份略微蛋疼...</p>
+<h2>原因</h2>
+<p>迁移的原因很简单，之前对于服务器分区，将/var用作存储数据，将/usr用作存储软件，故在安装bitnami的时候，下意识的就将三个平台放到/usr上了，后来一查看空间，/usr总共才分了30G，对于dokuwiki时肯定不够的，故决定迁移；</p>
+<p>这个问题也说明了业务数据和逻辑实现分离的重要性，同时也是bitnami的弊端，给懒人安装上的便利，同时带来维护上的麻烦；</p>
+<h2>解决思路</h2>
+<p>这算是总结之后的思路：</p>
+<ul>
+<li>去bitnami的官方网站和bbs查看是否有迁移的方法；查到了备份和还原的方法；以及查看到了bitnami平台的文件结构，至少需要备份./XXX/apps/中的内容，这一般就是特定系统的文件。对于dokuwiki使用文本进行保存，就不需要备份数据库了，否则需要将数据库中的内容备份；</li>
+<li>在新的位置重新安装一遍dokuwik；因为只是迁移，故只要修改为正确的路径即可，其他的与原系统的相同；停止新的dokuwiki服务；</li>
+</ul>
+<p>停止方法是进入到bitnami系统的目录 ...</p>
+                    <a class="btn btn-default btn-xs" href="https://pelucky.github.io/pages/2015/09/15/bitnami-move/">more ...</a>
                 </div>
             </article>
             <hr/>
 
-        <ul class="pager">
-                <li class="previous"><a href="https://pelucky.github.io/index.html">&larr; Newer</a></li>
-                <li class="next disabled"><a href="#">Older &rarr;</a></li>
-        </ul>
         </div>
         <div class="col-sm-3" id="sidebar">
             <aside>
@@ -209,7 +218,7 @@ mv dvd1/Packages ...</pre></div>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2016 pelucky
+         <div class="col-xs-10">&copy; 2015 pelucky
             &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
