@@ -115,66 +115,66 @@ pelucky's blog            </a>
 <p>a. 准备好CentOS-6.5DVD1和DVD2中的文件，通过winSCP或lrzsz上传到服务器上；</p>
 <p>b. 开启http服务，apache、Nginx均可</p>
 <p>c. 将DVD1中的内容全部拷贝到上面的文件夹中，将DVD2中Packages中的文件全部拷进去</p>
-<div class="highlight"><pre>mkdir /var/www/html/yum/CentOS-6.5/
+<div class="highlight"><pre><span class="code-line">mkdir /var/www/html/yum/CentOS-6.5/</span>
 </pre></div>
 
 
 <p>d. 合并DVD2中的Packages/TRANS.TBL到DVD1中并排序，主要是cat进入后再sort，没用过这个方法，记录下</p>
-<div class="highlight"><pre>cat dvd2/Packages/TRANS.TBL &gt;&gt; dvd1/Packages/TRANS.TBL
-mv dvd1/Packages/{TRANS.TBL.BAK,TRANS.TBL.BAK}
-sort dvd1/Packages/TRANS.TBL.BAK &gt;dvd1/Packages/TRANS.TBL
-rm -rf dvd1/Packages/TRANS.TBL.BAK
+<div class="highlight"><pre><span class="code-line">cat dvd2/Packages/TRANS.TBL &gt;&gt; dvd1/Packages/TRANS.TBL</span>
+<span class="code-line">mv dvd1/Packages/{TRANS.TBL.BAK,TRANS.TBL.BAK}</span>
+<span class="code-line">sort dvd1/Packages/TRANS.TBL.BAK &gt;dvd1/Packages/TRANS.TBL</span>
+<span class="code-line">rm -rf dvd1/Packages/TRANS.TBL.BAK</span>
 </pre></div>
 
 
 <p>e. 接下来使用安装createrepo病创建软件仓库：</p>
-<div class="highlight"><pre>rpm -ivh Packages/deltarpm-3.5-0.5.20090913git.el6.x86_64.rpm
-rpm -ivh Packages/python-deltarpm-3.5-0.5.20090913git.el6.x86_64.rpm
-rpm -ivh Packages/createrepo-0.9.9-18.el6.noarch.rpm
+<div class="highlight"><pre><span class="code-line">rpm -ivh Packages/deltarpm-3.5-0.5.20090913git.el6.x86_64.rpm</span>
+<span class="code-line">rpm -ivh Packages/python-deltarpm-3.5-0.5.20090913git.el6.x86_64.rpm</span>
+<span class="code-line">rpm -ivh Packages/createrepo-0.9.9-18.el6.noarch.rpm</span>
 </pre></div>
 
 
 <p>f. 使用createrepo命令将所有安装包加载进入到软件仓库中：</p>
-<div class="highlight"><pre>createrepo -v /var/www/html/yum/CentOS-6.5/Packages/
+<div class="highlight"><pre><span class="code-line">createrepo -v /var/www/html/yum/CentOS-6.5/Packages/</span>
 </pre></div>
 
 
 <h2>客户端配置</h2>
 <p>使用vim修改/etc/yum.repos.d/CentOS-Base.repo的文件：</p>
-<div class="highlight"><pre># Made by pel for yum update
-
-[base]
-name=myrepo
-baseurl=http://192.168.1.10/yum/CentOS-6.5/Packages
-enabled=1
-gpgcheck=0
-
-#release updates
-[updates]
-name=myrepo
-baseurl=http://192.168.1.10/yum/CentOS-6.5/Packages
-gpgcheck=1
-enabled=1
-gpgcheck=0
-
-#packages used/procduced in the build but not released
-[addons]
-name=myrepo
-baseurl=http://192.168.1.10/yum/CentOS-6.5/Packages
-enabled=1
-gpgcheck=0
-
-#additional packages that may be useful
-[extras]
-name=myrepo
-baseurl=http://192.168.1.10/yum/CentOS-6.5/Packages
-enabled=1
-gpgcheck=0&lt;/blockquote&gt;
+<div class="highlight"><pre><span class="code-line"># Made by pel for yum update</span>
+<span class="code-line"></span>
+<span class="code-line">[base]</span>
+<span class="code-line">name=myrepo</span>
+<span class="code-line">baseurl=http://192.168.1.10/yum/CentOS-6.5/Packages</span>
+<span class="code-line">enabled=1</span>
+<span class="code-line">gpgcheck=0</span>
+<span class="code-line"></span>
+<span class="code-line">#release updates</span>
+<span class="code-line">[updates]</span>
+<span class="code-line">name=myrepo</span>
+<span class="code-line">baseurl=http://192.168.1.10/yum/CentOS-6.5/Packages</span>
+<span class="code-line">gpgcheck=1</span>
+<span class="code-line">enabled=1</span>
+<span class="code-line">gpgcheck=0</span>
+<span class="code-line"></span>
+<span class="code-line">#packages used/procduced in the build but not released</span>
+<span class="code-line">[addons]</span>
+<span class="code-line">name=myrepo</span>
+<span class="code-line">baseurl=http://192.168.1.10/yum/CentOS-6.5/Packages</span>
+<span class="code-line">enabled=1</span>
+<span class="code-line">gpgcheck=0</span>
+<span class="code-line"></span>
+<span class="code-line">#additional packages that may be useful</span>
+<span class="code-line">[extras]</span>
+<span class="code-line">name=myrepo</span>
+<span class="code-line">baseurl=http://192.168.1.10/yum/CentOS-6.5/Packages</span>
+<span class="code-line">enabled=1</span>
+<span class="code-line">gpgcheck=0&lt;/blockquote&gt;</span>
 </pre></div>
 
 
 <p>查看效果</p>
-<div class="highlight"><pre>yum list 即可看到可安装的软件源
+<div class="highlight"><pre><span class="code-line">yum list 即可看到可安装的软件源</span>
 </pre></div>
             </div>
             <!-- /.entry-content -->

@@ -133,13 +133,13 @@ pelucky's blog            </a>
 <p>停止方法是进入到bitnami系统的目录，运行./ctlscript.sh stop。该脚本就是负责整个bitnami系统的启停；</p>
 <p>停止老的dokuwiki系统（当然在安装新的dokuwiki时就应该停止老系统了）；将老的dokuwiki中的./apps/dokuwiki中的内容全部都覆盖到新的对应的位置，要保留文件权限，同时强制复制：</p>
 <p><strong>TIPS:</strong>由于CentOS在启动脚本中已将alias cp=cp -i，故遇到重复的文件，会强制询问你，所以可以先unalias cp，否则会询问很多次；</p>
-<div class="highlight"><pre>cp -rfvp dokuwiki/ /var/opt/dokuwiki-20140929d-0/apps/
+<div class="highlight"><pre><span class="code-line">cp -rfvp dokuwiki/ /var/opt/dokuwiki-20140929d-0/apps/</span>
 </pre></div>
 
 
 <p>替换更新后的文件中的路径参数；因为dokuwiki中有许多配置文件会涉及到文件系统路径的问题，故需要更新路径；</p>
 <p><strong>TIPS：</strong>最开始想到使用sed替换，但是sed遇到需要转义的字符就会嗝屁；最后敲定使用rpl工具，需要自己下载，但是功能很强大；</p>
-<div class="highlight"><pre>rpl -vR &quot;usr/dokuwiki-20140929-0&quot; &quot;var/opt/dokuwiki-20140929d-0&quot; ./dokuwiki/
+<div class="highlight"><pre><span class="code-line">rpl -vR &quot;usr/dokuwiki-20140929-0&quot; &quot;var/opt/dokuwiki-20140929d-0&quot; ./dokuwiki/</span>
 </pre></div>
 
 

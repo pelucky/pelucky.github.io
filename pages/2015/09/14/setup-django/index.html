@@ -115,35 +115,35 @@ pelucky's blog            </a>
 <li>安装Django，提示需要安装setuptools，去下载，从头来；</li>
 <li>安装setuptools，外网只需要一个指令，即可自动安装，内网蛋疼，<code>/usr/local/python-2.7.10/bin/python setup.py install</code>，提示如下：</li>
 </ol>
-<div class="highlight"><pre>Traceback (most recent call last):
-File &quot;setup.py&quot;, line 171, in &lt;module&gt;
-dist = setuptools.setup(**setup_params)
-File &quot;/usr/local/python-2.7.10/lib/python2.7/distutils/core.py&quot;, line 151, in setup
-dist.run_commands()
-File &quot;/usr/local/python-2.7.10/lib/python2.7/distutils/dist.py&quot;, line 953, in run_commands
-self.run_command(cmd)
-File &quot;/usr/local/python-2.7.10/lib/python2.7/distutils/dist.py&quot;, line 972, in run_command
-cmd_obj.run()
-File &quot;/usr/local/src/setuptools-18.3.1/setuptools/command/install.py&quot;, line 67, in run
-self.do_egg_install()
-File &quot;/usr/local/src/setuptools-18.3.1/setuptools/command/install.py&quot;, line 109, in do_egg_install
-self.run_command(&#39;bdist_egg&#39;)
-File &quot;/usr/local/python-2.7.10/lib/python2.7/distutils/cmd.py&quot;, line 326, in run_command
-self.distribution.run_command(command)
-File &quot;/usr/local/python-2.7.10/lib/python2.7/distutils/dist.py&quot;, line 972, in run_command
-cmd_obj.run()
-File &quot;/usr/local/src/setuptools-18.3.1/setuptools/command/bdist_egg.py&quot;, line 222, in run
-dry_run=self.dry_run, mode=self.gen_header())
-File &quot;/usr/local/src/setuptools-18.3.1/setuptools/command/bdist_egg.py&quot;, line 463, in make_zipfile
-z = zipfile.ZipFile(zip_filename, mode, compression=compression)
-File &quot;/usr/local/python-2.7.10/lib/python2.7/zipfile.py&quot;, line 736, in __init__
-&quot;Compression requires the (missing) zlib module&quot;
+<div class="highlight"><pre><span class="code-line">Traceback (most recent call last):</span>
+<span class="code-line">File &quot;setup.py&quot;, line 171, in &lt;module&gt;</span>
+<span class="code-line">dist = setuptools.setup(**setup_params)</span>
+<span class="code-line">File &quot;/usr/local/python-2.7.10/lib/python2.7/distutils/core.py&quot;, line 151, in setup</span>
+<span class="code-line">dist.run_commands()</span>
+<span class="code-line">File &quot;/usr/local/python-2.7.10/lib/python2.7/distutils/dist.py&quot;, line 953, in run_commands</span>
+<span class="code-line">self.run_command(cmd)</span>
+<span class="code-line">File &quot;/usr/local/python-2.7.10/lib/python2.7/distutils/dist.py&quot;, line 972, in run_command</span>
+<span class="code-line">cmd_obj.run()</span>
+<span class="code-line">File &quot;/usr/local/src/setuptools-18.3.1/setuptools/command/install.py&quot;, line 67, in run</span>
+<span class="code-line">self.do_egg_install()</span>
+<span class="code-line">File &quot;/usr/local/src/setuptools-18.3.1/setuptools/command/install.py&quot;, line 109, in do_egg_install</span>
+<span class="code-line">self.run_command(&#39;bdist_egg&#39;)</span>
+<span class="code-line">File &quot;/usr/local/python-2.7.10/lib/python2.7/distutils/cmd.py&quot;, line 326, in run_command</span>
+<span class="code-line">self.distribution.run_command(command)</span>
+<span class="code-line">File &quot;/usr/local/python-2.7.10/lib/python2.7/distutils/dist.py&quot;, line 972, in run_command</span>
+<span class="code-line">cmd_obj.run()</span>
+<span class="code-line">File &quot;/usr/local/src/setuptools-18.3.1/setuptools/command/bdist_egg.py&quot;, line 222, in run</span>
+<span class="code-line">dry_run=self.dry_run, mode=self.gen_header())</span>
+<span class="code-line">File &quot;/usr/local/src/setuptools-18.3.1/setuptools/command/bdist_egg.py&quot;, line 463, in make_zipfile</span>
+<span class="code-line">z = zipfile.ZipFile(zip_filename, mode, compression=compression)</span>
+<span class="code-line">File &quot;/usr/local/python-2.7.10/lib/python2.7/zipfile.py&quot;, line 736, in __init__</span>
+<span class="code-line">&quot;Compression requires the (missing) zlib module&quot;</span>
 </pre></div>
 
 
 <p>简而言之就是没有zlib，网上查找再三，找到解决方法：</p>
-<div class="highlight"><pre>yum install zlib
-yum install zlib-devel
+<div class="highlight"><pre><span class="code-line">yum install zlib</span>
+<span class="code-line">yum install zlib-devel</span>
 </pre></div>
 
 
