@@ -121,10 +121,10 @@ pelucky's blog            </a>
 <li>做man-in-the-middle攻击。现在的大部分主机都会安装防火墙和杀软，一进行中间人攻击，可恶的360就会报警，但是手机平板之类的就另说了...</li>
 </ul>
 <p>交换机为Huawei s2326 ，查了下交换机手册，做了下端口镜像：</p>
-<div class="highlight"><pre><span class="code-line">&lt;Huawei-s2326&gt;:sys //进入交换机</span>
-<span class="code-line">[Huawei-s2326]:observing-port 1 interface Ethernet 0/0/24  //设置观察端口</span>
-<span class="code-line">[Huawei-s2326]:interface Ethernet 0//0/1    //进入被镜像端口</span>
-<span class="code-line">[Huawei-s2326]:port-mirroring to observe-port 1 both  //设置双向镜像</span>
+<div class="highlight"><pre>&lt;Huawei-s2326&gt;:sys //进入交换机
+[Huawei-s2326]:observing-port 1 interface Ethernet 0/0/24  //设置观察端口
+[Huawei-s2326]:interface Ethernet 0//0/1    //进入被镜像端口
+[Huawei-s2326]:port-mirroring to observe-port 1 both  //设置双向镜像
 </pre></div>
 
 
