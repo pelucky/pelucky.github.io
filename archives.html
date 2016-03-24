@@ -27,6 +27,7 @@
     <link href="https://pelucky.github.io/theme/css/font-awesome.min.css" rel="stylesheet">
 
     <link href="https://pelucky.github.io/theme/css/pygments/native.css" rel="stylesheet">
+    <link href="https://pelucky.github.io/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
     <link rel="stylesheet" href="https://pelucky.github.io/theme/css/style.css" type="text/css"/>
 
 
@@ -43,13 +44,17 @@
                 <span class="icon-bar"></span>
             </button>
             <a href="https://pelucky.github.io/" class="navbar-brand">
-<img src="https://pelucky.github.io/images/logo.png" width="30"/> pelucky's blog            </a>
+pelucky's blog            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                    <li><a href="https://pelucky.github.io/archives.html">archives</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
+              <li><span>
+                <form class="navbar-search" action="/search">
+                  <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
+                </form></span>
+              </li>
               <li><a href="https://pelucky.github.io/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
             </ul>
         </div>
@@ -110,24 +115,28 @@
         </div>
         <div class="col-sm-3" id="sidebar">
             <aside>
-<div id="aboutme">
-        <p>
-            <img width="100%" class="img-thumbnail" src="images/test.jpg"/>
-        </p>
-    <p>
-        <strong>About pelucky</strong><br/>
-        "Time waits for no one..."
-    </p>
-</div>
+
 <section class="well well-sm">
     <ul class="list-group list-group-flush">
-            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
-              <ul class="list-group" id="social">
-                <li class="list-group-item"><a href="https://github.com/pelucky"><i class="fa fa-github-square fa-lg"></i> Github</a></li>
-                <li class="list-group-item"><a href="https://twitter.com/pelucky1412"><i class="fa fa-twitter-square fa-lg"></i> Twitter</a></li>
-                <li class="list-group-item"><a href="https://www.facebook.com/profile.php?id=100011137096595"><i class="fa fa-facebook-square fa-lg"></i> Facebook</a></li>
-                <li class="list-group-item"><a href="https://plus.google.com/u/0/105742713362431137918"><i class="fa fa-google-plus-square fa-lg"></i> Google+</a></li>
-              </ul>
+
+            <li class="list-group-item"><a href="https://pelucky.github.io/"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="https://pelucky.github.io/category/life.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Life
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="https://pelucky.github.io/category/network.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Network
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="https://pelucky.github.io/category/system.html">
+                            <i class="fa fa-folder-open fa-lg"></i> System
+                        </a>
+                    </li>
+                </ul>
             </li>
 
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
@@ -145,26 +154,6 @@
                     <li class="list-group-item">
                         <a href="https://pelucky.github.io/pages/2015/10/10/switch-snmp/">
                             交换机开启SNMP
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="list-group-item"><a href="https://pelucky.github.io/"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
-                <ul class="list-group" id="categories">
-                    <li class="list-group-item">
-                        <a href="https://pelucky.github.io/category/life.html">
-                            <i class="fa fa-folder-open fa-lg"></i> Life
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="https://pelucky.github.io/category/network.html">
-                            <i class="fa fa-folder-open fa-lg"></i> Network
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="https://pelucky.github.io/category/system.html">
-                            <i class="fa fa-folder-open fa-lg"></i> System
                         </a>
                     </li>
                 </ul>
@@ -221,6 +210,16 @@
         </div>
             <a href="https://github.com/pelucky">@pelucky</a> on GitHub
     </li>
+
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+              <ul class="list-group" id="social">
+                <li class="list-group-item"><a href="https://github.com/pelucky"><i class="fa fa-github-square fa-lg"></i> Github</a></li>
+                <li class="list-group-item"><a href="https://twitter.com/pelucky1412"><i class="fa fa-twitter-square fa-lg"></i> Twitter</a></li>
+                <li class="list-group-item"><a href="https://www.facebook.com/profile.php?id=100011137096595"><i class="fa fa-facebook-square fa-lg"></i> Facebook</a></li>
+                <li class="list-group-item"><a href="https://plus.google.com/u/0/105742713362431137918"><i class="fa fa-google-plus-square fa-lg"></i> Google+</a></li>
+              </ul>
+            </li>
+
     <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
       <ul class="list-group" id="links">
         <li class="list-group-item">

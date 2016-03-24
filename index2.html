@@ -27,6 +27,7 @@
     <link href="https://pelucky.github.io/theme/css/font-awesome.min.css" rel="stylesheet">
 
     <link href="https://pelucky.github.io/theme/css/pygments/native.css" rel="stylesheet">
+    <link href="https://pelucky.github.io/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
     <link rel="stylesheet" href="https://pelucky.github.io/theme/css/style.css" type="text/css"/>
 
 
@@ -43,13 +44,17 @@
                 <span class="icon-bar"></span>
             </button>
             <a href="https://pelucky.github.io/" class="navbar-brand">
-<img src="https://pelucky.github.io/images/logo.png" width="30"/> pelucky's blog            </a>
+pelucky's blog            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                    <li><a href="https://pelucky.github.io/archives.html">archives</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
+              <li><span>
+                <form class="navbar-search" action="/search">
+                  <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
+                </form></span>
+              </li>
               <li><a href="https://pelucky.github.io/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
             </ul>
         </div>
@@ -63,12 +68,12 @@
         <div class="col-sm-9">
 
             <article>
-                <h2><a href="https://pelucky.github.io/pages/2015/08/03/gitlab-setup/">gitlab 安装使用</a></h2>
+                <h2><a href="https://pelucky.github.io/pages/2015/09/15/bitnami-move/">bitnami之迁移</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2015-08-03T01:36:01+00:00"> Mon 03 August 2015</time>
+        <i class="fa fa-calendar"></i><time datetime="2015-09-15T12:31:59+00:00"> Tue 15 September 2015</time>
     </span>
 
 
@@ -76,119 +81,109 @@
 <span class="label label-default">Tags</span>
 	<a href="https://pelucky.github.io/tag/bitnami.html">bitnami</a>
         /
-	<a href="https://pelucky.github.io/tag/gitlab.html">gitlab</a>
+	<a href="https://pelucky.github.io/tag/dokuwiki.html">dokuwiki</a>
         /
-	<a href="https://pelucky.github.io/tag/setup.html">setup</a>
+	<a href="https://pelucky.github.io/tag/replace-string-in-branch-files.html">replace string in branch files</a>
+        /
+	<a href="https://pelucky.github.io/tag/move.html">move</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>习惯了外网使用github管理代码，局域网中依旧没有：</p>
-<p>简单说下安装使用</p>
-<h2>前期调研</h2>
-<p>两大选择SVN或者git，一直没有用过SVN，如果搭建内网SVN估计难度较大，故选择了git；
-开源git方案最常见的就是gitlab</p>
-<h2>关于gitlab</h2>
-<p>gitlab是基于ruby on rails框架；
-先去官方网站看了说明，查看有两种安装：</p>
+                <div class="summary"><p>前文有介绍，发现bitnami这个大套件后，就顺手搭了三个系统：</p>
 <ul>
-<li>一种是每种服务自行安装，包括mysql、appache或nginx、ruby等，要解决依赖性等问题，相对复杂；</li>
-<li>另一种官网提供了脚本，一键运行脚本，再下载对应的安装包，如rpm或deb包；</li>
+<li>用于代码管理的gitlab</li>
+<li>用于工作管理的redmine</li>
+<li>用于知识共享的dokuwiki</li>
 </ul>
-<p>原本计划为第二种方案，但是查看脚本，有curl https://xxx ...</p>
-                    <a class="btn btn-default btn-xs" href="https://pelucky.github.io/pages/2015/08/03/gitlab-setup/">more ...</a>
+<p>bitnami的好处之前已经提过，一键式安装，所有组件都子提供一份。但缺点也很明显 ...</p>
+                    <a class="btn btn-default btn-xs" href="https://pelucky.github.io/pages/2015/09/15/bitnami-move/">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
-                <h2><a href="https://pelucky.github.io/pages/2015/08/02/ibm-x3650-m3-setup-linux/">IBM x3650 m3 安装Linux小记</a></h2>
+                <h2><a href="https://pelucky.github.io/pages/2015/09/14/setup-django/">安装Django小记</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2015-08-02T03:04:58+00:00"> Sun 02 August 2015</time>
+        <i class="fa fa-calendar"></i><time datetime="2015-09-14T07:30:38+00:00"> Mon 14 September 2015</time>
     </span>
 
 
 
 <span class="label label-default">Tags</span>
-	<a href="https://pelucky.github.io/tag/efi.html">EFI</a>
+	<a href="https://pelucky.github.io/tag/python.html">Python</a>
         /
-	<a href="https://pelucky.github.io/tag/gpt.html">GPT</a>
-        /
-	<a href="https://pelucky.github.io/tag/ibm.html">IBM</a>
-        /
-	<a href="https://pelucky.github.io/tag/linux.html">Linux</a>
-        /
-	<a href="https://pelucky.github.io/tag/setup.html">setup</a>
+	<a href="https://pelucky.github.io/tag/setuptools.html">setuptools</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>回来折腾服务器，主要的问题是没接触过EFI，不了解EFI的工作原理，故重装服务器折腾了很久，服务器重启又是一个长等待，简单介绍下相关原理：</p>
-<h2>原引导流程</h2>
-<p><strong>BIOS+MBR:</strong>
-具体可以参考鸟哥linux，由于BIOS大小的64KB限制，只能分4个主分区，每个分区的大小不能超过2T，这个是硬伤，随着磁盘存储容量的升级，上T的硬盘都不是问题；</p>
-<h2>现引导流程</h2>
-<p><strong>EFI+GPT:</strong>
-Intel提出的，主要就是为了解决上面的问题，现在预装windows系统、Mac系统的都已经采用了EFI的引导方式。EFI的另一个优点是可以确保安装授权的操作系统（MS极力推广的原因）</p>
-<h2>关于系统</h2>
-<p>CentOS在6.3之前需要下载不同的IOS，对于EFI的版本需要下载CentOS 6 ...</p>
-                    <a class="btn btn-default btn-xs" href="https://pelucky.github.io/pages/2015/08/02/ibm-x3650-m3-setup-linux/">more ...</a>
+                <div class="summary"><p>主要是局域网蛋疼，无pip，yum中不包含Django，故只能手动安装</p>
+<ol>
+<li>首先查看Python版本，CentOS6.5自带Python2.6，没戏，需要重新安装2 ...</li></ol>
+                    <a class="btn btn-default btn-xs" href="https://pelucky.github.io/pages/2015/09/14/setup-django/">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
-                <h2><a href="https://pelucky.github.io/pages/2015/08/02/centos-6-5-update-http/">CentOS 6.5 64bits 自建内部http源</a></h2>
+                <h2><a href="https://pelucky.github.io/pages/2015/08/03/huawei-s2300-port-mirror/">Wireshark抓包测试--Huawei s2300 端口镜像</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2015-08-02T02:31:00+00:00"> Sun 02 August 2015</time>
+        <i class="fa fa-calendar"></i><time datetime="2015-08-03T08:06:57+00:00"> Mon 03 August 2015</time>
     </span>
 
 
 
 <span class="label label-default">Tags</span>
-	<a href="https://pelucky.github.io/tag/centos-65.html">CentOS 6.5</a>
+	<a href="https://pelucky.github.io/tag/huawei-2300.html">huawei 2300</a>
         /
-	<a href="https://pelucky.github.io/tag/update-http-source.html">update http source</a>
+	<a href="https://pelucky.github.io/tag/wireshark.html">wireshark</a>
+        /
+	<a href="https://pelucky.github.io/tag/port-mirror.html">port mirror</a>
+        /
+	<a href="https://pelucky.github.io/tag/switch.html">switch</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>笔者以前不能连接互联网，故需要自己内建update源...</p>
-<p>局域网内部未找到CentOS源，故决定自己做一个，查了下教程，不难，简单写一下：</p>
-<p>如果只是想使用的话，则只看下面客户端配置即可，要求是CentOS6.5 64bit。</p>
-<h2>服务器端配置</h2>
-<p>a. 准备好CentOS-6.5DVD1和DVD2中的文件，通过winSCP或lrzsz上传到服务器上；</p>
-<p>b. 开启http服务，apache、Nginx均可</p>
-<p>c. 将DVD1中的内容全部拷贝到上面的文件夹中，将DVD2中Packages中的文件全部拷进去</p>
-<div class="highlight"><pre>mkdir /var/www/html/yum/CentOS-6 ...</pre></div>
-                    <a class="btn btn-default btn-xs" href="https://pelucky.github.io/pages/2015/08/02/centos-6-5-update-http/">more ...</a>
+                <div class="summary"><p>wireshark抓取局域网中的包，有三种方法：</p>
+<ul>
+<li>交换机换成集线器，也就是交换性网络换成共享性网络，会有广播风暴等缺点，现在普通的交换机都已经是交换性网卡了，这个方案肯定不可行；</li>
+<li>交换机中做端口镜像。这个可以有；</li>
+<li>做man-in-the-middle攻击 ...</li></ul>
+                    <a class="btn btn-default btn-xs" href="https://pelucky.github.io/pages/2015/08/03/huawei-s2300-port-mirror/">more ...</a>
                 </div>
             </article>
             <hr/>
 
         <ul class="pager">
                 <li class="previous"><a href="https://pelucky.github.io/index.html">&larr; Newer</a></li>
-                <li class="next disabled"><a href="#">Older &rarr;</a></li>
+                <li class="next"><a
+                        href="https://pelucky.github.io/index3.html">Older &rarr;</a></li>
         </ul>
         </div>
         <div class="col-sm-3" id="sidebar">
             <aside>
-<div id="aboutme">
-        <p>
-            <img width="100%" class="img-thumbnail" src="images/test.jpg"/>
-        </p>
-    <p>
-        <strong>About pelucky</strong><br/>
-        "Time waits for no one..."
-    </p>
-</div>
+
 <section class="well well-sm">
     <ul class="list-group list-group-flush">
-            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
-              <ul class="list-group" id="social">
-                <li class="list-group-item"><a href="https://github.com/pelucky"><i class="fa fa-github-square fa-lg"></i> Github</a></li>
-                <li class="list-group-item"><a href="https://twitter.com/pelucky1412"><i class="fa fa-twitter-square fa-lg"></i> Twitter</a></li>
-                <li class="list-group-item"><a href="https://www.facebook.com/profile.php?id=100011137096595"><i class="fa fa-facebook-square fa-lg"></i> Facebook</a></li>
-                <li class="list-group-item"><a href="https://plus.google.com/u/0/105742713362431137918"><i class="fa fa-google-plus-square fa-lg"></i> Google+</a></li>
-              </ul>
+
+            <li class="list-group-item"><a href="https://pelucky.github.io/"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="https://pelucky.github.io/category/life.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Life
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="https://pelucky.github.io/category/network.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Network
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="https://pelucky.github.io/category/system.html">
+                            <i class="fa fa-folder-open fa-lg"></i> System
+                        </a>
+                    </li>
+                </ul>
             </li>
 
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
@@ -206,26 +201,6 @@ Intel提出的，主要就是为了解决上面的问题，现在预装windows�
                     <li class="list-group-item">
                         <a href="https://pelucky.github.io/pages/2015/10/10/switch-snmp/">
                             交换机开启SNMP
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="list-group-item"><a href="https://pelucky.github.io/"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
-                <ul class="list-group" id="categories">
-                    <li class="list-group-item">
-                        <a href="https://pelucky.github.io/category/life.html">
-                            <i class="fa fa-folder-open fa-lg"></i> Life
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="https://pelucky.github.io/category/network.html">
-                            <i class="fa fa-folder-open fa-lg"></i> Network
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="https://pelucky.github.io/category/system.html">
-                            <i class="fa fa-folder-open fa-lg"></i> System
                         </a>
                     </li>
                 </ul>
@@ -282,6 +257,16 @@ Intel提出的，主要就是为了解决上面的问题，现在预装windows�
         </div>
             <a href="https://github.com/pelucky">@pelucky</a> on GitHub
     </li>
+
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+              <ul class="list-group" id="social">
+                <li class="list-group-item"><a href="https://github.com/pelucky"><i class="fa fa-github-square fa-lg"></i> Github</a></li>
+                <li class="list-group-item"><a href="https://twitter.com/pelucky1412"><i class="fa fa-twitter-square fa-lg"></i> Twitter</a></li>
+                <li class="list-group-item"><a href="https://www.facebook.com/profile.php?id=100011137096595"><i class="fa fa-facebook-square fa-lg"></i> Facebook</a></li>
+                <li class="list-group-item"><a href="https://plus.google.com/u/0/105742713362431137918"><i class="fa fa-google-plus-square fa-lg"></i> Google+</a></li>
+              </ul>
+            </li>
+
     <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
       <ul class="list-group" id="links">
         <li class="list-group-item">
