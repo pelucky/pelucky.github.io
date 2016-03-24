@@ -44,7 +44,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a href="https://pelucky.github.io/" class="navbar-brand">
-<img src="https://pelucky.github.io/images/logo.png" width="30"/> pelucky's blog            </a>
+pelucky's blog            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
@@ -101,18 +101,7 @@
 <li>社区活跃，遇到问题可以抱大神大腿</li>
 </ul>
 <h2>Solution</h2>
-<p>主要是三大类解决方案：</p>
-<p>a. 商业化产品</p>
-<ul>
-<li>Lofter</li>
-<li>CSDN</li>
-</ul>
-<p>b. 个人博客（CMS）</p>
-<ul>
-<li>Wordpress</li>
-<li>Durpal</li>
-</ul>
-<p>c ...</p>
+<p>主要是三大类解决方案 ...</p>
                     <a class="btn btn-default btn-xs" href="https://pelucky.github.io/pages/2016/03/22/gitpages-pelican/">more ...</a>
                 </div>
             </article>
@@ -160,10 +149,7 @@
 </footer><!-- /.post-info -->                    </div>
                 <div class="summary"><p>最近一直在研究使用zabbix监控整个系统，服务器的简单，直接套用模板即可，交换机和路由器无法安装zabbix agentd，故需要使用snmp，简单介绍下各类交换机打开snmp的方法：</p>
 <h2>SNMP</h2>
-<p>SNMP有一个树状结构的oid，每个树端点为一个值，比如CPU的负载 =&gt; 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.5</p>
-<p>故需要查询某值时只需要输入对应的oid即可。</p>
-<h2>服务器端</h2>
-<p>服务器端需要zabbix在编译时添加对snmp的支持，除此之外还需要安装net-snmp和net-snmp-utils ...</p>
+<p>SNMP有一个树状结构的oid，每个树端点为一个值，比如CPU的负载 =&gt; 1.3.6.1.4.1.2011.5.25 ...</p>
                     <a class="btn btn-default btn-xs" href="https://pelucky.github.io/pages/2015/10/10/switch-snmp/">more ...</a>
                 </div>
             </article>
@@ -197,8 +183,7 @@
 </ul>
 <p>bitnami的好处之前已经提过，一键式安装，所有组件都子提供一份。但缺点也很明显，扩展、升级、备份略微蛋疼...</p>
 <h2>原因</h2>
-<p>迁移的原因很简单，之前对于服务器分区，将/var用作存储数据，将/usr用作存储软件，故在安装bitnami的时候，下意识的就将三个平台放到/usr上了，后来一查看空间，/usr总共才分了30G，对于dokuwiki时肯定不够的，故决定迁移；</p>
-<p>这个问题也说明了业务数据和逻辑实现分离的重要性，同时也是bitnami的弊端，给懒人安装上的便利 ...</p>
+<p>迁移的原因很简单，之前对于服务器分区，将/var用作存储数据，将/usr用作存储软件 ...</p>
                     <a class="btn btn-default btn-xs" href="https://pelucky.github.io/pages/2015/09/15/bitnami-move/">more ...</a>
                 </div>
             </article>
@@ -224,8 +209,7 @@
 <ol>
 <li>首先查看Python版本，CentOS6.5自带Python2.6，没戏，需要重新安装2.7以上版本；</li>
 <li>下载Python2.7.10，源码安装，三部曲走起...</li>
-<li>安装Django，提示需要安装setuptools，去下载，从头来；</li>
-<li>安装setuptools，外网只需要一个指令，即可自动安装，内网蛋疼，<code>/usr/local/python-2.7.10/bin ...</code></li></ol>
+<li>安装Django，提示需要安装setuptools，去下载，从头来 ...</li></ol>
                     <a class="btn btn-default btn-xs" href="https://pelucky.github.io/pages/2015/09/14/setup-django/">more ...</a>
                 </div>
             </article>
@@ -258,8 +242,7 @@
 <li>做man-in-the-middle攻击。现在的大部分主机都会安装防火墙和杀软，一进行中间人攻击，可恶的360就会报警，但是手机平板之类的就另说了...</li>
 </ul>
 <p>交换机为Huawei s2326 ，查了下交换机手册，做了下端口镜像：</p>
-<div class="highlight"><pre>&lt;Huawei-s2326&gt;:sys //进入交换机
-[Huawei-s2326]:observing-port 1 interface Ethernet 0/0/24  //设置观察端口 ...</pre></div>
+<div class="highlight"><pre>&lt;Huawei-s2326&gt;:sys ...</pre></div>
                     <a class="btn btn-default btn-xs" href="https://pelucky.github.io/pages/2015/08/03/huawei-s2300-port-mirror/">more ...</a>
                 </div>
             </article>
@@ -273,15 +256,7 @@
         </div>
         <div class="col-sm-3" id="sidebar">
             <aside>
-<div id="aboutme">
-        <p>
-            <img width="100%" class="img-thumbnail" src="images/test.jpg"/>
-        </p>
-    <p>
-        <strong>About pelucky</strong><br/>
-        "Time waits for no one..."
-    </p>
-</div>
+
 <section class="well well-sm">
     <ul class="list-group list-group-flush">
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
