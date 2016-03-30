@@ -264,8 +264,9 @@ pelican-themes -i pelican-bootstrap3
 </pre></div>
 <p>将需要安装的插件添加到pelicanconf.py文件中，新版本将关键字改为PLUFIN_PATHS以及列表的形式。</p>
 <div class="highlight"><pre>PLUGIN_PATHS = [u"pelican-plugins"]
-PLUGINS = [u"sitemap", u"tag_cloud", u"gzip_cache", u"neighbors", u"related_posts"]
+PLUGINS = [u"sitemap", u"tag_cloud", u"gzip_cache", u"related_posts", u"tipue_search", u"pelican-toc"]
 </pre></div>
+<p>tag_cloud, related_posts, gzip_cache参考手册设置即可</p>
 <h5 id="sitemap">sitemap</h5>
 <p>Pelican的sitemap插件可以导出站点地图，Google Webmaster是Google的站长工具，方便Google收录博客：</p>
 <p>a. 在pelicanconf.py中添加sitemap，同时别忘了设置SITEURL，否则生成的sitemap.xml不正确</p>
