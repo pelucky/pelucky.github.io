@@ -31,6 +31,7 @@
             <meta property="article:author" content="pel" />
 
 
+
     <!-- Bootstrap -->
         <link rel="stylesheet" href="https://pelucky.github.io/theme/css/bootstrap.min.css" type="text/css"/>
     <link href="https://pelucky.github.io/theme/css/font-awesome.min.css" rel="stylesheet">
@@ -115,16 +116,16 @@ pelucky's blog            </a>
 </footer><!-- /.post-info -->                    </div>
                 </div>
                 <p>最近一直在研究使用zabbix监控整个系统，服务器的简单，直接套用模板即可，交换机和路由器无法安装zabbix agentd，故需要使用snmp，简单介绍下各类交换机打开snmp的方法：</p>
-<h2>SNMP</h2>
+<h2 id="snmp">SNMP</h2>
 <p>SNMP有一个树状结构的oid，每个树端点为一个值，比如CPU的负载 =&gt; 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.5</p>
 <p>故需要查询某值时只需要输入对应的oid即可。</p>
-<h2>服务器端</h2>
+<h2 id="_1">服务器端</h2>
 <p>服务器端需要zabbix在编译时添加对snmp的支持，除此之外还需要安装net-snmp和net-snmp-utils，安装这两个之后可以使用snmpwalk命令检测交换机是否设置正确；</p>
 <p>服务器和所需要管理的交换机串连在一起，实现带内管理。</p>
-<h2>交换机端</h2>
+<h2 id="_2">交换机端</h2>
 <p>交换机方面的设置整体思路都是相同的：<strong>打开telnet登录-&gt;设置交换机参数-&gt;设置snmp-&gt;服务器端测试。</strong>简单介绍下碰到的几类交换机：</p>
-<h3>huawei S2326</h3>
-<div class="highlight"><pre>&lt;Quidway&gt;system-view
+<h3 id="huawei-s2326">huawei S2326</h3>
+<p><code>&lt;Quidway&gt;system-view
 Enter system view, return user view with Ctrl+Z.
 [Quidway]snmp-agent
 [Quidway]snmp-agent local-engineid 800063A203000FE207F2E0  //不需要，自己会生成
@@ -135,33 +136,25 @@ Enter system view, return user view with Ctrl+Z.
 注释：
 1. udp-domain 192.168.18.1           //zabbix服务器ip地址 
 2. udp-port 161                      //监听端口 ，默认是udp 161端口
-3. snmp-agent community read public  //社团名称public
-</pre></div>
-
-
-<h3>DCN DCS-4500（指令类似思科）</h3>
-<div class="highlight"><pre>enable
+3. snmp-agent community read public  //社团名称public</code></p>
+<h3 id="dcn-dcs-4500">DCN DCS-4500（指令类似思科）</h3>
+<p><code>enable
 configure terminal
 snmp-server enable
 snmp-server securityip 192.168.18.1
 snmp-server community ro public
-snmp-server enable traps
-</pre></div>
-
-
+snmp-server enable traps</code></p>
 <p>交换机设置完成后，有两种方法测试，第一种使用snmpwalk指令；第二种使用getif软件；</p>
-<h3>snmpwalk</h3>
-<p>snmpwalk的基本命令模式:</p>
-<div class="highlight"><pre>snmpwalk -v 2c -c hidecode 192.168.0.4 .1.3.6.1.2.1.1.5.0
-
--v 代表SNMP的版本号，目前只有3种 1 2c 3
+<h3 id="snmpwalk">snmpwalk</h3>
+<p>snmpwalk的基本命令模式:
+```
+snmpwalk -v 2c -c hidecode 192.168.0.4 .1.3.6.1.2.1.1.5.0</p>
+<p>-v 代表SNMP的版本号，目前只有3种 1 2c 3
 -c 代表访问的SNMP CODE
 后面跟上IP地址
-空格后跟上要查询的OID即可，如果不输入OID他就会探索所有的OID出来~
-
-华为设备的oid：
-
-CPU =&gt; 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.5
+空格后跟上要查询的OID即可，如果不输入OID他就会探索所有的OID出来~</p>
+<p>华为设备的oid：</p>
+<p>CPU =&gt; 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.5
 内存 =&gt; 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.7
 设备温度 =&gt; 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.11
 系统运行时间 =&gt; 1.3.6.1.2.1.1.3.0
@@ -170,11 +163,9 @@ CPU =&gt; 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.5
 流入流量 =&gt; 1.3.6.1.2.1.2.2.1.10
 流出流量 =&gt; 1.3.6.1.2.1.2.2.1.16
 端口状态 =&gt; 1.3.6.1.2.1.2.2.1.8
-</pre></div>
-
-
-<p><strong>输出结果：</strong>SNMPv2-MIB::sysName.0 = STRING: S2326-100-8L-2P-5</p>
-<h3>getif</h3>
+```
+<strong>输出结果：</strong>SNMPv2-MIB::sysName.0 = STRING: S2326-100-8L-2P-5</p>
+<h3 id="getif">getif</h3>
 <p>一款可以测试snmp的windows下的软件，它可以获取所有的oid,使用方法</p>
 <ol>
 <li>在parameters-&gt;host name -&gt;点击下方的start即可以看到设备的最基本的信息；</li>
