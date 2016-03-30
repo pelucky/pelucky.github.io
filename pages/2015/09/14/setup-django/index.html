@@ -116,37 +116,33 @@ pelucky's blog            </a>
 <li>安装setuptools，外网只需要一个指令，即可自动安装，内网蛋疼，<code>/usr/local/python-2.7.10/bin/python setup.py install</code>，提示如下：</li>
 </ol>
 <div class="highlight"><pre>Traceback (most recent call last):
-File &quot;setup.py&quot;, line 171, in &lt;module&gt;
+File "setup.py", line 171, in &lt;module&gt;
 dist = setuptools.setup(**setup_params)
-File &quot;/usr/local/python-2.7.10/lib/python2.7/distutils/core.py&quot;, line 151, in setup
+File "/usr/local/python-2.7.10/lib/python2.7/distutils/core.py", line 151, in setup
 dist.run_commands()
-File &quot;/usr/local/python-2.7.10/lib/python2.7/distutils/dist.py&quot;, line 953, in run_commands
+File "/usr/local/python-2.7.10/lib/python2.7/distutils/dist.py", line 953, in run_commands
 self.run_command(cmd)
-File &quot;/usr/local/python-2.7.10/lib/python2.7/distutils/dist.py&quot;, line 972, in run_command
+File "/usr/local/python-2.7.10/lib/python2.7/distutils/dist.py", line 972, in run_command
 cmd_obj.run()
-File &quot;/usr/local/src/setuptools-18.3.1/setuptools/command/install.py&quot;, line 67, in run
+File "/usr/local/src/setuptools-18.3.1/setuptools/command/install.py", line 67, in run
 self.do_egg_install()
-File &quot;/usr/local/src/setuptools-18.3.1/setuptools/command/install.py&quot;, line 109, in do_egg_install
-self.run_command(&#39;bdist_egg&#39;)
-File &quot;/usr/local/python-2.7.10/lib/python2.7/distutils/cmd.py&quot;, line 326, in run_command
+File "/usr/local/src/setuptools-18.3.1/setuptools/command/install.py", line 109, in do_egg_install
+self.run_command('bdist_egg')
+File "/usr/local/python-2.7.10/lib/python2.7/distutils/cmd.py", line 326, in run_command
 self.distribution.run_command(command)
-File &quot;/usr/local/python-2.7.10/lib/python2.7/distutils/dist.py&quot;, line 972, in run_command
+File "/usr/local/python-2.7.10/lib/python2.7/distutils/dist.py", line 972, in run_command
 cmd_obj.run()
-File &quot;/usr/local/src/setuptools-18.3.1/setuptools/command/bdist_egg.py&quot;, line 222, in run
+File "/usr/local/src/setuptools-18.3.1/setuptools/command/bdist_egg.py", line 222, in run
 dry_run=self.dry_run, mode=self.gen_header())
-File &quot;/usr/local/src/setuptools-18.3.1/setuptools/command/bdist_egg.py&quot;, line 463, in make_zipfile
+File "/usr/local/src/setuptools-18.3.1/setuptools/command/bdist_egg.py", line 463, in make_zipfile
 z = zipfile.ZipFile(zip_filename, mode, compression=compression)
-File &quot;/usr/local/python-2.7.10/lib/python2.7/zipfile.py&quot;, line 736, in __init__
-&quot;Compression requires the (missing) zlib module&quot;
+File "/usr/local/python-2.7.10/lib/python2.7/zipfile.py", line 736, in __init__
+"Compression requires the (missing) zlib module"
 </pre></div>
-
-
 <p>简而言之就是没有zlib，网上查找再三，找到解决方法：</p>
 <div class="highlight"><pre>yum install zlib
 yum install zlib-devel
 </pre></div>
-
-
 <p>再重新编译python2.7，再三部曲
 1. 安装setuptools，成功；
 2. 安装django，成功；
