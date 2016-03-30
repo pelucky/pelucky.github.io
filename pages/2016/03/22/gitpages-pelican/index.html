@@ -15,13 +15,13 @@
 
         <meta name="author" content="pel" />
         <meta name="keywords" content="git,pelican,jekyll" />
-        <meta name="description" content="这篇主要是总结下折腾个人博客的经验，前人已经刷了无数攻略，这个副本并不难，只是需要花时间。遇到问题时，Google始终是你最好的老师... Requirement 搭建简单 ..." />
+        <meta name="description" content="[TOC] 这篇主要是总结下折腾个人博客的经验，前人已经刷了无数攻略，这个副本并不难，只是需要花时间。遇到问题时，Google始终是你最好的老师... Requirement ..." />
 
         <meta property="og:site_name" content="pelucky's blog" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Pelican札记"/>
         <meta property="og:url" content="https://pelucky.github.io/pages/2016/03/22/gitpages-pelican/"/>
-        <meta property="og:description" content="这篇主要是总结下折腾个人博客的经验，前人已经刷了无数攻略，这个副本并不难，只是需要花时间。遇到问题时，Google始终是你最好的老师... Requirement 搭建简单 ..."/>
+        <meta property="og:description" content="[TOC] 这篇主要是总结下折腾个人博客的经验，前人已经刷了无数攻略，这个副本并不难，只是需要花时间。遇到问题时，Google始终是你最好的老师... Requirement ..."/>
         <meta property="article:published_time" content="2016-03-22" />
             <meta property="article:section" content="System" />
             <meta property="article:tag" content="git" />
@@ -94,49 +94,6 @@ pelucky's blog            </a>
             <div class="entry-content">
                 <div class="panel">
                     <div class="panel-body">
-                           <nav class="toc">
-                           <div class="toc">
-<ul>
-<li><a href="#requirement">Requirement</a></li>
-<li><a href="#solution">Solution</a></li>
-<li><a href="#pelican">Pelican</a><ul>
-<li><a href="#1introduce">1.Introduce</a></li>
-<li><a href="#2setup">2.Setup</a></li>
-<li><a href="#3usage">3.Usage</a><ul>
-<li><a href="#_1">站点结构</a></li>
-<li><a href="#_2">文档内容</a><ul>
-<li><a href="#_3"></a></li>
-</ul>
-</li>
-<li><a href="#_4">输出和启动</a></li>
-<li><a href="#_5">配置主题</a></li>
-<li><a href="#_6">配置插件</a><ul>
-<li><a href="#sitemap">sitemap</a></li>
-<li><a href="#tag_cloud">tag_cloud</a></li>
-</ul>
-</li>
-<li><a href="#google-analytics">Google Analytics</a></li>
-<li><a href="#github">一键Github</a></li>
-<li><a href="#_7">取消代码中红框</a></li>
-<li><a href="#_8">评论系统</a></li>
-<li><a href="#_9">插入图片</a></li>
-<li><a href="#dns">DNS</a></li>
-<li><a href="#_10">站内搜索</a></li>
-<li><a href="#wordpresspelican">从WordPress迁移到Pelican</a></li>
-<li><a href="#url">URL配置</a></li>
-<li><a href="#_11">更换字体</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#staticcsscssgumbycss">static/css/目录下css文件中,例如gumby.css</a></li>
-<li><a href="#_12">替换为</a><ul>
-<li><a href="#reference">Reference</a></li>
-</ul>
-</li>
-</ul>
-</div>
-                           </nav>
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
@@ -154,16 +111,16 @@ pelucky's blog            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                
+                <p>[TOC]</p>
 <p>这篇主要是总结下折腾<strong>个人博客</strong>的经验，前人已经刷了无数攻略，这个副本并不难，只是需要花时间。遇到问题时，Google始终是你最好的老师...</p>
-<h2 id="requirement">Requirement</h2>
+<h2 id="9b97b7bd5e0a87be7bf218224ada83cf">Requirement</h2>
 <ul>
 <li>搭建简单，维护备份方便</li>
 <li>写博客方便，支持MD格式</li>
 <li>模板美观大方，可以装B，不会丑的狗带</li>
 <li>社区活跃，遇到问题可以抱大神大腿</li>
 </ul>
-<h2 id="solution">Solution</h2>
+<h2 id="49b21ad0d38942f635877e7bbc5d7a1e">Solution</h2>
 <p>主要是三大类解决方案：</p>
 <p>a. 商业化产品</p>
 <ul>
@@ -194,9 +151,9 @@ pelucky's blog            </a>
 Jekyll在Github上有20000+stars，远远领先于第二名的关注度，笔者没用过ruby，且国内ruby源被GFWfuck后，设置淘宝源各种蛋疼...遂放弃</li>
 <li>Ortopress同理，但是看到别人做的效果挺好的就关注了下：<a href="http://sonnewilling.com/">陋室</a></li>
 </ul>
-<h2 id="pelican">Pelican</h2>
+<h2 id="a6d15caf7e8c9d203af5aa134219bab2">Pelican</h2>
 <p>笔者使用Python，并且之前接触过Pelican，考虑了一下就选择了最熟悉的Pelican,毕竟它叫<strong>Pel I Can</strong>...</p>
-<h3 id="1introduce">1.Introduce</h3>
+<h3 id="de714151bda850f7a17e9de5a15f6111">1.Introduce</h3>
 <ul>
 <li>pelican是一个用python生成的静态站点生成器。具有以下特点：</li>
 <li>支持Markdown和reStructuredText格式；</li>
@@ -204,17 +161,19 @@ Jekyll在Github上有20000+stars，远远领先于第二名的关注度，笔者
 <li>具有简单易用的版本控制系统；</li>
 <li>完全静态，可在任何地方输出；</li>
 </ul>
-<h3 id="2setup">2.Setup</h3>
-<p>安装pelican
-<code>pip install pelican Markdown</code>
-如有印刷格式上的需要，还需要安装typogrify
-<code>pip install typogrify</code></p>
-<h3 id="3usage">3.Usage</h3>
+<h3 id="002e483f763f70e296b46e899dd08457">2.Setup</h3>
+<p>安装pelican</p>
+<div class="codehilite"><pre>pip install pelican Markdown
+</pre></div>
+<p>如有印刷格式上的需要，还需要安装typogrify</p>
+<div class="codehilite"><pre>pip install typogrify
+</pre></div>
+<h3 id="9cac29c07cb4a44fbeaf14cfb00e485d">3.Usage</h3>
 <ul>
 <li>pelican-quickstart创建站点到/var/www/pelican/，根据脚本提示配置参数</li>
 </ul>
-<h4 id="_1">站点结构</h4>
-<p><code>yourproject/
+<h4 id="594ae55a2af05ddac34f5a47ed84676e">站点结构</h4>
+<div class="codehilite"><pre>yourproject/
 ├── content
 │   └── (pages)
 ├── output
@@ -222,55 +181,67 @@ Jekyll在Github上有20000+stars，远远领先于第二名的关注度，笔者
 ├── fabfile.py
 ├── Makefile
 ├── pelicanconf.py       # Main settings file
-└── publishconf.py       # Settings to use when ready to publish</code></p>
-<h4 id="_2">文档内容</h4>
+└── publishconf.py       # Settings to use when ready to publish
+</pre></div>
+<h4 id="24c1d6dc05d8e14b1196cffc469233f9">文档内容</h4>
 <ul>
 <li>pelican支持三种格式：reStructuredText、markdown以及AsciiDoc</li>
 </ul>
-<p>reStructuredText要求文件后缀为.rst，并且源文件格式如下：
-```
-My super title</p>
-<h6 id="_3"></h6>
-<p>:date: 2010-10-03 10:20
+<p>reStructuredText要求文件后缀为.rst，并且源文件格式如下：</p>
+<div class="codehilite"><pre>My super title
+##############
+
+:date: 2010-10-03 10:20
 :modified: 2010-10-04 18:40
 :tags: thats, awesome
 :category: yeah
 :slug: my-super-post
 :authors: Alexis Metaireau, Conan Doyle
-:summary: Short version for index and feeds</p>
-<p>This is the content of my super blog post.
-<code>Markdown要求文件后缀为.md, .markdown, .mkd, 或 .mdown，并且源文件格式如下：</code>
-Title: My super title
-Date: 2010-12-03 10:20
-Modified: 2010-12-05 19:30
-Category: Python
-Tags: pelican, publishing
-Slug: my-super-post
-Authors: Alexis Metaireau, Conan Doyle
-Summary: Short version for index and feeds</p>
-<p>This is the content of my super blog post.
-```</p>
+:summary: Short version for index and feeds
+
+This is the content of my super blog post.
+</pre></div>
+<p>Markdown要求文件后缀为.md, .markdown, .mkd, 或 .mdown，并且源文件格式如下：</p>
+<div class="codehilite"><pre><span class="n">Title</span><span class="o">:</span> <span class="n">My</span> <span class="kd">super</span> <span class="n">title</span>
+<span class="n">Date</span><span class="o">:</span> <span class="mi">2010</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">03</span> <span class="mi">10</span><span class="o">:</span><span class="mi">20</span>
+<span class="n">Modified</span><span class="o">:</span> <span class="mi">2010</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">05</span> <span class="mi">19</span><span class="o">:</span><span class="mi">30</span>
+<span class="n">Category</span><span class="o">:</span> <span class="n">Python</span>
+<span class="n">Tags</span><span class="o">:</span> <span class="n">pelican</span><span class="o">,</span> <span class="n">publishing</span>
+<span class="n">Slug</span><span class="o">:</span> <span class="n">my</span><span class="o">-</span><span class="kd">super</span><span class="o">-</span><span class="n">post</span>
+<span class="n">Authors</span><span class="o">:</span> <span class="n">Alexis</span> <span class="n">Metaireau</span><span class="o">,</span> <span class="n">Conan</span> <span class="n">Doyle</span>
+<span class="n">Summary</span><span class="o">:</span> <span class="n">Short</span> <span class="n">version</span> <span class="k">for</span> <span class="n">index</span> <span class="n">and</span> <span class="n">feeds</span>
+
+<span class="n">This</span> <span class="k">is</span> <span class="n">the</span> <span class="n">content</span> <span class="n">of</span> <span class="n">my</span> <span class="kd">super</span> <span class="n">blog</span> <span class="n">post</span><span class="o">.</span>
+</pre></div>
 <p>还支持翻译、语法高亮、内置内容（模板）、从其他站点导入等功能；</p>
-<h4 id="_4">输出和启动</h4>
+<h4 id="483435522c849925ccbc76f32d961ae8">输出和启动</h4>
 <ul>
-<li>编辑好Markdown或reStructuredText文件后，pelican会将内容转换为静态html格式，输出到output中
-<code>pelican /path/to/your/content/ [-s path/to/your/settings.py]</code></li>
-<li>启动服务器
-<code>cd output
+<li>编辑好Markdown或reStructuredText文件后，pelican会将内容转换为静态html格式，输出到output中</li>
+</ul>
+<div class="codehilite"><pre>pelican /path/to/your/content/ [-s path/to/your/settings.py]
+</pre></div>
+<ul>
+<li>启动服务器</li>
+</ul>
+<div class="codehilite"><pre>cd output
 python -m SimpleHTTPServer      #python2
-python -m http.server           #python3</code></li>
+python -m http.server           #python3
+</pre></div>
+<ul>
 <li>打开浏览器http://192.168.1.112:8000/，预览效果；</li>
 </ul>
-<h4 id="_5">配置主题</h4>
-<p>Pelican支持大量的开源主题，GitHub上的pelican-themes项目有几十套主题，大部分都带了效果预览图。可以从里面挑一个喜欢的主题样式来使用。还有一个更方便的挑选主题的方式，直接打开<a href="www.pelicanthemes.com">pelicanthemes</a>挑选（加载略慢）。一个网页里就列出了几乎所有的主题。该博客使用pelican-bootstrap3主题，并在这套主题的基础上进行了一些定制。选定好喜欢的主题后，从GitHub上下载下来所有的主题，安装主题：
-<code>mkdir pelican
+<h4 id="5ef83fd4f8fddcf2d9deb64cdc352f64">配置主题</h4>
+<p>Pelican支持大量的开源主题，GitHub上的pelican-themes项目有几十套主题，大部分都带了效果预览图。可以从里面挑一个喜欢的主题样式来使用。还有一个更方便的挑选主题的方式，直接打开<a href="www.pelicanthemes.com">pelicanthemes</a>挑选（加载略慢）。一个网页里就列出了几乎所有的主题。该博客使用pelican-bootstrap3主题，并在这套主题的基础上进行了一些定制。选定好喜欢的主题后，从GitHub上下载下来所有的主题，安装主题：</p>
+<div class="codehilite"><pre>mkdir pelican
 cd pelican
 git clone https://github.com/getpelican/pelican-themes.git
-pelican-themes -i pelican-bootstrap3</code>
-然后在pelicanconf.py里通过下面代码指定博客主题：
-<code>THEME = 'pelican-bootstrap3'</code>
-通常的做法是，选中一个自己喜欢的主题后，会进行一些定制。Pelican使用Jinja2来配置主题。一个主题的典型结构如下：
-<code>├── static
+pelican-themes -i pelican-bootstrap3
+</pre></div>
+<p>然后在pelicanconf.py里通过下面代码指定博客主题：</p>
+<div class="codehilite"><pre>THEME = 'pelican-bootstrap3'
+</pre></div>
+<p>通常的做法是，选中一个自己喜欢的主题后，会进行一些定制。Pelican使用Jinja2来配置主题。一个主题的典型结构如下：</p>
+<div class="codehilite"><pre>├── static
 │   ├── css
 │   └── images
 └── templates
@@ -283,20 +254,23 @@ pelican-themes -i pelican-bootstrap3</code>
     ├── index.html          // 主页
     ├── page.html           // 分页显示的模板
     ├── tag.html            // 某类标签下的文章列表
-    └── tags.html           // 所有的标签列表页面模板</code>
-稍微有点Jinja的知识加上一些HTML和CSS的知识，就可以自己定义主题了。</p>
-<h4 id="_6">配置插件</h4>
-<p>插件同主题类似，到github上down下来,虽然大部分插件都是全主题可用的,但是也存在好用与否的问题, 有些插件在原生主题上就需要自己改base.css才能用,所以尽量配套选,避免麻烦.
-<code>git clone --recursive https://github.com/getpelican/pelican-plugins</code>
-将需要安装的插件添加到pelicanconf.py文件中，新版本将关键字改为PLUFIN_PATHS以及列表的形式。
-<code>PLUGIN_PATHS = [u"pelican-plugins"]
-PLUGINS = [u"sitemap", u"tag_cloud", u"gzip_cache", u"neighbors", u"related_posts"]</code></p>
-<h5 id="sitemap">sitemap</h5>
+    └── tags.html           // 所有的标签列表页面模板
+</pre></div>
+<p>稍微有点Jinja的知识加上一些HTML和CSS的知识，就可以自己定义主题了。</p>
+<h4 id="7a886abbb5da4373ffcfd88df9575954">配置插件</h4>
+<p>插件同主题类似，到github上down下来,虽然大部分插件都是全主题可用的,但是也存在好用与否的问题, 有些插件在原生主题上就需要自己改base.css才能用,所以尽量配套选,避免麻烦.</p>
+<div class="codehilite"><pre>git clone --recursive https://github.com/getpelican/pelican-plugins
+</pre></div>
+<p>将需要安装的插件添加到pelicanconf.py文件中，新版本将关键字改为PLUFIN_PATHS以及列表的形式。</p>
+<div class="codehilite"><pre>PLUGIN_PATHS = [u"pelican-plugins"]
+PLUGINS = [u"sitemap", u"tag_cloud", u"gzip_cache", u"neighbors", u"related_posts"]
+</pre></div>
+<h5 id="e1da49db34b0bdfdddaba2ad6552f848">sitemap</h5>
 <p>Pelican的sitemap插件可以导出站点地图，Google Webmaster是Google的站长工具，方便Google收录博客：</p>
-<p>a. 在pelicanconf.py中添加sitemap，同时别忘了设置SITEURL，否则生成的sitemap.xml不正确
-```
-SITEURL = u'https://pelucky.github.io'</p>
-<p>SITEMAP = {
+<p>a. 在pelicanconf.py中添加sitemap，同时别忘了设置SITEURL，否则生成的sitemap.xml不正确</p>
+<div class="codehilite"><pre>SITEURL = u'https://pelucky.github.io'
+
+SITEMAP = {
     "format": "xml",
     "priorities": {
         "articles": 0.7,
@@ -309,8 +283,8 @@ SITEURL = u'https://pelucky.github.io'</p>
         "pages": "monthly",
     }
 }
-```
-b. 登录<a href="https://www.google.com/webmasters">Google Webmasters</a>,注册博客并测试sitemap，测试通过后提交，过段时间就可以查看Google已经收录了博客。</p>
+</pre></div>
+<p>b. 登录<a href="https://www.google.com/webmasters">Google Webmasters</a>,注册博客并测试sitemap，测试通过后提交，过段时间就可以查看Google已经收录了博客。</p>
 <ul>
 <li>
 <p>亦可以选择“Google抓取方式”，手动提交索引；抓取的结果在“抓取统计信息”页面中查看，参考<a href="https://support.google.com/webmasters/answer/96568#2">关于我们的统计信息和数据</a></p>
@@ -322,57 +296,64 @@ b. 登录<a href="https://www.google.com/webmasters">Google Webmasters</a>,注�
 <p>同样可以添加robots.txt用于告知Google抓取的内容，参考<a href="https://support.google.com/webmasters/answer/6062608?hl=zh-Hans">了解 robots.txt 文件</a></p>
 </li>
 </ul>
-<h5 id="tag_cloud">tag_cloud</h5>
-<p>这个应该是必装的，否则右侧tag选项永远显示为空，在pelicanconf.py中添加：
-<code>DISPLAY_TAGS_ON_SIDEBAR = True
+<h5 id="86c2f24c1d6283ac1ef7b1c45568feef">tag_cloud</h5>
+<p>这个应该是必装的，否则右侧tag选项永远显示为空，在pelicanconf.py中添加：</p>
+<div class="codehilite"><pre>DISPLAY_TAGS_ON_SIDEBAR = True
 TAGS_URL = "tags.html"
-tag_cloud = True</code></p>
-<h4 id="google-analytics">Google Analytics</h4>
+tag_cloud = True
+</pre></div>
+<h4 id="d86cf69a8b82547a94ca3f6a307cf9a6">Google Analytics</h4>
 <p>去<a href="https://www.google.com/analytics/">Google Analytics</a>申请账号，会要求检验你拥有该站点的所有权，需要下载googlexxxx.html，上传并点击该链接来确认。记下跟踪ID。 在pelicanconf.py添加</p>
-<p><code>GOOGLE_ANALYTICS = u'跟踪ID'</code>
-之后即可到Google Analytics的控制台查看访问情况；</p>
-<h4 id="github">一键Github</h4>
-<p>若要一键上传到Github，需要修改Makefile脚本两处地方：
-```
-publish:
-$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)</p>
-<p>......</p>
-<p>github: publish
-cd $(OUTPUTDIR) ; git add . ;  git commit -am 'Update pages' ; git push
-```</p>
+<div class="codehilite"><pre>GOOGLE_ANALYTICS = u'跟踪ID'
+</pre></div>
+<p>之后即可到Google Analytics的控制台查看访问情况；</p>
+<h4 id="20936ffdff587612137d4a2ad315879d">一键Github</h4>
+<p>若要一键上传到Github，需要修改Makefile脚本两处地方：</p>
+<div class="codehilite"><pre><span class="nf">publish</span><span class="o">:</span>
+<span class="k">$(</span><span class="nv">PELICAN</span><span class="k">)</span> <span class="k">$(</span><span class="nv">INPUTDIR</span><span class="k">)</span> <span class="err">-o</span> <span class="k">$(</span><span class="nv">OUTPUTDIR</span><span class="k">)</span> <span class="err">-s</span> <span class="k">$(</span><span class="nv">CONFFILE</span><span class="k">)</span> <span class="k">$(</span><span class="nv">PELICANOPTS</span><span class="k">)</span>
+
+<span class="err">......</span>
+
+<span class="nf">github</span><span class="o">:</span> <span class="n">publish</span>
+<span class="err">cd</span> <span class="k">$(</span><span class="nv">OUTPUTDIR</span><span class="k">)</span> <span class="err">;</span> <span class="err">git</span> <span class="err">add</span> <span class="err">.</span> <span class="err">;</span>  <span class="err">git</span> <span class="err">commit</span> <span class="err">-am</span> <span class="s1">'Update pages'</span> <span class="err">;</span> <span class="err">git</span> <span class="err">push</span>
+</pre></div>
 <p>以后写完文章在Pelican目录下执行make github就可以一键部署了。</p>
-<h4 id="_7">取消代码中红框</h4>
+<h4 id="d1cc78672304aebb080781adf7af521e">取消代码中红框</h4>
 <p>参考：<a href="http://allotory.github.io/posts/2014/09/08/fix-code-err/">修复pelican代码中红框</a></p>
-<p>在使用Markdown的代码块时，如果代码中有汉字或者按规定书写错误的代码，则生成的HTML文件中错误的代码会有红框框住，output/theme/pygment.css文件中定义了该样式，注释或者删除掉。
-<code>.err {
-border:1px solid #FF0000;
-}</code>
-由于output中的内容每次都会生成，故需要把模板中的pygment.css进行更换，如果之前使用了
-<code>pelican-themes -i pelican-bootstrap</code>安装，则一般会在如下位置，直接vim修改模板中的pygment.css：
-<code>pel@debian:~/pelican$ pelican-themes -p
-/usr/local/lib/python2.7/dist-packages/pelican/themes</code></p>
-<h4 id="_8">评论系统</h4>
-<p>在<a href="https://disqus.com/admin/signup">Disqus</a>上申请一个站点，记牢Shortname(不需要加后缀)，评论系统加载起来有点慢，国内也可以使用多说。 在pelicanconf.py添加
-<code>DISQUS_SITENAME = 'Shortname'</code></p>
-<h4 id="_9">插入图片</h4>
+<p>在使用Markdown的代码块时，如果代码中有汉字或者按规定书写错误的代码，则生成的HTML文件中错误的代码会有红框框住，output/theme/pygment.css文件中定义了该样式，注释或者删除掉。</p>
+<div class="codehilite"><pre><span class="na">.err</span> <span class="err">{</span>
+<span class="nl">border:</span><span class="err">1</span><span class="nf">px</span> <span class="no">solid</span> <span class="c">#FF0000;</span>
+<span class="err">}</span>
+</pre></div>
+<p>由于output中的内容每次都会生成，故需要把模板中的pygment.css进行更换，如果之前使用了
+<code>pelican-themes -i pelican-bootstrap</code>安装，则一般会在如下位置，直接vim修改模板中的pygment.css：</p>
+<div class="codehilite"><pre>pel@debian:~/pelican$ pelican-themes -p
+/usr/local/lib/python2.7/dist-packages/pelican/themes
+</pre></div>
+<h4 id="101eb555124e3aee64e63a51fed63f41">评论系统</h4>
+<p>在<a href="https://disqus.com/admin/signup">Disqus</a>上申请一个站点，记牢Shortname(不需要加后缀)，评论系统加载起来有点慢，国内也可以使用多说。 在pelicanconf.py添加</p>
+<div class="codehilite"><pre>DISQUS_SITENAME = 'Shortname'
+</pre></div>
+<h4 id="4938f95bac0f04c25c92c9ff868de768">插入图片</h4>
 <p>有两种方法:</p>
 <ul>
-<li>
-<p>一种是使用云存储，设置为公开图片，直接链接过来，如<a href="https://picasaweb.google.com/home">Picasa</a>来维护图片,推荐使用云图床；
-<code>![Test Cloud img](https://lh3.googleusercontent.com/-rBvjY3F2wEU/VvD3yZ9T-1I/AAAAAAAAAVc/LsPcb3CIxtomUcXq5aVKj27qSrI4OserwCCo/s400-Ic42/3d94dcb44aed2e730566c2068601a18b86d6fa7f.jpg)</code>
-<img alt="Test Cloud img" src="https://lh3.googleusercontent.com/-rBvjY3F2wEU/VvD3yZ9T-1I/AAAAAAAAAVc/LsPcb3CIxtomUcXq5aVKj27qSrI4OserwCCo/s400-Ic42/3d94dcb44aed2e730566c2068601a18b86d6fa7f.jpg"/></p>
-</li>
-<li>
-<p>另一种使用本地图片，<a href="http://docs.getpelican.com/en/3.6.3/content.html#linking-to-static-files">参考</a>,但Github有图片容量限制。content目录下建立一个 images目录 然后在 pelicanconf.py 中添加:</p>
-</li>
+<li>一种是使用云存储，设置为公开图片，直接链接过来，如<a href="https://picasaweb.google.com/home">Picasa</a>来维护图片,推荐使用云图床；</li>
 </ul>
-<p><code>STATIC_PATHS = ["images"]</code>
-在文章中引用图片,路径要设置为本文件与图片文件中的相对路径，如果文件路径变更了，就需要修改图片的相对路径，那个真蠢...可<a href="http://stackoverflow.com/questions/21892913/editing-markdown-files-with-images-for-pelican-site">参考</a>：
-<code>![Test img](../../../../../../images/test.jpg)</code>
-<img alt="Test img" src="../../../../../../images/test.jpg"/></p>
-<h4 id="dns">DNS</h4>
+<div class="codehilite"><pre>![Test Cloud img](https://lh3.googleusercontent.com/-rBvjY3F2wEU/VvD3yZ9T-1I/AAAAAAAAAVc/LsPcb3CIxtomUcXq5aVKj27qSrI4OserwCCo/s400-Ic42/3d94dcb44aed2e730566c2068601a18b86d6fa7f.jpg)
+</pre></div>
+<p><img alt="Test Cloud img" src="https://lh3.googleusercontent.com/-rBvjY3F2wEU/VvD3yZ9T-1I/AAAAAAAAAVc/LsPcb3CIxtomUcXq5aVKj27qSrI4OserwCCo/s400-Ic42/3d94dcb44aed2e730566c2068601a18b86d6fa7f.jpg"/></p>
+<ul>
+<li>另一种使用本地图片，<a href="http://docs.getpelican.com/en/3.6.3/content.html#linking-to-static-files">参考</a>,但Github有图片容量限制。content目录下建立一个 images目录 然后在 pelicanconf.py 中添加:</li>
+</ul>
+<div class="codehilite"><pre>STATIC_PATHS = ["images"]
+</pre></div>
+<p>在文章中引用图片,路径要设置为本文件与图片文件中的相对路径，如果文件路径变更了，就需要修改图片的相对路径，那个真蠢...可<a href="http://stackoverflow.com/questions/21892913/editing-markdown-files-with-images-for-pelican-site">参考</a>：</p>
+<div class="codehilite"><pre><span class="o">!</span><span class="p">[</span><span class="n">Test</span> <span class="n">img</span><span class="p">](..</span><span class="o">/</span><span class="p">..</span><span class="o">/</span><span class="p">..</span><span class="o">/</span><span class="p">..</span><span class="o">/</span><span class="p">..</span><span class="o">/</span><span class="p">..</span><span class="o">/</span><span class="n">images</span><span class="o">/</span><span class="n">test</span><span class="p">.</span><span class="n">jpg</span><span class="p">)</span>
+</pre></div>
+<p><img alt="Test img" src="../../../../../../images/test.jpg"/></p>
+<h4 id="ed5f2bdecbd4bd349d09412d1ff6a6fb">DNS</h4>
 <p>待续...</p>
-<h4 id="_10">站内搜索</h4>
+<h4 id="c9dd568ff5a00036f63f30b92c376e45">站内搜索</h4>
 <p>站内搜索有两种解决方案，一种是采用Google的站内搜索，另一种是使用静态搜索引擎；</p>
 <ul>
 <li>
@@ -384,36 +365,36 @@ border:1px solid #FF0000;
 原理就是每次生成静态网站的时候，同时会生成一个JSON格式的索引文件，前端加载一个检索入口即可搜索网站内容，比较适合中小型的静态网站；</p>
 </li>
 </ul>
-<p>```
-PLUGINS = [u"tipue_search"]</p>
-<p>Tipue Search
+<div class="codehilite"><pre>PLUGINS = [u"tipue_search"]
+
+Tipue Search
 DIRECT_TEMPLATES = (('index', 'tags', 'categories', 'archives', 'search',))
 SEARCH_URL = '/search'
-```</p>
+</pre></div>
 <p><strong>Tips:</strong></p>
 <p>从pelican-plugins下git下来的Tipue Search有bug，搜索出来的URL会显示undefined，参考<a href="https://github.com/DandyDev/pelican-bootstrap3/issues/220">此处</a>，将Tipue_Search更新至5.0即可，具体更新的方法参考<a href="http://www.futurile.net/2014/04/19/sitesearch-for-pelican-blog-with-tipue/">Site search with Tipue for Pelican</a>，要注意查看template/search.html中的路径；</p>
-<h4 id="wordpresspelican">从WordPress迁移到Pelican</h4>
+<h4 id="eed4cfab7a71b2f7af56b60f388ba18f">从WordPress迁移到Pelican</h4>
 <ol>
 <li>导出WordPress数据；在 WordPress 后台 -&gt; 工具 -&gt; 导出。即可导出并下载包含全部文章、页面、评论、自定义栏目、分类目录和标签的 xml 文件。</li>
 <li>将xml转成Markdown；使用 <a href="https://github.com/yourtion/exitwp">exitwp</a> 自动处理xml文件。下载后将导出的 xml 放入 wordpress-xml 目录中，运行 python exitwp.py 即可将 xml 转成 Markdown。 </li>
 <li>需要注意的是转换出的文件注释部分，关于Tags，Category，Date等Meta部分需要按Pelican的形式进行格式调整，以便被Pelican解析，其实还是有点工作量的...</li>
 </ol>
 <p>看文档发现，有pelican-import可以直接从wordpress导入，<a href="http://docs.getpelican.com/en/3.6.3/importer.html">参考</a></p>
-<h4 id="url">URL配置</h4>
+<h4 id="0abd20cdeff46404b09e63f487207adc">URL配置</h4>
 <p>默认的URL太low了，可以更优雅...但要注意修改后本地图片的相对路径需要该.</p>
 <p>打开pelicanconf.py配置文件，添加如下，具体配置请参见<a href="http://docs.getpelican.com/en/3.6.3/settings.html#url-settings">官方文档</a>。</p>
-<p><code>ARTICLE_URL = 'pages/{date:%Y}/{date:%m}/{date:%d}/{slug}/'
+<div class="codehilite"><pre>ARTICLE_URL = 'pages/{date:%Y}/{date:%m}/{date:%d}/{slug}/'
 ARTICLE_SAVE_AS = 'pages/{date:%Y}/{date:%m}/{date:%d}/{slug}/index.html'
 PAGE_URL = 'pages/{slug}/'
-PAGE_SAVE_AS = 'pages/{slug}/index.html'</code></p>
-<h4 id="_11">更换字体</h4>
-<p>Pelican默认的字体使用了Google的字体服务，会导致加载速度巨慢，更改国内的源或将字体文件放到github上
-```</p>
-<h1 id="staticcsscssgumbycss">static/css/目录下css文件中,例如gumby.css</h1>
-<p>@import url(//fonts.googleapi.com/css?family=Open+Sans:400,300,600,700);</p>
-<h1 id="_12">替换为</h1>
-<p>@import url(//fonts.useso.com/css?family=Open+Sans:400,300,600,700);
-```</p>
+PAGE_SAVE_AS = 'pages/{slug}/index.html'
+</pre></div>
+<h4 id="6023d2a6113952f99dbb04f39c50439e">更换字体</h4>
+<p>Pelican默认的字体使用了Google的字体服务，会导致加载速度巨慢，更改国内的源或将字体文件放到github上</p>
+<div class="codehilite"><pre><span class="c">#static/css/目录下css文件中,例如gumby.css</span>
+<span class="nd">@import</span> <span class="n">url</span><span class="p">(</span><span class="o">//</span><span class="n">fonts</span><span class="o">.</span><span class="n">googleapi</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">css</span><span class="err">?</span><span class="n">family</span><span class="o">=</span><span class="n">Open</span><span class="o">+</span><span class="n">Sans</span><span class="p">:</span><span class="mi">400</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span><span class="mi">600</span><span class="p">,</span><span class="mi">700</span><span class="p">);</span>
+<span class="c">#替换为</span>
+<span class="nd">@import</span> <span class="n">url</span><span class="p">(</span><span class="o">//</span><span class="n">fonts</span><span class="o">.</span><span class="n">useso</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">css</span><span class="err">?</span><span class="n">family</span><span class="o">=</span><span class="n">Open</span><span class="o">+</span><span class="n">Sans</span><span class="p">:</span><span class="mi">400</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span><span class="mi">600</span><span class="p">,</span><span class="mi">700</span><span class="p">);</span>
+</pre></div>
 <blockquote>
 <ul>
 <li>如何创建github-page、git使用就不介绍了...</li>
@@ -423,7 +404,7 @@ PAGE_SAVE_AS = 'pages/{slug}/index.html'</code></p>
 </ul>
 </blockquote>
 <hr/>
-<h2 id="reference">Reference</h2>
+<h2 id="63d5049791d9d79d86e9a108b0a999ca">Reference</h2>
 <ul>
 <li><a href="http://docs.getpelican.com/en/3.6.3/">Pelican docs</a></li>
 <li><a href="https://pages.github.com/">GitPages</a></li>
@@ -474,7 +455,6 @@ PAGE_SAVE_AS = 'pages/{slug}/index.html'</code></p>
 
 <section class="well well-sm">
     <ul class="list-group list-group-flush">
-
             <li class="list-group-item"><a href="https://pelucky.github.io/"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
                 <ul class="list-group" id="categories">
                     <li class="list-group-item">

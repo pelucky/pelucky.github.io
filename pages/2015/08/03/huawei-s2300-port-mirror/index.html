@@ -120,12 +120,13 @@ pelucky's blog            </a>
 <li>交换机中做端口镜像。这个可以有；</li>
 <li>做man-in-the-middle攻击。现在的大部分主机都会安装防火墙和杀软，一进行中间人攻击，可恶的360就会报警，但是手机平板之类的就另说了...</li>
 </ul>
-<p>交换机为Huawei s2326 ，查了下交换机手册，做了下端口镜像：
-<code>&lt;Huawei-s2326&gt;:sys //进入交换机
+<p>交换机为Huawei s2326 ，查了下交换机手册，做了下端口镜像：</p>
+<div class="codehilite"><pre>&lt;Huawei-s2326&gt;:sys //进入交换机
 [Huawei-s2326]:observing-port 1 interface Ethernet 0/0/24  //设置观察端口
 [Huawei-s2326]:interface Ethernet 0//0/1    //进入被镜像端口
-[Huawei-s2326]:port-mirroring to observe-port 1 both  //设置双向镜像</code>
-打开wireshark，即可抓包分析网络数据。</p>
+[Huawei-s2326]:port-mirroring to observe-port 1 both  //设置双向镜像
+</pre></div>
+<p>打开wireshark，即可抓包分析网络数据。</p>
             </div>
             <!-- /.entry-content -->
 <section class="well" id="related-posts">
@@ -173,7 +174,6 @@ pelucky's blog            </a>
 
 <section class="well well-sm">
     <ul class="list-group list-group-flush">
-
             <li class="list-group-item"><a href="https://pelucky.github.io/"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
                 <ul class="list-group" id="categories">
                     <li class="list-group-item">

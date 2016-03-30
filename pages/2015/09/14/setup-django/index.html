@@ -115,7 +115,7 @@ pelucky's blog            </a>
 <li>安装Django，提示需要安装setuptools，去下载，从头来；</li>
 <li>安装setuptools，外网只需要一个指令，即可自动安装，内网蛋疼，<code>/usr/local/python-2.7.10/bin/python setup.py install</code>，提示如下：</li>
 </ol>
-<p><code>Traceback (most recent call last):
+<div class="codehilite"><pre>Traceback (most recent call last):
 File "setup.py", line 171, in &lt;module&gt;
 dist = setuptools.setup(**setup_params)
 File "/usr/local/python-2.7.10/lib/python2.7/distutils/core.py", line 151, in setup
@@ -137,10 +137,12 @@ dry_run=self.dry_run, mode=self.gen_header())
 File "/usr/local/src/setuptools-18.3.1/setuptools/command/bdist_egg.py", line 463, in make_zipfile
 z = zipfile.ZipFile(zip_filename, mode, compression=compression)
 File "/usr/local/python-2.7.10/lib/python2.7/zipfile.py", line 736, in __init__
-"Compression requires the (missing) zlib module"</code>
-简而言之就是没有zlib，网上查找再三，找到解决方法：
-<code>yum install zlib
-yum install zlib-devel</code></p>
+"Compression requires the (missing) zlib module"
+</pre></div>
+<p>简而言之就是没有zlib，网上查找再三，找到解决方法：</p>
+<div class="codehilite"><pre>yum install zlib
+yum install zlib-devel
+</pre></div>
 <p>再重新编译python2.7，再三部曲
 1. 安装setuptools，成功；
 2. 安装django，成功；
@@ -186,7 +188,6 @@ yum install zlib-devel</code></p>
 
 <section class="well well-sm">
     <ul class="list-group list-group-flush">
-
             <li class="list-group-item"><a href="https://pelucky.github.io/"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
                 <ul class="list-group" id="categories">
                     <li class="list-group-item">

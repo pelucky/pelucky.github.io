@@ -118,17 +118,17 @@ pelucky's blog            </a>
 </footer><!-- /.post-info -->                    </div>
                 </div>
                 <p>回来折腾服务器，主要的问题是没接触过EFI，不了解EFI的工作原理，故重装服务器折腾了很久，服务器重启又是一个长等待，简单介绍下相关原理：</p>
-<h2 id="_1">原引导流程</h2>
+<h2 id="b9eb1950b015ff22b4ba5b5d1efa6d0e">原引导流程</h2>
 <p><strong>BIOS+MBR:</strong>
 具体可以参考鸟哥linux，由于BIOS大小的64KB限制，只能分4个主分区，每个分区的大小不能超过2T，这个是硬伤，随着磁盘存储容量的升级，上T的硬盘都不是问题；</p>
-<h2 id="_2">现引导流程</h2>
+<h2 id="d74a913eb7a822b2f790e8519404e2ed">现引导流程</h2>
 <p><strong>EFI+GPT:</strong>
 Intel提出的，主要就是为了解决上面的问题，现在预装windows系统、Mac系统的都已经采用了EFI的引导方式。EFI的另一个优点是可以确保安装授权的操作系统（MS极力推广的原因）</p>
-<h2 id="_3">关于系统</h2>
+<h2 id="e166aa424d8974942db3a236e118224c">关于系统</h2>
 <p>CentOS在6.3之前需要下载不同的IOS，对于EFI的版本需要下载CentOS 6.3 - EFI版本，对于BIOS的则需要下载普通版，6.3之后的已经不用再区分版本了，两个都可以兼容；</p>
-<h2 id="_4">关于服务器</h2>
+<h2 id="768486d8724e4d41d3f3c9cd113bfbf3">关于服务器</h2>
 <p>主板支持EFI引导方式的服务器需要在BIOS中设置为EFI，当需要切换回传统引导方式时则需要切换成Legacy</p>
-<h2 id="_5">关于分区</h2>
+<h2 id="b4ee6bfc0941db6cfb59a8b525622952">关于分区</h2>
 <p>设置为EFI引导方式安装系统时，需要创建/boot/efi（暂时未安装成功）</p>
 <p>设置BIOS引导方式安装系统则正常安装即可。</p>
             </div>
@@ -178,7 +178,6 @@ Intel提出的，主要就是为了解决上面的问题，现在预装windows�
 
 <section class="well well-sm">
     <ul class="list-group list-group-flush">
-
             <li class="list-group-item"><a href="https://pelucky.github.io/"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
                 <ul class="list-group" id="categories">
                     <li class="list-group-item">
