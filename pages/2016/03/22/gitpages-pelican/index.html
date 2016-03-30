@@ -396,8 +396,28 @@ tag_cloud = True
 <p><img alt="Test img" src="../../../../../../images/test.jpg" /></p>
 <h4>DNS</h4>
 <p>待续...</p>
-<h4>Google站内搜索</h4>
-<p>待续...</p>
+<h4>站内搜索</h4>
+<p>站内搜索有两种解决方案，一种是采用Google的站内搜索，另一种是使用静态搜索引擎；</p>
+<ul>
+<li>
+<p>Google站内搜索
+由于Bootstrap支持Tipue Search，故没怎么折腾Google站内搜索，参考：<a href="http://guozhongxin.com/pages/2014/09/25/build_blog_with_pelican.html">pelican建站攻略补充（站内搜索，和标签云）</a></p>
+</li>
+<li>
+<p>Tipue Search静态搜索引擎
+原理就是每次生成静态网站的时候，同时会生成一个JSON格式的索引文件，前端加载一个检索入口即可搜索网站内容，比较适合中小型的静态网站；</p>
+</li>
+</ul>
+<div class="highlight"><pre>PLUGINS = [u&quot;tipue_search&quot;]
+
+Tipue Search
+DIRECT_TEMPLATES = ((&#39;index&#39;, &#39;tags&#39;, &#39;categories&#39;, &#39;archives&#39;, &#39;search&#39;,))
+SEARCH_URL = &#39;/search&#39;
+</pre></div>
+
+
+<p><strong>Tips:</strong></p>
+<p>从pelican-plugins下git下来的Tipue Search有bug，搜索出来的URL会显示undefined，参考<a href="https://github.com/DandyDev/pelican-bootstrap3/issues/220">此处</a>，将Tipue_Search更新至5.0即可，具体更新的方法参考<a href="http://www.futurile.net/2014/04/19/sitesearch-for-pelican-blog-with-tipue/">Site search with Tipue for Pelican</a>，要注意查看template/search.html中的路径；</p>
 <h4>从WordPress迁移到Pelican</h4>
 <ol>
 <li>导出WordPress数据；在 WordPress 后台 -&gt; 工具 -&gt; 导出。即可导出并下载包含全部文章、页面、评论、自定义栏目、分类目录和标签的 xml 文件。</li>
@@ -427,7 +447,8 @@ PAGE_SAVE_AS = &#39;pages/{slug}/index.html&#39;
 <blockquote>
 <ul>
 <li>如何创建github-page、git使用就不介绍了...</li>
-<li>之后的折腾就都来自Pelican docs了</li>
+<li>之后的折腾就都来自Pelican docs</li>
+<li><a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3">Bootstrap3</a>很值得看，里面介绍了模板支持的功能</li>
 <li><a href="https://github.com/pelucky/pelucky.github.io">Blog Source code</a></li>
 </ul>
 </blockquote>
