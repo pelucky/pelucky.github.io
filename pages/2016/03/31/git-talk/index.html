@@ -2,7 +2,7 @@
 <html lang="zh"
 >
 <head>
-    <title>CentOS 6.5 64bits 自建内部http源 - pelucky's blog</title>
+    <title>Git Talk - pelucky's blog</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -11,21 +11,23 @@
 
     <link href="https://pelucky.github.io/extra/favicon.ico" rel="icon">
 
-<link rel="canonical" href="https://pelucky.github.io/pages/2015/08/02/centos-6-5-update-http/">
+<link rel="canonical" href="https://pelucky.github.io/pages/2016/03/31/git-talk/">
 
         <meta name="author" content="pel" />
-        <meta name="keywords" content="CentOS 6.5,update http source" />
-        <meta name="description" content="笔者以前不能连接互联网，故需要自己内建update源... 局域网内部未找到CentOS源，故决定自己做一个，查了下教程，不难，简单写一下： 如果只是想使用的话，则只看下面客户端配置即可，要求是CentOS6 ..." />
+        <meta name="keywords" content="git,merge,branch,tag" />
+        <meta name="description" content="每次碰到Git的问题都要去Google，索性整理记录下，基本的安装和使用就不介绍了... 1. Basic Git是创建快照而不是记录不同： 传统VCS的存储方式： 2. Git storage ..." />
 
         <meta property="og:site_name" content="pelucky's blog" />
         <meta property="og:type" content="article"/>
-        <meta property="og:title" content="CentOS 6.5 64bits 自建内部http源"/>
-        <meta property="og:url" content="https://pelucky.github.io/pages/2015/08/02/centos-6-5-update-http/"/>
-        <meta property="og:description" content="笔者以前不能连接互联网，故需要自己内建update源... 局域网内部未找到CentOS源，故决定自己做一个，查了下教程，不难，简单写一下： 如果只是想使用的话，则只看下面客户端配置即可，要求是CentOS6 ..."/>
-        <meta property="article:published_time" content="2015-08-02" />
+        <meta property="og:title" content="Git Talk"/>
+        <meta property="og:url" content="https://pelucky.github.io/pages/2016/03/31/git-talk/"/>
+        <meta property="og:description" content="每次碰到Git的问题都要去Google，索性整理记录下，基本的安装和使用就不介绍了... 1. Basic Git是创建快照而不是记录不同： 传统VCS的存储方式： 2. Git storage ..."/>
+        <meta property="article:published_time" content="2016-03-31" />
             <meta property="article:section" content="System" />
-            <meta property="article:tag" content="CentOS 6.5" />
-            <meta property="article:tag" content="update http source" />
+            <meta property="article:tag" content="git" />
+            <meta property="article:tag" content="merge" />
+            <meta property="article:tag" content="branch" />
+            <meta property="article:tag" content="tag" />
             <meta property="article:author" content="pel" />
 
 
@@ -76,17 +78,17 @@ pelucky's blog            </a>
             <ol class="breadcrumb">
                 <li><a href="https://pelucky.github.io" title="pelucky's blog"><i class="fa fa-home fa-lg"></i></a></li>
                 <li><a href="https://pelucky.github.io/categories/system.html" title="System">System</a></li>
-                <li class="active">CentOS 6.5 64bits 自建内部http源</li>
+                <li class="active">Git Talk</li>
             </ol>
 
     <section id="content">
         <article>
            <header class="page-header">
                 <h1>
-                    <a href="https://pelucky.github.io/pages/2015/08/02/centos-6-5-update-http/"
+                    <a href="https://pelucky.github.io/pages/2016/03/31/git-talk/"
                        rel="bookmark"
-                       title="Permalink to CentOS 6.5 64bits 自建内部http源">
-                        CentOS 6.5 64bits 自建内部http源
+                       title="Permalink to Git Talk">
+                        Git Talk
                     </a>
                 </h1>
             </header>
@@ -96,80 +98,168 @@ pelucky's blog            </a>
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2015-08-02T02:31:00+00:00"> Sun 02 August 2015</time>
+        <i class="fa fa-calendar"></i><time datetime="2016-03-31T21:00:00+08:00"> Thu 31 March 2016</time>
     </span>
 
 
 
 <span class="label label-default">Tags</span>
-	<a href="https://pelucky.github.io/tag/centos-65.html">CentOS 6.5</a>
+	<a href="https://pelucky.github.io/tag/git.html">git</a>
         /
-	<a href="https://pelucky.github.io/tag/update-http-source.html">update http source</a>
+	<a href="https://pelucky.github.io/tag/merge.html">merge</a>
+        /
+	<a href="https://pelucky.github.io/tag/branch.html">branch</a>
+        /
+	<a href="https://pelucky.github.io/tag/tag.html">tag</a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                    <div id="toc"><ul><li><a class="toc-href" href="#" title="CentOS 6.5 64bits 自建内部http源">CentOS 6.5 64bits 自建内部http源</a><ul><li><a class="toc-href" href="#fu-wu-qi-duan-pei-zhi" title="服务器端配置">服务器端配置</a></li><li><a class="toc-href" href="#ke-hu-duan-pei-zhi" title="客户端配置">客户端配置</a></li></ul></li></ul></div>
+                    <div id="toc"><ul><li><a class="toc-href" href="#" title="Git Talk">Git Talk</a><ul><li><a class="toc-href" href="#1-basic" title="1. Basic">1. Basic</a></li><li><a class="toc-href" href="#2-git-storage" title="2. Git storage">2. Git storage</a></li><li><a class="toc-href" href="#3-git-state" title="3. Git state">3. Git state</a></li><li><a class="toc-href" href="#4-setup-usage" title="4. Setup &amp; usage">4. Setup &amp; usage</a></li><li><a class="toc-href" href="#5-remote" title="5. Remote">5. Remote</a></li><li><a class="toc-href" href="#6-tag" title="6. Tag">6. Tag</a></li><li><a class="toc-href" href="#7-branching" title="7. Branching">7. Branching</a></li><li><a class="toc-href" href="#8-rebase" title="8. rebase">8. rebase</a></li><li><a class="toc-href" href="#push-to-github" title="Push to Github">Push to Github</a></li><li><a class="toc-href" href="#reference" title="Reference">Reference</a></li></ul></li></ul></div>
                 <hr>
-                <p>笔者以前不能连接互联网，故需要自己内建update源...</p>
-<p>局域网内部未找到CentOS源，故决定自己做一个，查了下教程，不难，简单写一下：</p>
-<p>如果只是想使用的话，则只看下面客户端配置即可，要求是CentOS6.5 64bit。</p>
-<h2 id="fu-wu-qi-duan-pei-zhi">服务器端配置</h2>
-<p>a. 准备好CentOS-6.5DVD1和DVD2中的文件，通过winSCP或lrzsz上传到服务器上；</p>
-<p>b. 开启http服务，apache、Nginx均可</p>
-<p>c. 将DVD1中的内容全部拷贝到上面的文件夹中，将DVD2中Packages中的文件全部拷进去</p>
-<div class="highlight"><pre>mkdir&nbsp;/var/www/html/yum/CentOS-6.5/
+                <p>每次碰到Git的问题都要去Google，索性整理记录下，基本的安装和使用就不介绍了...</p>
+<h1 id="1-basic">1. Basic</h1>
+<p>Git是创建快照而不是记录不同：
+<img alt="Snapshots, Not Differences" src="https://git-scm.com/book/en/v2/book/01-introduction/images/deltas.png"/></p>
+<p>传统VCS的存储方式：
+ <img alt="Differences" src="https://git-scm.com/book/en/v2/book/01-introduction/images/snapshots.png"/></p>
+<h1 id="2-git-storage">2. Git storage</h1>
+<ul>
+<li>Git的存储方式导致Git类似一个文件系统，在创建Git分支的时候非常有用；</li>
+<li>Git是一个分布式代码管理软件，故每个git端上都会保存完整的所有版本的代码，故在本地端就会有一个代码的副本，故可以在本地进行操作；</li>
+<li>Git存在完整性校验；</li>
+<li>Git通常只添加数据，而不会抹除数据，避免了代码丢失的风险；</li>
+</ul>
+<h1 id="3-git-state">3. Git state</h1>
+<p>三个状态：<strong>committed, modified,  staged</strong>
+  - Committed表示已经安全的存储在本地；
+  - Modified表示已经修改但是还没有提交commit存储到本地数据库中；
+  - Staged表示标志了modified文件在当前的版本将会提交到下次创建快照中；</p>
+<p>下图描述了git的通常工作流程：
+<img alt="Three States" src="https://git-scm.com/book/en/v2/book/01-introduction/images/areas.png"/></p>
+<ol>
+<li>Modified文件；</li>
+<li>staged文件，添加他们的快照到staging area；</li>
+<li>将staging area中的文件添加到本地git数据库中；</li>
+</ol>
+<h1 id="4-setup-usage">4. Setup &amp; usage</h1>
+<ul>
+<li>安装和配置git直接参照书或git笔记的说明即可；</li>
+<li>子目录中git的配置会覆盖全局配置；</li>
+<li>文件的状态有两类：tracked和untracked，tracked又分为上面说的三种；</li>
+<li>gitignore文件的语法详见<a href="https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#Ignoring-Files">第二章</a>； </li>
+</ul>
+<div class="highlight"><pre>git config          #配置用户名和邮箱以及默认的编辑器
+git config --list   #列出配置参数
+git help XXX        #查找帮助
+git remove          #会将tracked file列表和实际存在的本地文件统统删除，如果只想不追踪，可以使用gitignore或者git rm --cached XXX
+git mv              #移动文件而不会重新记录
+git log -p          #显示每次提交的不同地方。log中还有很多参数可以选择；
+git commit --amend  #在提交漏交文件之后只提交一次commit，而不会有两次；
+git reset HEAD &lt;file&gt;   #可以将staged文件设置为unstaged文件;
+git checkout -- [file]  #是一个危险命令，可以将文件还原为未修改状态；他的工作原理是将老的文件直接覆盖掉新的文件，故会将所做的修改抹去；
 </pre></div>
-<p>d. 合并DVD2中的Packages/TRANS.TBL到DVD1中并排序，主要是cat进入后再sort，没用过这个方法，记录下</p>
-<div class="highlight"><pre>cat dvd2/Packages/TRANS.TBL &gt;&gt; dvd1/Packages/TRANS.TBL
-mv dvd1/Packages/{TRANS.TBL.BAK,TRANS.TBL.BAK}
-sort dvd1/Packages/TRANS.TBL.BAK &gt;dvd1/Packages/TRANS.TBL
-rm -rf dvd1/Packages/TRANS.TBL.BAK
+<p><a href="http://gitimmersion.com/lab_14.html">复原文件</a>的方法，恢复到Modified之前的文件;</p>
+<div class="highlight"><pre># 在文件被Modified但是未被staged的前提下，可使用checkout放弃对该文件的修改
+git checkout xxx.xx
 </pre></div>
-<p>e. 接下来使用安装createrepo病创建软件仓库：</p>
-<div class="highlight"><pre>rpm -ivh Packages/deltarpm-3.5-0.5.20090913git.el6.x86_64.rpm
-rpm -ivh Packages/python-deltarpm-3.5-0.5.20090913git.el6.x86_64.rpm
-rpm -ivh Packages/createrepo-0.9.9-18.el6.noarch.rpm
+<p><a href="http://gitimmersion.com/lab_22.html">查看</a>git的存储文件目录；
+- .git是个隐藏文件夹，包含在项目目录下；
+- .git/objects下是2个字母的若干文件夹，分别代表了每个sha1 hash的前两位；
+- .git/objects/<dir>的下为38位的文件，为objects的压缩并编码值；
+- .git/config为该项目的配置文件
+- .git/refs/xxx下有heads和tags文件夹，heads表示现在使用的分支，tags表示tag的版本号</dir></p>
+<h1 id="5-remote">5. Remote</h1>
+<div class="highlight"><pre>git remote      #查看配置了的远端服务器的参数，-v可以查看详细信息;
+git remote add [shortname] [url]    #显式的添加配置信息;
+git fetch [remote-name]     #会将从远端的数据拉过来，但是不会主动合并，pull则会主动合并；（此处的remote-name就是git remote中显示出来的参数）
+git push [remote-name] [branch-name]    #会将code推送到相对应的分支上去；当然同时只能有一个人正在push；如果别人push完毕后，由于代码的不一致，你需要先pull下别人的代码，才能push上去;
+git remote show [remote-name]       #会展示远端服务器的情况，包括远端服务器的分支有哪些还未被同步，有哪些可以合并等；
+git remote rename [old-name] [new-name] #修改远端的名称；
+git remote rm [name]                    #删除一个远端
 </pre></div>
-<p>f. 使用createrepo命令将所有安装包加载进入到软件仓库中：</p>
-<div class="highlight"><pre>createrepo -v /var/www/html/yum/CentOS-6.5/Packages/
+<h1 id="6-tag">6. Tag</h1>
+<p>Git中有两种tag，<strong>轻量级tag</strong>和<strong>带注释的tag</strong>；
+轻量级tag像一个不会改变的分支，只适用于特殊的标记；带注释的tag则五脏俱全；</p>
+<div class="highlight"><pre>git tag     #使用tag来标记版本，-l可以搜索关键字tag；
+git tag -a v1.4 -m 'my version 1.4'     #-m提示书写注释信息，如同commit中的-m，-a表示添加annotated tags
+git tag v1.4-lw     #轻量级tag
+git tag -a v1.2 9fceb02     #支持对之前的版本添加tag，方法是记住加上校验码的部分（如9fceb02就是某个版本校验码的前7位）
+git push origin v1.5        #默认git push 是不会将tag上传到服务器端的，如果需要可以使用
+git push origin --tags      #一次性上传所有的tags
 </pre></div>
-<h2 id="ke-hu-duan-pei-zhi">客户端配置</h2>
-<p>使用vim修改/etc/yum.repos.d/CentOS-Base.repo的文件：</p>
-<div class="highlight"><pre># Made by pel for yum update
-
-[base]
-name=myrepo
-baseurl=http://192.168.1.10/yum/CentOS-6.5/Packages
-enabled=1
-gpgcheck=0
-
-#release updates
-[updates]
-name=myrepo
-baseurl=http://192.168.1.10/yum/CentOS-6.5/Packages
-gpgcheck=1
-enabled=1
-gpgcheck=0
-
-#packages used/procduced in the build but not released
-[addons]
-name=myrepo
-baseurl=http://192.168.1.10/yum/CentOS-6.5/Packages
-enabled=1
-gpgcheck=0
-
-#additional packages that may be useful
-[extras]
-name=myrepo
-baseurl=http://192.168.1.10/yum/CentOS-6.5/Packages
-enabled=1
-gpgcheck=0&lt;/blockquote&gt;
+<p><strong>Git alias</strong>
+可以在全局模式下设置别名，故可以使用git 别名，如：
+<code>git config --global alias.unstage 'reset HEAD --'</code>
+如下两个等价：</p>
+<div class="highlight"><pre><span class="nv">$ </span>git unstage fileA
+<span class="nv">$ </span>git reset HEAD -- fileA
 </pre></div>
-<p>查看效果</p>
-<div class="highlight"><pre>yum list 即可看到可安装的软件源
+<p>或者直接修改配置文件~/.gitconfig</p>
+<div class="highlight"><pre><span class="k">[alias]</span>
+    <span class="na">hist</span> <span class="o">=</span> <span class="s">log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short</span>
 </pre></div>
+<h1 id="7-branching">7. Branching</h1>
+<p><a href="http://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging">参考</a>：很详细的讲解了git branch的过程；
+<strong>Notice</strong>：</p>
+<ol>
+<li>添加分支不会主动修改HEAD的指向；</li>
+<li>git的快照是采用指针的方式，每个指针指向其&ldquo;母版本&rdquo;；</li>
+<li>由于是存储快照，故在创建分支是非常迅速的，每个只需要增加41bytes（40字节的校验码和一个空行），不会像其他VCS那样存储一个副本，节省了时间；</li>
+<li>与其他VCS不同，他不需要用户选择更倾向于哪个分支，而会将他们两个选择为共同的祖先，也就是同时指向他们两个；</li>
+<li>未经merge的分支是不建议删除的，如果需要强制删除，需要使用-D；</li>
+<li>记住merge和branch都是在本地，没有与远端的服务器通信；</li>
+</ol>
+<div class="highlight"><pre><span class="n">git</span> <span class="n">branch</span> <span class="p">[</span><span class="n">branch</span> <span class="n">name</span><span class="p">]</span>            <span class="err">#创建一个新分支</span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="p">[</span><span class="n">branch</span> <span class="n">name</span><span class="p">]</span>          <span class="err">#选择一个分支</span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="p">[</span><span class="n">branch</span> <span class="n">name</span><span class="p">]</span>       <span class="err">#等同于上面两个操作</span>
+<span class="n">git</span> <span class="n">merge</span> <span class="p">[</span><span class="n">branch</span> <span class="n">name</span><span class="p">]</span>             <span class="err">#将老分支与之前的</span><span class="n">snapshot</span><span class="err">合并（要</span><span class="n">checkout</span><span class="err">一个分支，</span><span class="n">merge</span><span class="err">另一个分支）</span>
+<span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">d</span> <span class="p">[</span><span class="n">branch</span> <span class="n">name</span><span class="p">]</span>         <span class="err">#删除某个</span><span class="n">branch</span><span class="err">分支（这里个人理解为删除某个快照名）</span>
+<span class="n">git</span> <span class="n">mergetool</span>       <span class="err">#当某个文件被两个分支同时修改过时，</span><span class="n">merge</span><span class="err">他就会有冲突，可以手动修改冲突之后，在进行合并；也可使用图形工具</span><span class="p">(</span><span class="err">需要实现配置，使用</span><span class="n">opendiff</span><span class="p">)</span><span class="o">:</span> 
+<span class="n">git</span> <span class="n">branch</span>          <span class="err">#查看现在所处的分支，</span><span class="o">-</span><span class="n">v</span><span class="err">查看详细内容；</span><span class="o">--</span><span class="n">merged</span><span class="err">查看合并的内容；</span>
+<span class="n">git</span> <span class="n">ls</span><span class="o">-</span><span class="n">remote</span> <span class="p">(</span><span class="n">remote</span><span class="p">)</span>      <span class="err">#查看远端服务器分支情况</span>
+<span class="n">git</span> <span class="n">remote</span> <span class="n">show</span> <span class="p">(</span><span class="n">remote</span><span class="p">)</span>
+</pre></div>
+<ul>
+<li>远端的分支采用(remote)/(branch)的形式，如origin/master表示远端master的位置；</li>
+<li>常用名origin不是固定的，可以修改；
+<em>remote branch还有很多货，不是很理解，以后再过一遍!</em></li>
+</ul>
+<h1 id="8-rebase">8. rebase</h1>
+<ul>
+<li>
+<p>rebase（中文翻译变基）的作用就是将提交到某一个分支的所有操作用到另一个上去；也就是将两个分支合并为一个分支；
+选中一个分支，然后将另一个分支变基过来&hellip;(<em>什么鬼</em>)</p>
+</li>
+<li>
+<p><a href="http://gitimmersion.com/lab_34.html">merge vs rebase</a>
+翻译里面说的：只对尚未推送或分享给别人的本地修改执行变基操作清理历史，从不对已推送至别处的提交执行变基操作（<em>没看太懂</em>）</p>
+</li>
+</ul>
+<h1 id="push-to-github">Push to Github</h1>
+<ol>
+<li><code>apt-get install git</code></li>
+<li>生成SSH-key ，<code>ssh-keygen -t rsa -C "your_email@youremail.com"</code>，your_email是你的email，默认生成的文件在用户的家目录下.ssh/id_rsa.pub文件里面，复制全部内容；</li>
+<li>粘贴到github，进入Account Settings，左边选择SSH Keys</li>
+<li>测试ssh key是否成功，使用命令&ldquo;ssh -T git@github.com&rdquo;</li>
+<li>配置Git的配置文件，username和email</li>
+</ol>
+<div class="highlight"><pre>git config --global user.name "your name"      //配置用户名
+git config --global user.email "your email"    //配置email
+</pre></div>
+<hr/>
+<h1 id="reference">Reference</h1>
+<ul>
+<li><a href="https://git-scm.com/book/en/v2">git</a></li>
+<li><a href="http://gitimmersion.com/index.html">git Immersion</a></li>
+</ul>
             </div>
             <!-- /.entry-content -->
+<section class="well" id="related-posts">
+    <h4>Related Posts:</h4>
+    <ul>
+        <li><a href="https://pelucky.github.io/pages/2016/03/22/gitpages-pelican/">Pelican札记</a></li>
+    </ul>
+</section>
     <hr/>
     <section class="comments" id="comments">
         <h2>Comments</h2>
@@ -179,8 +269,8 @@ gpgcheck=0&lt;/blockquote&gt;
             /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
             var disqus_shortname = 'pelucky'; // required: replace example with your forum shortname
 
-                    var disqus_identifier = 'centos-6-5-update-http';
-                var disqus_url = 'https://pelucky.github.io/pages/2015/08/02/centos-6-5-update-http/';
+                    var disqus_identifier = 'git-talk';
+                var disqus_url = 'https://pelucky.github.io/pages/2016/03/31/git-talk/';
 
             var disqus_config = function () {
                 this.language = "zh";

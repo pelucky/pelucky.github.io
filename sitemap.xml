@@ -5,30 +5,37 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://pelucky.github.io/</loc>
-<lastmod>2016-03-31T20:59:05-00:00</lastmod>
+<lastmod>2016-03-31T21:58:14-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://pelucky.github.io/archives.html</loc>
-<lastmod>2016-03-31T20:59:05-00:00</lastmod>
+<lastmod>2016-03-31T21:58:14-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://pelucky.github.io/tags.html</loc>
-<lastmod>2016-03-31T20:59:05-00:00</lastmod>
+<lastmod>2016-03-31T21:58:14-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://pelucky.github.io/categories.html</loc>
-<lastmod>2016-03-31T20:59:05-00:00</lastmod>
+<lastmod>2016-03-31T21:58:14-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://pelucky.github.io/pages/2016/03/31/git-talk/</loc>
+<lastmod>2016-03-31T21:00:00+08:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
 </url>
 
 <url>
@@ -110,7 +117,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://pelucky.github.io/categories/system.html</loc>
-<lastmod>2016-03-22T10:13:00+07:37</lastmod>
+<lastmod>2016-03-31T21:00:00+07:37</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -151,6 +158,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>https://pelucky.github.io/tag/tag.html</loc>
+<lastmod>2016-03-31T21:00:00+07:37</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>https://pelucky.github.io/tag/linux.html</loc>
 <lastmod>2016-03-21T18:40:00+07:37</lastmod>
 <changefreq>daily</changefreq>
@@ -159,7 +173,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://pelucky.github.io/tag/git.html</loc>
-<lastmod>2016-03-22T10:13:00+07:37</lastmod>
+<lastmod>2016-03-31T21:00:00+07:37</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -195,6 +209,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://pelucky.github.io/tag/efi.html</loc>
 <lastmod>2016-03-21T18:40:00+07:37</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://pelucky.github.io/tag/branch.html</loc>
+<lastmod>2016-03-31T21:00:00+07:37</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -263,6 +284,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>https://pelucky.github.io/tag/merge.html</loc>
+<lastmod>2016-03-31T21:00:00+07:37</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>https://pelucky.github.io/tag/switch.html</loc>
 <lastmod>2016-03-21T18:54:00+07:37</lastmod>
 <changefreq>daily</changefreq>
@@ -285,7 +313,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://pelucky.github.io/author/pel.html</loc>
-<lastmod>2016-03-22T10:13:00+07:37</lastmod>
+<lastmod>2016-03-31T21:00:00+07:37</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
