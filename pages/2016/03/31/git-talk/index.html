@@ -114,7 +114,7 @@ pelucky's blog            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                    <div id="toc"><ul><li><a class="toc-href" href="#" title="Git Talk">Git Talk</a><ul><li><a class="toc-href" href="#1-basic" title="1. Basic">1. Basic</a></li><li><a class="toc-href" href="#2-git-storage" title="2. Git storage">2. Git storage</a></li><li><a class="toc-href" href="#3-git-state" title="3. Git state">3. Git state</a></li><li><a class="toc-href" href="#4-setup-usage" title="4. Setup &amp; usage">4. Setup &amp; usage</a></li><li><a class="toc-href" href="#5-remote" title="5. Remote">5. Remote</a></li><li><a class="toc-href" href="#6-tag" title="6. Tag">6. Tag</a></li><li><a class="toc-href" href="#7-branching" title="7. Branching">7. Branching</a></li><li><a class="toc-href" href="#8-rebase" title="8. rebase">8. rebase</a></li><li><a class="toc-href" href="#push-to-github" title="Push to Github">Push to Github</a></li><li><a class="toc-href" href="#reference" title="Reference">Reference</a></li></ul></li></ul></div>
+                    <div id="toc"><ul><li><a class="toc-href" href="#" title="Git Talk">Git Talk</a><ul><li><a class="toc-href" href="#1-basic" title="1. Basic">1. Basic</a></li><li><a class="toc-href" href="#2-git-storage" title="2. Git storage">2. Git storage</a></li><li><a class="toc-href" href="#3-git-state" title="3. Git state">3. Git state</a></li><li><a class="toc-href" href="#4-setup-usage" title="4. Setup &amp; usage">4. Setup &amp; usage</a></li><li><a class="toc-href" href="#5-remote" title="5. Remote">5. Remote</a></li><li><a class="toc-href" href="#6-tag" title="6. Tag">6. Tag</a></li><li><a class="toc-href" href="#7-branching" title="7. Branching">7. Branching</a></li><li><a class="toc-href" href="#8-rebase" title="8. rebase">8. rebase</a></li><li><a class="toc-href" href="#9-push-to-github" title="9. Push to Github">9. Push to Github</a></li><li><a class="toc-href" href="#reference" title="Reference">Reference</a></li></ul></li></ul></div>
                 <hr>
                 <p>每次碰到Git的问题都要去Google，索性整理记录下，基本的安装和使用就不介绍了...</p>
 <h1 id="1-basic">1. Basic</h1>
@@ -130,10 +130,12 @@ pelucky's blog            </a>
 <li>Git通常只添加数据，而不会抹除数据，避免了代码丢失的风险；</li>
 </ul>
 <h1 id="3-git-state">3. Git state</h1>
-<p>三个状态：<strong>committed, modified,  staged</strong>
-  - Committed表示已经安全的存储在本地；
-  - Modified表示已经修改但是还没有提交commit存储到本地数据库中；
-  - Staged表示标志了modified文件在当前的版本将会提交到下次创建快照中；</p>
+<p>三个状态：<strong>committed, modified,  staged</strong></p>
+<ul>
+<li>Committed表示已经安全的存储在本地；</li>
+<li>Modified表示已经修改但是还没有提交commit存储到本地数据库中；</li>
+<li>Staged表示标志了modified文件在当前的版本将会提交到下次创建快照中；</li>
+</ul>
 <p>下图描述了git的通常工作流程：
 <img alt="Three States" src="https://git-scm.com/book/en/v2/book/01-introduction/images/areas.png"/></p>
 <ol>
@@ -148,13 +150,13 @@ pelucky's blog            </a>
 <li>文件的状态有两类：tracked和untracked，tracked又分为上面说的三种；</li>
 <li>gitignore文件的语法详见<a href="https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#Ignoring-Files">第二章</a>； </li>
 </ul>
-<div class="highlight"><pre>git config          #配置用户名和邮箱以及默认的编辑器
-git config --list   #列出配置参数
-git help XXX        #查找帮助
-git remove          #会将tracked file列表和实际存在的本地文件统统删除，如果只想不追踪，可以使用gitignore或者git rm --cached XXX
-git mv              #移动文件而不会重新记录
-git log -p          #显示每次提交的不同地方。log中还有很多参数可以选择；
-git commit --amend  #在提交漏交文件之后只提交一次commit，而不会有两次；
+<div class="highlight"><pre>git config              #配置用户名和邮箱以及默认的编辑器
+git config --list       #列出配置参数
+git help XXX            #查找帮助
+git remove              #会将tracked file列表和实际存在的本地文件统统删除，如果只想不追踪，可以使用gitignore或者git rm --cached XXX
+git mv                  #移动文件而不会重新记录
+git log -p              #显示每次提交的不同地方。log中还有很多参数可以选择；
+git commit --amend      #在提交漏交文件之后只提交一次commit，而不会有两次；
 git reset HEAD &lt;file&gt;   #可以将staged文件设置为unstaged文件;
 git checkout -- [file]  #是一个危险命令，可以将文件还原为未修改状态；他的工作原理是将老的文件直接覆盖掉新的文件，故会将所做的修改抹去；
 </pre></div>
@@ -162,30 +164,32 @@ git checkout -- [file]  #是一个危险命令，可以将文件还原为未修�
 <div class="highlight"><pre># 在文件被Modified但是未被staged的前提下，可使用checkout放弃对该文件的修改
 git checkout xxx.xx
 </pre></div>
-<p><a href="http://gitimmersion.com/lab_22.html">查看</a>git的存储文件目录；
-- .git是个隐藏文件夹，包含在项目目录下；
-- .git/objects下是2个字母的若干文件夹，分别代表了每个sha1 hash的前两位；
-- .git/objects/<dir>的下为38位的文件，为objects的压缩并编码值；
-- .git/config为该项目的配置文件
-- .git/refs/xxx下有heads和tags文件夹，heads表示现在使用的分支，tags表示tag的版本号</dir></p>
+<p><a href="http://gitimmersion.com/lab_22.html">查看</a>git的存储文件目录；</p>
+<ul>
+<li>.git是个隐藏文件夹，包含在项目目录下；</li>
+<li>.git/objects下是2个字母的若干文件夹，分别代表了每个sha1 hash的前两位；</li>
+<li>.git/objects/<dir>的下为38位的文件，为objects的压缩并编码值；</dir></li>
+<li>.git/config为该项目的配置文件</li>
+<li>.git/refs/xxx下有heads和tags文件夹，heads表示现在使用的分支，tags表示tag的版本号</li>
+</ul>
 <h1 id="5-remote">5. Remote</h1>
-<div class="highlight"><pre>git remote      #查看配置了的远端服务器的参数，-v可以查看详细信息;
-git remote add [shortname] [url]    #显式的添加配置信息;
-git fetch [remote-name]     #会将从远端的数据拉过来，但是不会主动合并，pull则会主动合并；（此处的remote-name就是git remote中显示出来的参数）
+<div class="highlight"><pre>git remote                              #查看配置了的远端服务器的参数，-v可以查看详细信息;
+git remote add [shortname] [url]        #显式的添加配置信息;
+git fetch [remote-name]                 #会将从远端的数据拉过来，但是不会主动合并，pull则会主动合并；（此处的remote-name就是git remote中显示出来的参数）
 git push [remote-name] [branch-name]    #会将code推送到相对应的分支上去；当然同时只能有一个人正在push；如果别人push完毕后，由于代码的不一致，你需要先pull下别人的代码，才能push上去;
-git remote show [remote-name]       #会展示远端服务器的情况，包括远端服务器的分支有哪些还未被同步，有哪些可以合并等；
+git remote show [remote-name]           #会展示远端服务器的情况，包括远端服务器的分支有哪些还未被同步，有哪些可以合并等；
 git remote rename [old-name] [new-name] #修改远端的名称；
 git remote rm [name]                    #删除一个远端
 </pre></div>
 <h1 id="6-tag">6. Tag</h1>
 <p>Git中有两种tag，<strong>轻量级tag</strong>和<strong>带注释的tag</strong>；
 轻量级tag像一个不会改变的分支，只适用于特殊的标记；带注释的tag则五脏俱全；</p>
-<div class="highlight"><pre>git tag     #使用tag来标记版本，-l可以搜索关键字tag；
+<div class="highlight"><pre>git tag                                 #使用tag来标记版本，-l可以搜索关键字tag；
 git tag -a v1.4 -m 'my version 1.4'     #-m提示书写注释信息，如同commit中的-m，-a表示添加annotated tags
-git tag v1.4-lw     #轻量级tag
-git tag -a v1.2 9fceb02     #支持对之前的版本添加tag，方法是记住加上校验码的部分（如9fceb02就是某个版本校验码的前7位）
-git push origin v1.5        #默认git push 是不会将tag上传到服务器端的，如果需要可以使用
-git push origin --tags      #一次性上传所有的tags
+git tag v1.4-lw                         #轻量级tag
+git tag -a v1.2 9fceb02                 #支持对之前的版本添加tag，方法是记住加上校验码的部分（如9fceb02就是某个版本校验码的前7位）
+git push origin v1.5                    #默认git push 是不会将tag上传到服务器端的，如果需要可以使用
+git push origin --tags                  #一次性上传所有的tags
 </pre></div>
 <p><strong>Git alias</strong>
 可以在全局模式下设置别名，故可以使用git 别名，如：
@@ -199,8 +203,8 @@ git push origin --tags      #一次性上传所有的tags
     <span class="na">hist</span> <span class="o">=</span> <span class="s">log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short</span>
 </pre></div>
 <h1 id="7-branching">7. Branching</h1>
-<p><a href="http://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging">参考</a>：很详细的讲解了git branch的过程；
-<strong>Notice</strong>：</p>
+<p><a href="http://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging">参考</a>：很详细的讲解了git branch的过程；</p>
+<p><strong>Notice</strong>：</p>
 <ol>
 <li>添加分支不会主动修改HEAD的指向；</li>
 <li>git的快照是采用指针的方式，每个指针指向其&ldquo;母版本&rdquo;；</li>
@@ -235,7 +239,7 @@ git push origin --tags      #一次性上传所有的tags
 翻译里面说的：只对尚未推送或分享给别人的本地修改执行变基操作清理历史，从不对已推送至别处的提交执行变基操作（<em>没看太懂</em>）</p>
 </li>
 </ul>
-<h1 id="push-to-github">Push to Github</h1>
+<h1 id="9-push-to-github">9. Push to Github</h1>
 <ol>
 <li><code>apt-get install git</code></li>
 <li>生成SSH-key ，<code>ssh-keygen -t rsa -C "your_email@youremail.com"</code>，your_email是你的email，默认生成的文件在用户的家目录下.ssh/id_rsa.pub文件里面，复制全部内容；</li>
