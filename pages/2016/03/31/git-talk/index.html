@@ -114,7 +114,7 @@ pelucky's blog            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                    <div id="toc"><ul><li><a class="toc-href" href="#" title="Git Talk">Git Talk</a><ul><li><a class="toc-href" href="#1-basic" title="1. Basic">1. Basic</a></li><li><a class="toc-href" href="#2-git-storage" title="2. Git storage">2. Git storage</a></li><li><a class="toc-href" href="#3-git-state" title="3. Git state">3. Git state</a></li><li><a class="toc-href" href="#4-setup-usage" title="4. Setup &amp; usage">4. Setup &amp; usage</a></li><li><a class="toc-href" href="#5-remote" title="5. Remote">5. Remote</a></li><li><a class="toc-href" href="#6-tag" title="6. Tag">6. Tag</a></li><li><a class="toc-href" href="#7-branching" title="7. Branching">7. Branching</a></li><li><a class="toc-href" href="#8-rebase" title="8. rebase">8. rebase</a></li><li><a class="toc-href" href="#9-push-to-github" title="9. Push to Github">9. Push to Github</a></li><li><a class="toc-href" href="#reference" title="Reference">Reference</a></li></ul></li></ul></div>
+                    <div id="toc"><ul><li><a class="toc-href" href="#" title="Git Talk">Git Talk</a><ul><li><a class="toc-href" href="#1-basic" title="1. Basic">1. Basic</a></li><li><a class="toc-href" href="#2-git-storage" title="2. Git storage">2. Git storage</a></li><li><a class="toc-href" href="#3-git-state" title="3. Git state">3. Git state</a></li><li><a class="toc-href" href="#4-setup-usage" title="4. Setup &amp; usage">4. Setup &amp; usage</a></li><li><a class="toc-href" href="#5-remote" title="5. Remote">5. Remote</a></li><li><a class="toc-href" href="#6-tag" title="6. Tag">6. Tag</a></li><li><a class="toc-href" href="#7-branching" title="7. Branching">7. Branching</a></li><li><a class="toc-href" href="#8-rebase" title="8. rebase">8. rebase</a></li><li><a class="toc-href" href="#9-one-step-to-github" title="9. One step to Github">9. One step to Github</a></li><li><a class="toc-href" href="#reference" title="Reference">Reference</a></li></ul></li></ul></div>
                 <hr>
                 <p>每次碰到Git的问题都要去Google，索性整理记录下，基本的安装和使用就不介绍了...</p>
 <h1 id="1-basic">1. Basic</h1>
@@ -160,6 +160,16 @@ git commit --amend      #在提交漏交文件之后只提交一次commit，而�
 git reset HEAD &lt;file&gt;   #可以将staged文件设置为unstaged文件;
 git checkout -- [file]  #是一个危险命令，可以将文件还原为未修改状态；他的工作原理是将老的文件直接覆盖掉新的文件，故会将所做的修改抹去；
 </pre></div>
+<p>git的生命周期为：
+<a href="https://git-scm.com/book/en/v2/book/02-git-basics/images/lifecycle.png">git lifecycle</a></p>
+<p><em>Tips:</em></p>
+<ul>
+<li>untracked files为未添加跟踪的文件状态,即未git add xxxx.xx的文件;</li>
+<li>添加跟踪未被修改的文件状态为Unmodified，即经过上次的git commit之后未修改的文件;</li>
+<li>Changes not staged for commit: (modified)为添加跟踪且被修改过的文件状态</li>
+<li>Changes to be committed为添加跟踪且被修改过并被提交到暂存区的(也就是图上的staged)，可通过git add命令将文件添加到暂存区；</li>
+<li>git add是个多功能命令，可以用它开始跟踪新文件，或者把已跟踪的文件放到暂存区，还能用于合并时把有冲突的文件标记为已解决状态等。将这个命令理解为&ldquo;添加内容到下一次提交中&rdquo;而不是&ldquo;将一个文件添加到项目中&rdquo;要更加合适。 </li>
+</ul>
 <p><a href="http://gitimmersion.com/lab_14.html">复原文件</a>的方法，恢复到Modified之前的文件;</p>
 <div class="highlight"><pre># 在文件被Modified但是未被staged的前提下，可使用checkout放弃对该文件的修改
 git checkout xxx.xx
@@ -177,6 +187,7 @@ git checkout xxx.xx
 git remote add [shortname] [url]        #显式的添加配置信息;
 git fetch [remote-name]                 #会将从远端的数据拉过来，但是不会主动合并，pull则会主动合并；（此处的remote-name就是git remote中显示出来的参数）
 git push [remote-name] [branch-name]    #会将code推送到相对应的分支上去；当然同时只能有一个人正在push；如果别人push完毕后，由于代码的不一致，你需要先pull下别人的代码，才能push上去;
+git push origin master --force          #强行push，Dangerous！
 git remote show [remote-name]           #会展示远端服务器的情况，包括远端服务器的分支有哪些还未被同步，有哪些可以合并等；
 git remote rename [old-name] [new-name] #修改远端的名称；
 git remote rm [name]                    #删除一个远端
@@ -218,9 +229,9 @@ git push origin --tags                  #一次性上传所有的tags
 <span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="p">[</span><span class="n">branch</span> <span class="n">name</span><span class="p">]</span>       <span class="err">#等同于上面两个操作</span>
 <span class="n">git</span> <span class="n">merge</span> <span class="p">[</span><span class="n">branch</span> <span class="n">name</span><span class="p">]</span>             <span class="err">#将老分支与之前的</span><span class="n">snapshot</span><span class="err">合并（要</span><span class="n">checkout</span><span class="err">一个分支，</span><span class="n">merge</span><span class="err">另一个分支）</span>
 <span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">d</span> <span class="p">[</span><span class="n">branch</span> <span class="n">name</span><span class="p">]</span>         <span class="err">#删除某个</span><span class="n">branch</span><span class="err">分支（这里个人理解为删除某个快照名）</span>
-<span class="n">git</span> <span class="n">mergetool</span>       <span class="err">#当某个文件被两个分支同时修改过时，</span><span class="n">merge</span><span class="err">他就会有冲突，可以手动修改冲突之后，在进行合并；也可使用图形工具</span><span class="p">(</span><span class="err">需要实现配置，使用</span><span class="n">opendiff</span><span class="p">)</span><span class="o">:</span> 
-<span class="n">git</span> <span class="n">branch</span>          <span class="err">#查看现在所处的分支，</span><span class="o">-</span><span class="n">v</span><span class="err">查看详细内容；</span><span class="o">--</span><span class="n">merged</span><span class="err">查看合并的内容；</span>
-<span class="n">git</span> <span class="n">ls</span><span class="o">-</span><span class="n">remote</span> <span class="p">(</span><span class="n">remote</span><span class="p">)</span>      <span class="err">#查看远端服务器分支情况</span>
+<span class="n">git</span> <span class="n">mergetool</span>                       <span class="err">#当某个文件被两个分支同时修改过时，</span><span class="n">merge</span><span class="err">他就会有冲突，可以手动修改冲突之后，在进行合并；也可使用图形工具</span><span class="p">(</span><span class="err">需要实现配置，使用</span><span class="n">opendiff</span><span class="p">)</span><span class="o">:</span> 
+<span class="n">git</span> <span class="n">branch</span>                          <span class="err">#查看现在所处的分支，</span><span class="o">-</span><span class="n">v</span><span class="err">查看详细内容；</span><span class="o">--</span><span class="n">merged</span><span class="err">查看合并的内容；</span>
+<span class="n">git</span> <span class="n">ls</span><span class="o">-</span><span class="n">remote</span> <span class="p">(</span><span class="n">remote</span><span class="p">)</span>              <span class="err">#查看远端服务器分支情况</span>
 <span class="n">git</span> <span class="n">remote</span> <span class="n">show</span> <span class="p">(</span><span class="n">remote</span><span class="p">)</span>
 </pre></div>
 <ul>
@@ -232,14 +243,14 @@ git push origin --tags                  #一次性上传所有的tags
 <ul>
 <li>
 <p>rebase（中文翻译变基）的作用就是将提交到某一个分支的所有操作用到另一个上去；也就是将两个分支合并为一个分支；
-选中一个分支，然后将另一个分支变基过来&hellip;(<em>什么鬼</em>)</p>
+选中一个分支，然后将另一个分支变基过来&hellip;</p>
 </li>
 <li>
 <p><a href="http://gitimmersion.com/lab_34.html">merge vs rebase</a>
 翻译里面说的：只对尚未推送或分享给别人的本地修改执行变基操作清理历史，从不对已推送至别处的提交执行变基操作（<em>没看太懂</em>）</p>
 </li>
 </ul>
-<h1 id="9-push-to-github">9. Push to Github</h1>
+<h1 id="9-one-step-to-github">9. One step to Github</h1>
 <ol>
 <li><code>apt-get install git</code></li>
 <li>生成SSH-key ，<code>ssh-keygen -t rsa -C "your_email@youremail.com"</code>，your_email是你的email，默认生成的文件在用户的家目录下.ssh/id_rsa.pub文件里面，复制全部内容；</li>
@@ -249,12 +260,18 @@ git push origin --tags                  #一次性上传所有的tags
 </ol>
 <div class="highlight"><pre>git config --global user.name "your name"      //配置用户名
 git config --global user.email "your email"    //配置email
+git config --global core.editor vim            //配置编辑器
+git config --global color.ui true              //配置颜色
 </pre></div>
+<p>总的来说Git的帮助文档很强大，忘记了git xx -h并且看看它的反馈提示基本就能解决；</p>
 <hr/>
 <h1 id="reference">Reference</h1>
 <ul>
 <li><a href="https://git-scm.com/book/en/v2">git</a></li>
 <li><a href="http://gitimmersion.com/index.html">git Immersion</a></li>
+<li><a href="http://chengshiwen.com/article/head-first-git/">深入浅出 Git</a></li>
+<li><a href="http://pic002.cnblogs.com/img/1-2-3/201007/2010072023345292.png">Git常用命令简记图</a></li>
+<li><a href="http://ndpsoftware.com/git-cheatsheet.html">Visual Git Cheat Sheet</a></li>
 </ul>
             </div>
             <!-- /.entry-content -->
