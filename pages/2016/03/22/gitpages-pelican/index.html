@@ -15,13 +15,13 @@
 
         <meta name="author" content="pel" />
         <meta name="keywords" content="git,pelican,jekyll" />
-        <meta name="description" content="这篇主要是总结下折腾个人博客的经验，前人已经刷了无数攻略，这个副本并不难，只是需要花时间。遇到问题时，Google始终是你最好的老师... Requirement 搭建简单 ..." />
+        <meta name="description" content="这篇主要是总结下折腾个人博客的经验，前人已经刷了无数攻略，这个副本并不难，只是需要花时间。遇到问题时，Google始终是你最好的老师... 0x01 Requirement ..." />
 
         <meta property="og:site_name" content="pelucky's blog" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Pelican札记"/>
         <meta property="og:url" content="https://pelucky.github.io/pages/2016/03/22/gitpages-pelican/"/>
-        <meta property="og:description" content="这篇主要是总结下折腾个人博客的经验，前人已经刷了无数攻略，这个副本并不难，只是需要花时间。遇到问题时，Google始终是你最好的老师... Requirement 搭建简单 ..."/>
+        <meta property="og:description" content="这篇主要是总结下折腾个人博客的经验，前人已经刷了无数攻略，这个副本并不难，只是需要花时间。遇到问题时，Google始终是你最好的老师... 0x01 Requirement ..."/>
         <meta property="article:published_time" content="2016-03-22" />
             <meta property="article:section" content="System" />
             <meta property="article:tag" content="git" />
@@ -111,17 +111,17 @@ pelucky's blog            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                    <div id="toc"><ul><li><a class="toc-href" href="#" title="Pelican札记">Pelican札记</a><ul><li><a class="toc-href" href="#requirement" title="Requirement">Requirement</a></li><li><a class="toc-href" href="#solution" title="Solution">Solution</a></li><li><a class="toc-href" href="#pelican" title="Pelican">Pelican</a><ul><li><a class="toc-href" href="#1introduce" title="1.Introduce">1.Introduce</a></li><li><a class="toc-href" href="#2setup" title="2.Setup">2.Setup</a></li><li><a class="toc-href" href="#3usage" title="3.Usage">3.Usage</a><ul><li><a class="toc-href" href="#zhan-dian-jie-gou" title="站点结构">站点结构</a></li><li><a class="toc-href" href="#wen-dang-nei-rong" title="文档内容">文档内容</a></li><li><a class="toc-href" href="#shu-chu-he-qi-dong" title="输出和启动">输出和启动</a></li><li><a class="toc-href" href="#pei-zhi-zhu-ti" title="配置主题">配置主题</a></li><li><a class="toc-href" href="#pei-zhi-cha-jian" title="配置插件">配置插件</a><ul><li><a class="toc-href" href="#sitemap" title="sitemap">sitemap</a></li><li><a class="toc-href" href="#tag_cloud" title="tag_cloud">tag_cloud</a></li><li><a class="toc-href" href="#pelican-toc" title="pelican-toc">pelican-toc</a></li></ul></li><li><a class="toc-href" href="#google-analytics_1" title="Google Analytics">Google Analytics</a></li><li><a class="toc-href" href="#yi-jian-github" title="一键Github">一键Github</a></li><li><a class="toc-href" href="#qu-xiao-dai-ma-zhong-hong-kuang" title="取消代码中红框">取消代码中红框</a></li><li><a class="toc-href" href="#ping-lun-xi-tong" title="评论系统">评论系统</a></li><li><a class="toc-href" href="#cha-ru-tu-pian" title="插入图片">插入图片</a></li><li><a class="toc-href" href="#she-zhi-yu-ming" title="设置域名">设置域名</a></li><li><a class="toc-href" href="#zhan-nei-sou-suo" title="站内搜索">站内搜索</a></li><li><a class="toc-href" href="#cong-wordpressqian-yi-dao-pelican" title="从WordPress迁移到Pelican">从WordPress迁移到Pelican</a></li><li><a class="toc-href" href="#urlpei-zhi" title="URL配置">URL配置</a></li><li><a class="toc-href" href="#geng-huan-zi-ti" title="更换字体">更换字体</a></li></ul></li></ul></li><li><a class="toc-href" href="#reference_2" title="Reference">Reference</a></li></ul></li></ul></div>
+                    <div id="toc"><ul><li><a class="toc-href" href="#" title="Pelican札记">Pelican札记</a><ul><li><a class="toc-href" href="#0x01-requirement" title="0x01 Requirement">0x01 Requirement</a></li><li><a class="toc-href" href="#0x02-solution" title="0x02 Solution">0x02 Solution</a></li><li><a class="toc-href" href="#0x03-pelican" title="0x03 Pelican">0x03 Pelican</a><ul><li><a class="toc-href" href="#1introduce" title="1.Introduce">1.Introduce</a></li><li><a class="toc-href" href="#2setup" title="2.Setup">2.Setup</a></li><li><a class="toc-href" href="#3usage" title="3.Usage">3.Usage</a><ul><li><a class="toc-href" href="#azhan-dian-jie-gou" title="a.站点结构">a.站点结构</a></li><li><a class="toc-href" href="#bwen-dang-nei-rong" title="b.文档内容">b.文档内容</a></li><li><a class="toc-href" href="#cshu-chu-he-qi-dong" title="c.输出和启动">c.输出和启动</a></li><li><a class="toc-href" href="#dpei-zhi-zhu-ti" title="d.配置主题">d.配置主题</a></li><li><a class="toc-href" href="#epei-zhi-cha-jian" title="e.配置插件">e.配置插件</a><ul><li><a class="toc-href" href="#sitemap" title="sitemap">sitemap</a></li><li><a class="toc-href" href="#tag_cloud" title="tag_cloud">tag_cloud</a></li><li><a class="toc-href" href="#pelican-toc" title="pelican-toc">pelican-toc</a></li></ul></li><li><a class="toc-href" href="#fgoogle-analytics_1" title="f.Google Analytics">f.Google Analytics</a></li><li><a class="toc-href" href="#gyi-jian-github" title="g.一键Github">g.一键Github</a></li><li><a class="toc-href" href="#hqu-xiao-dai-ma-zhong-hong-kuang" title="h.取消代码中红框">h.取消代码中红框</a></li><li><a class="toc-href" href="#iping-lun-xi-tong" title="i.评论系统">i.评论系统</a></li><li><a class="toc-href" href="#jcha-ru-tu-pian" title="j.插入图片">j.插入图片</a></li><li><a class="toc-href" href="#kshe-zhi-yu-ming" title="k.设置域名">k.设置域名</a></li><li><a class="toc-href" href="#lzhan-nei-sou-suo" title="l.站内搜索">l.站内搜索</a></li><li><a class="toc-href" href="#mcong-wordpressqian-yi-dao-pelican" title="m.从WordPress迁移到Pelican">m.从WordPress迁移到Pelican</a></li><li><a class="toc-href" href="#nurlpei-zhi" title="n.URL配置">n.URL配置</a></li><li><a class="toc-href" href="#ogeng-huan-zi-ti" title="o.更换字体">o.更换字体</a></li></ul></li></ul></li><li><a class="toc-href" href="#reference_2" title="Reference">Reference</a></li></ul></li></ul></div>
                 <hr>
                 <p>这篇主要是总结下折腾<strong>个人博客</strong>的经验，前人已经刷了无数攻略，这个副本并不难，只是需要花时间。遇到问题时，Google始终是你最好的老师...</p>
-<h2 id="requirement">Requirement</h2>
+<h2 id="0x01-requirement">0x01 Requirement</h2>
 <ul>
 <li>搭建简单，维护备份方便</li>
 <li>写博客方便，支持MD格式</li>
 <li>模板美观大方，可以装B，不会丑的狗带</li>
 <li>社区活跃，遇到问题可以抱大神大腿</li>
 </ul>
-<h2 id="solution">Solution</h2>
+<h2 id="0x02-solution">0x02 Solution</h2>
 <p>主要是三大类解决方案：</p>
 <p>a. 商业化产品</p>
 <ul>
@@ -152,7 +152,7 @@ pelucky's blog            </a>
 Jekyll在Github上有20000+stars，远远领先于第二名的关注度，笔者没用过ruby，且国内ruby源被GFWfuck后，设置淘宝源各种蛋疼...遂放弃</li>
 <li>Ortopress同理，但是看到别人做的效果挺好的就关注了下：<a href="http://sonnewilling.com/">陋室</a></li>
 </ul>
-<h2 id="pelican">Pelican</h2>
+<h2 id="0x03-pelican">0x03 Pelican</h2>
 <p>笔者使用Python，并且之前接触过Pelican，考虑了一下就选择了最熟悉的Pelican,毕竟它叫<strong>Pel I Can</strong>...</p>
 <h3 id="1introduce">1.Introduce</h3>
 <ul>
@@ -173,7 +173,7 @@ Jekyll在Github上有20000+stars，远远领先于第二名的关注度，笔者
 <ul>
 <li>pelican-quickstart创建站点到/var/www/pelican/，根据脚本提示配置参数</li>
 </ul>
-<h4 id="zhan-dian-jie-gou">站点结构</h4>
+<h4 id="azhan-dian-jie-gou">a.站点结构</h4>
 <div class="highlight"><pre>yourproject/
 ├── content
 │   └── (pages)
@@ -184,7 +184,7 @@ Jekyll在Github上有20000+stars，远远领先于第二名的关注度，笔者
 ├── pelicanconf.py       # Main settings file
 └── publishconf.py       # Settings to use when ready to publish
 </pre></div>
-<h4 id="wen-dang-nei-rong">文档内容</h4>
+<h4 id="bwen-dang-nei-rong">b.文档内容</h4>
 <ul>
 <li>pelican支持三种格式：reStructuredText、markdown以及AsciiDoc</li>
 </ul>
@@ -215,7 +215,7 @@ This is the content of my super blog post.
 <span class="n">This</span> <span class="k">is</span> <span class="n">the</span> <span class="n">content</span> <span class="n">of</span> <span class="n">my</span> <span class="kd">super</span> <span class="n">blog</span> <span class="n">post</span><span class="o">.</span>
 </pre></div>
 <p>还支持翻译、语法高亮、内置内容（模板）、从其他站点导入等功能；</p>
-<h4 id="shu-chu-he-qi-dong">输出和启动</h4>
+<h4 id="cshu-chu-he-qi-dong">c.输出和启动</h4>
 <ul>
 <li>编辑好Markdown或reStructuredText文件后，pelican会将内容转换为静态html格式，输出到output中</li>
 </ul>
@@ -231,7 +231,7 @@ python -m http.server           #python3
 <ul>
 <li>打开浏览器http://192.168.1.112:8000/，预览效果；</li>
 </ul>
-<h4 id="pei-zhi-zhu-ti">配置主题</h4>
+<h4 id="dpei-zhi-zhu-ti">d.配置主题</h4>
 <p>Pelican支持大量的开源主题，GitHub上的pelican-themes项目有几十套主题，大部分都带了效果预览图。可以从里面挑一个喜欢的主题样式来使用。还有一个更方便的挑选主题的方式，直接打开<a href="www.pelicanthemes.com">pelicanthemes</a>挑选（加载略慢）。一个网页里就列出了几乎所有的主题。该博客使用pelican-bootstrap3主题，并在这套主题的基础上进行了一些定制。选定好喜欢的主题后，从GitHub上下载下来所有的主题，安装主题：</p>
 <div class="highlight"><pre>mkdir pelican
 cd pelican
@@ -258,7 +258,7 @@ pelican-themes -i pelican-bootstrap3
     └── tags.html           // 所有的标签列表页面模板
 </pre></div>
 <p>稍微有点Jinja的知识加上一些HTML和CSS的知识，就可以自己定义主题了。</p>
-<h4 id="pei-zhi-cha-jian">配置插件</h4>
+<h4 id="epei-zhi-cha-jian">e.配置插件</h4>
 <p>插件同主题类似，到github上down下来,虽然大部分插件都是全主题可用的,但是也存在好用与否的问题, 有些插件在原生主题上就需要自己改base.css才能用,所以尽量配套选,避免麻烦.</p>
 <div class="highlight"><pre>git clone --recursive https://github.com/getpelican/pelican-plugins
 </pre></div>
@@ -322,12 +322,12 @@ TOC = {
 <span class="x">    </span><span class="cp">{{</span><span class="nv">article.toc</span><span class="cp">}}</span><span class="x"></span>
 <span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
 </pre></div>
-<h4 id="google-analytics_1">Google Analytics</h4>
+<h4 id="fgoogle-analytics_1">f.Google Analytics</h4>
 <p>去<a href="https://www.google.com/analytics/">Google Analytics</a>申请账号，会要求检验你拥有该站点的所有权，需要下载googlexxxx.html，上传并点击该链接来确认。记下跟踪ID。 在pelicanconf.py添加</p>
 <div class="highlight"><pre>GOOGLE_ANALYTICS = u'跟踪ID'
 </pre></div>
 <p>之后即可到Google Analytics的控制台查看访问情况；</p>
-<h4 id="yi-jian-github">一键Github</h4>
+<h4 id="gyi-jian-github">g.一键Github</h4>
 <p>若要一键上传到Github，需要修改Makefile脚本两处地方：</p>
 <div class="highlight"><pre><span class="nf">publish</span><span class="o">:</span>
 <span class="k">$(</span><span class="nv">PELICAN</span><span class="k">)</span> <span class="k">$(</span><span class="nv">INPUTDIR</span><span class="k">)</span> <span class="err">-o</span> <span class="k">$(</span><span class="nv">OUTPUTDIR</span><span class="k">)</span> <span class="err">-s</span> <span class="k">$(</span><span class="nv">CONFFILE</span><span class="k">)</span> <span class="k">$(</span><span class="nv">PELICANOPTS</span><span class="k">)</span>
@@ -338,7 +338,7 @@ TOC = {
 <span class="err">cd</span> <span class="k">$(</span><span class="nv">OUTPUTDIR</span><span class="k">)</span> <span class="err">;</span> <span class="err">git</span> <span class="err">add</span> <span class="err">.</span> <span class="err">;</span>  <span class="err">git</span> <span class="err">commit</span> <span class="err">-am</span> <span class="s1">'Update pages'</span> <span class="err">;</span> <span class="err">git</span> <span class="err">push</span>
 </pre></div>
 <p>以后写完文章在Pelican目录下执行make github就可以一键部署了。</p>
-<h4 id="qu-xiao-dai-ma-zhong-hong-kuang">取消代码中红框</h4>
+<h4 id="hqu-xiao-dai-ma-zhong-hong-kuang">h.取消代码中红框</h4>
 <p>参考：<a href="http://allotory.github.io/posts/2014/09/08/fix-code-err/">修复pelican代码中红框</a></p>
 <p>在使用Markdown的代码块时，如果代码中有汉字或者按规定书写错误的代码，则生成的HTML文件中错误的代码会有红框框住，output/theme/pygment.css文件中定义了该样式，注释或者删除掉。</p>
 <div class="highlight"><pre><span class="na">.err</span> <span class="err">{</span>
@@ -350,11 +350,11 @@ TOC = {
 <div class="highlight"><pre>pel@debian:~/pelican$ pelican-themes -p
 /usr/local/lib/python2.7/dist-packages/pelican/themes
 </pre></div>
-<h4 id="ping-lun-xi-tong">评论系统</h4>
+<h4 id="iping-lun-xi-tong">i.评论系统</h4>
 <p>在<a href="https://disqus.com/admin/signup">Disqus</a>上申请一个站点，记牢Shortname(不需要加后缀)，评论系统加载起来有点慢，国内也可以使用多说。 在pelicanconf.py添加</p>
 <div class="highlight"><pre>DISQUS_SITENAME = 'Shortname'
 </pre></div>
-<h4 id="cha-ru-tu-pian">插入图片</h4>
+<h4 id="jcha-ru-tu-pian">j.插入图片</h4>
 <p>有两种方法:</p>
 <ul>
 <li>一种是使用云存储，设置为公开图片，直接链接过来，如<a href="https://picasaweb.google.com/home">Picasa</a>来维护图片,推荐使用云图床；</li>
@@ -371,9 +371,9 @@ TOC = {
 <div class="highlight"><pre><span class="o">!</span><span class="p">[</span><span class="n">Test</span> <span class="n">img</span><span class="p">](..</span><span class="o">/</span><span class="p">..</span><span class="o">/</span><span class="p">..</span><span class="o">/</span><span class="p">..</span><span class="o">/</span><span class="p">..</span><span class="o">/</span><span class="p">..</span><span class="o">/</span><span class="n">images</span><span class="o">/</span><span class="n">test</span><span class="p">.</span><span class="n">jpg</span><span class="p">)</span>
 </pre></div>
 <p><img alt="Test img" src="../../../../../../images/test.jpg"/></p>
-<h4 id="she-zhi-yu-ming">设置域名</h4>
+<h4 id="kshe-zhi-yu-ming">k.设置域名</h4>
 <p>待续...</p>
-<h4 id="zhan-nei-sou-suo">站内搜索</h4>
+<h4 id="lzhan-nei-sou-suo">l.站内搜索</h4>
 <p>站内搜索有两种解决方案，一种是采用Google的站内搜索，另一种是使用静态搜索引擎；</p>
 <ul>
 <li>
@@ -393,14 +393,14 @@ SEARCH_URL = '/search'
 </pre></div>
 <p><strong>Tips:</strong></p>
 <p>从pelican-plugins下git下来的Tipue Search有bug，搜索出来的URL会显示undefined，参考<a href="https://github.com/DandyDev/pelican-bootstrap3/issues/220">此处</a>，将Tipue_Search更新至5.0即可，具体更新的方法参考<a href="http://www.futurile.net/2014/04/19/sitesearch-for-pelican-blog-with-tipue/">Site search with Tipue for Pelican</a>，要注意查看template/search.html中的路径；</p>
-<h4 id="cong-wordpressqian-yi-dao-pelican">从WordPress迁移到Pelican</h4>
+<h4 id="mcong-wordpressqian-yi-dao-pelican">m.从WordPress迁移到Pelican</h4>
 <ol>
 <li>导出WordPress数据；在 WordPress 后台 -&gt; 工具 -&gt; 导出。即可导出并下载包含全部文章、页面、评论、自定义栏目、分类目录和标签的 xml 文件。</li>
 <li>将xml转成Markdown；使用 <a href="https://github.com/yourtion/exitwp">exitwp</a> 自动处理xml文件。下载后将导出的 xml 放入 wordpress-xml 目录中，运行 python exitwp.py 即可将 xml 转成 Markdown。 </li>
 <li>需要注意的是转换出的文件注释部分，关于Tags，Category，Date等Meta部分需要按Pelican的形式进行格式调整，以便被Pelican解析，其实还是有点工作量的...</li>
 </ol>
 <p>看文档发现，有pelican-import可以直接从wordpress导入，<a href="http://docs.getpelican.com/en/3.6.3/importer.html">参考</a></p>
-<h4 id="urlpei-zhi">URL配置</h4>
+<h4 id="nurlpei-zhi">n.URL配置</h4>
 <p>默认的URL太low了，可以更优雅...但要注意修改后本地图片的相对路径需要该.</p>
 <p>打开pelicanconf.py配置文件，添加如下，具体配置请参见<a href="http://docs.getpelican.com/en/3.6.3/settings.html#url-settings">官方文档</a>。</p>
 <div class="highlight"><pre>ARTICLE_URL = 'pages/{date:%Y}/{date:%m}/{date:%d}/{slug}/'
@@ -408,7 +408,7 @@ ARTICLE_SAVE_AS = 'pages/{date:%Y}/{date:%m}/{date:%d}/{slug}/index.html'
 PAGE_URL = 'pages/{slug}/'
 PAGE_SAVE_AS = 'pages/{slug}/index.html'
 </pre></div>
-<h4 id="geng-huan-zi-ti">更换字体</h4>
+<h4 id="ogeng-huan-zi-ti">o.更换字体</h4>
 <p>Pelican默认的字体使用了Google的字体服务，会导致加载速度巨慢，更改国内的源或将字体文件放到github上</p>
 <div class="highlight"><pre><span class="c">#static/css/目录下css文件中,例如gumby.css</span>
 <span class="nd">@import</span> <span class="n">url</span><span class="p">(</span><span class="o">//</span><span class="n">fonts</span><span class="o">.</span><span class="n">googleapi</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">css</span><span class="err">?</span><span class="n">family</span><span class="o">=</span><span class="n">Open</span><span class="o">+</span><span class="n">Sans</span><span class="p">:</span><span class="mi">400</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span><span class="mi">600</span><span class="p">,</span><span class="mi">700</span><span class="p">);</span>
