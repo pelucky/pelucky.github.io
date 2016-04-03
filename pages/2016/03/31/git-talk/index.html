@@ -161,8 +161,8 @@ git reset HEAD &lt;file&gt;   #可以将staged文件设置为unstaged文件;
 git checkout -- [file]  #是一个危险命令，可以将文件还原为未修改状态；他的工作原理是将老的文件直接覆盖掉新的文件，故会将所做的修改抹去；
 </pre></div>
 <p>git的生命周期为：
-<a href="https://git-scm.com/book/en/v2/book/02-git-basics/images/lifecycle.png">git lifecycle</a></p>
-<p><em>Tips:</em></p>
+<img alt="git lifecycle" src="https://git-scm.com/book/en/v2/book/02-git-basics/images/lifecycle.png"/></p>
+<p><strong>Tips:</strong></p>
 <ul>
 <li>untracked files为未添加跟踪的文件状态,即未git add xxxx.xx的文件;</li>
 <li>添加跟踪未被修改的文件状态为Unmodified，即经过上次的git commit之后未修改的文件;</li>
@@ -255,9 +255,9 @@ git push origin --tags                  #一次性上传所有的tags
 <ul>
 <li>集中式工作流</li>
 </ul>
-<p>集中式系统中通常使用的是单点协作模型&mdash;&mdash;集中式工作流。 一个中心集线器，或者说仓库，可以接受代码，所有人将自己的工作与之同步。 若干个开发者则作为节点&mdash;&mdash;也就是中心仓库的消费者&mdash;&mdash;并且与其进行同步。
-<a href="https://git-scm.com/book/en/v2/book/05-distributed-git/images/centralized_workflow.png">集中式</a>
-这是最常用的工作流。多人合作项目时，要求后人将前人数据抓取下来并且合并后才能推送到中心仓库中，即是非快进式（non-fast-forward）的方式推送</p>
+<p>集中式系统中通常使用的是单点协作模型&mdash;&mdash;集中式工作流。 一个中心集线器，或者说仓库，可以接受代码，所有人将自己的工作与之同步。 若干个开发者则作为节点&mdash;&mdash;也就是中心仓库的消费者&mdash;&mdash;并且与其进行同步。</p>
+<p><img alt="集中式" src="https://git-scm.com/book/en/v2/book/05-distributed-git/images/centralized_workflow.png"/></p>
+<p>这是最常用的工作流。多人合作项目时，要求后人将前人数据抓取下来并且合并后才能推送到中心仓库中，即是非快进式（non-fast-forward）的方式推送</p>
 <ul>
 <li>集成管理者工作流</li>
 </ul>
@@ -270,7 +270,7 @@ git push origin --tags                  #一次性上传所有的tags
 <li>维护者在自己本地的仓库中，将贡献者的仓库加为远程仓库并合并修改。</li>
 <li>维护者将合并后的修改推送到主仓库。</li>
 </ol>
-<p><a href="https://git-scm.com/book/en/v2/book/05-distributed-git/images/integration-manager.png">集成管理者</a></p>
+<p><img alt="集成管理者" src="https://git-scm.com/book/en/v2/book/05-distributed-git/images/integration-manager.png"/></p>
 <ul>
 <li>司令官与副官工作流</li>
 </ul>
@@ -281,12 +281,12 @@ git push origin --tags                  #一次性上传所有的tags
 <li>司令官将所有副官的 master 分支并入自己的 master 分支中。</li>
 <li>司令官将集成后的 master 分支推送到参考仓库中，以便所有其他开发者以此为基础进行变基。</li>
 </ol>
-<p><a href="https://git-scm.com/book/en/v2/book/05-distributed-git/images/benevolent-dictator.png">司令官与副官</a></p>
+<p><img alt="司令官与副官" src="https://git-scm.com/book/en/v2/book/05-distributed-git/images/benevolent-dictator.png"/></p>
 <p>实际并不常用，只有像Linux内核这类的大项目才会用到...</p>
 <h1 id="0x0a-contributing-to-a-project">0x0A Contributing to a project</h1>
 <p>两个开发者编辑了不同的文件时，Subversion 会对编辑的不同文件在服务器上自动进行一次合并，但 Git 要求你在本地合并提交。</p>
-<p>一个简单的多人 Git 工作流程的通常事件顺序
-<a href="https://git-scm.com/book/en/v2/book/05-distributed-git/images/small-team-flow.png">一个简单的多人 Git 工作流程的通常事件顺序</a></p>
+<p>一个简单的多人 Git 工作流程的通常事件顺序</p>
+<p><img alt="一个简单的多人 Git 工作流程的通常事件顺序" src="https://git-scm.com/book/en/v2/book/05-distributed-git/images/small-team-flow.png"/></p>
 <h1 id="0x0b-one-step-to-github">0x0B One step to Github</h1>
 <ol>
 <li><code>apt-get install git</code></li>
