@@ -241,14 +241,21 @@ git push origin --tags                  #一次性上传所有的tags
 </ul>
 <h1 id="0x08-rebase">0x08 rebase</h1>
 <ul>
-<li>
-<p>rebase（中文翻译变基）的作用就是将提交到某一个分支的所有操作用到另一个上去；也就是将两个分支合并为一个分支；
-选中一个分支，然后将另一个分支变基过来&hellip;</p>
-</li>
-<li>
-<p><a href="http://gitimmersion.com/lab_34.html">merge vs rebase</a>
-翻译里面说的：只对尚未推送或分享给别人的本地修改执行变基操作清理历史，从不对已推送至别处的提交执行变基操作.</p>
-</li>
+<li>rebase（中文翻译变基）的作用就是将提交到某一个分支的所有操作用到另一个上去；也就是将两个分支合并为一个分支；
+选中一个分支，然后将另一个分支变基过来&hellip;</li>
+</ul>
+<p>变基的原理是首先找到这两个分支（即当前分支 experiment、变基操作的目标基底分支 master）的最近共同祖先 C2，然后对比当前分支相对于该祖先的历次提交，提取相应的修改并存为临时文件，然后将当前分支指向目标基底 C3, 最后以此将之前另存为临时文件的修改依序应用。</p>
+<p><img alt="rebase" src="https://git-scm.com/book/en/v2/book/03-git-branching/images/basic-rebase-3.png"/></p>
+<div class="highlight"><pre>git checkout experiment
+git rebase master
+git checkout master
+git merge experiment
+</pre></div>
+<p><strong>不要对在你的仓库外有副本的分支执行变基，因为会造成混乱</strong></p>
+<ul>
+<li><a href="http://gitimmersion.com/lab_34.html">merge vs rebase</a>
+翻译里面说的：只对尚未推送或分享给别人的本地修改执行变基操作清理历史，从不对已推送至别处的提交执行变基操作.
+merge不会改变历史记录，使用merge会记录实际发生过的内容；rebase则会修改历史记录，如果你认为提交历史是项目过程中发生的故事，则使用rebase更合适；</li>
 </ul>
 <h1 id="0x09-distributed-git">0x09 Distributed Git</h1>
 <p>分布式工作流程大致可以分为三类：集中式工作流、集成管理者工作流和司令官与副官工作流；</p>
